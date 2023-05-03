@@ -1,0 +1,140 @@
+using Gtk 4.0;
+using Adw 1;
+
+template CalligraphyWindow : Adw.ApplicationWindow {
+  title: "Calligraphy";
+  default-width: 350;
+  default-height: 500;
+  height-request: 300;
+  width-request: 300;
+  content:
+  Adw.ToastOverlay toast_overlay {
+    child:
+    Box {
+      orientation: vertical;
+      hexpand: true;
+      vexpand: true;
+
+      HeaderBar {
+        styles [
+          "flat",
+        ]
+
+        [start]
+        MenuButton {
+          primary: true;
+          menu-model: primary_menu;
+          icon-name: "open-menu-symbolic";
+          tooltip-text: _("Main Menu");
+        }
+      }
+
+      Box window_box {
+        orientation: vertical;
+        margin-bottom: 24;
+        margin-start: 24;
+        margin-end: 24;
+        spacing: 15;
+
+        Adw.PreferencesGroup {
+          title: _("Message");
+
+          Box {
+            orientation: vertical;
+            hexpand: true;
+            vexpand: true;
+
+            styles [
+              "card",
+              "text-box",
+            ]
+
+            ScrolledWindow {
+              margin-top: 12;
+              margin-bottom: 0;
+              margin-start: 12;
+              margin-end: 12;
+
+              styles [
+                "scrolled-window",
+              ]
+
+              TextView input_text_view {
+                hexpand: true;
+                vexpand: true;
+              }
+            }
+          }
+        }
+
+        Adw.PreferencesGroup {
+          title: _("Output");
+
+          Box {
+            orientation: vertical;
+            hexpand: true;
+            vexpand: true;
+
+            styles [
+              "card",
+              "text-box",
+            ]
+
+            ScrolledWindow {
+              margin-top: 12;
+              margin-bottom: 0;
+              margin-start: 12;
+              margin-end: 12;
+
+              TextView output_text_view {
+                monospace: true;
+                hexpand: true;
+                vexpand: true;
+                editable: false;
+                cursor-visible: false;
+                accessible-role: none;
+              }
+            }
+
+            Box toolbar {
+              styles [
+                "toolbar",
+              ]
+
+              Box {
+                hexpand: true;
+              }
+
+              Button to_clipboard_btn {
+                icon-name: "edit-copy-symbolic";
+                tooltip-text: _("Copy to Clipboard");
+                halign: end;
+                styles [
+                  "raised",
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ;
+  }
+
+  ;
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+
+    item {
+      label: _("_About Calligraphy");
+      action: "app.about";
+    }
+  }
+}

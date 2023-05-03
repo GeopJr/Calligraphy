@@ -1,0 +1,88 @@
+# window.py
+#
+# Copyright 2023 Calligraphy Contributors
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+from .fonts_list import full_fonts_list
+
+from gi.repository import Adw, Gtk, Gio, Gdk, GObject
+
+import pyfiglet
+
+@Gtk.Template(resource_path='/io/gitlab/gregorni/Calligraphy/window.ui')
+class CalligraphyWindow(Adw.ApplicationWindow):
+    __gtype_name__ = 'CalligraphyWindow'
+
+    window_box = Gtk.Template.Child()
+    output_text_view = Gtk.Template.Child()
+    input_text_view = Gtk.Template.Child()
+    to_clipboard_btn = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
+    toolbar = Gtk.Template.Child()
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        settings = Gio.Settings(schema_id='io.gitlab.gregorni.Calligraphy')
+        settings.bind('width', self, 'default-width',
+                           Gio.SettingsBindFlags.DEFAULT)
+        settings.bind('height', self, 'default-height',
+                           Gio.SettingsBindFlags.DEFAULT)
+        settings.bind('is-maximized', self, 'maximized',
+                           Gio.SettingsBindFlags.DEFAULT)
+
+        self.input_buffer = self.input_text_view.get_buffer()
+        self.input_buffer.connect('changed', self.__on_input_changed)
+
+        self.output_buffer = self.output_text_view.get_buffer()
+
+        self.to_clipboard_btn.connect('clicked', self.__copy_output_to_clipboard)
+
+        self.select_font_dropdown = Gtk.DropDown.new_from_strings(full_fonts_list)
+        settings.bind('selected-font', self.select_font_dropdown, 'selected',
+                           Gio.SettingsBindFlags.DEFAULT)
+        self.select_font_dropdown.connect('notify::selected', self.__on_input_changed)
+        self.toolbar.prepend(self.select_font_dropdown)
+
+    def do_size_allocate(self, width, height, baseline):
+        if width < 800:
+            self.window_box.props.orientation = Gtk.Orientation.VERTICAL
+        else:
+            self.window_box.props.orientation = Gtk.Orientation.HORIZONTAL
+
+        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
+
+    def __text_as_figlet(self):
+        # Retrieve the iterator at the start of the buffer
+        start = self.input_buffer.get_start_iter()
+        # Retrieve the iterator at the end of the buffer
+        end = self.input_buffer.get_end_iter()
+        # Retrieve all the visible text between the two bounds
+        text = self.input_buffer.get_text(start, end, False)
+
+        return str(pyfiglet.figlet_format(text, self.select_font_dropdown.get_selected_item().get_string()))
+
+    def __on_input_changed(self, *args):
+        self.output_buffer.set_text(self.__text_as_figlet())
+
+    def __copy_output_to_clipboard(self, *args):
+        if self.__text_as_figlet() == '':
+            self.toast_overlay.add_toast(Adw.Toast(title=_('Nothing to copy')))
+            return
+        Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
+        self.toast_overlay.add_toast(Adw.Toast(title=_('Copied to clipboard')))
+

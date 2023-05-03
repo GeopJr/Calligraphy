@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>io.gitlab.gregorni.Calligraphy.desktop</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-or-later</project_license>
+
+  <name>Calligraphy</name>
+  <developer_name>Calligraphy Contributors</developer_name>
+  <summary>Turn your text into ASCII banners</summary>
+
+	<description>
+	  <p>
+	    Calligraphy uses pyfiglet to turn text into impressive banners made up of ASCII Characters.
+	  </p>
+	</description>
+
+  <categories>
+    <category>GTK</category>
+    <category>GNOME</category>
+    <category>TextTools</category>
+  </categories>
+
+  <keywords>
+    <keyword>ascii</keyword>
+    <keyword>convert</keyword>
+    <keyword>conversion</keyword>
+    <keyword>text</keyword>
+  </keywords>
+
+  <requires>
+    <internet>offline-only</internet>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+
+  <screenshots>
+    <screenshot>
+      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/overview.png</image>
+      <caption>Overview</caption>
+    </screenshot>
+  </screenshots>
+
+  <launchable type="desktop-id">io.gitlab.gregorni.Calligraphy.desktop</launchable>
+
+  <url type="homepage">https://gitlab.com/gregorni/Calligraphy</url>
+  <url type="bugtracker">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
+  <url type="help">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/gregorni/Calligraphy</url>
+  <url type="contribute">https://gitlab.com/gregorni/Calligraphy</url>
+  <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
+
+  <update_contact>gregorniehl@web.de</update_contact>
+
+  <content_rating type="oars-1.1" />
+
+  <project_group>GNOME</project_group>
+
+  <releases>
+    <release version="1.0.0" date="XXX">
+      <description>
+        <p>First Release! 🎉</p>
+      </description>
+    </release>
+  </releases>
+
+  <kudos>
+      <!--
+        GNOME Software kudos:
+        https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
+      -->
+      <kudo>ModernToolkit</kudo>
+      <kudo>HiDpiIcon</kudo>
+  </kudos>
+
+  <custom>
+    <value key="Purism::form_factor">workstation</value>
+    <value key="Purism::form_factor">mobile</value>
+  </custom>
+
+</component>
+

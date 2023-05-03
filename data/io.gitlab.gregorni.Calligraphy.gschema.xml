@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="calligraphy">
+	<schema id="io.gitlab.gregorni.Calligraphy" path="/io/gitlab/gregorni/Calligraphy/">
+	  <key name="width" type="i">
+      <default>350</default>
+    </key>
+    <key name="height" type="i">
+      <default>500</default>
+    </key>
+    <key name="is-maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="selected-font" type="i">
+      <default>14</default>
+    </key>
+	</schema>
+</schemalist>
