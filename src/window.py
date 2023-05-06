@@ -19,7 +19,7 @@
 
 from .fonts_list import full_fonts_list
 
-from gi.repository import Adw, Gtk, Gio, Gdk, GObject
+from gi.repository import Adw, Gtk, Gio, Gdk
 
 import pyfiglet
 
