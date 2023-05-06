@@ -78,11 +78,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __on_input_changed(self, *args):
         self.output_buffer.set_text(self.__text_as_figlet())
+        if self.__text_as_figlet() == '':
+            self.to_clipboard_btn.set_sensitive(False)
+        else:
+            self.to_clipboard_btn.set_sensitive(True)
 
     def __copy_output_to_clipboard(self, *args):
-        if self.__text_as_figlet() == '':
-            self.toast_overlay.add_toast(Adw.Toast(title=_('Nothing to copy')))
-            return
         Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
         self.toast_overlay.add_toast(Adw.Toast(title=_('Copied to clipboard')))
 
