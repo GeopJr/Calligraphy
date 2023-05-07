@@ -52,7 +52,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         self.to_clipboard_btn.connect('clicked', self.__copy_output_to_clipboard)
 
-        self.select_font_dropdown = Gtk.DropDown.new_from_strings(full_fonts_list)
+        self.select_font_dropdown = self.__create_fonts_dropdown()
+
         settings.bind('selected-font', self.select_font_dropdown, 'selected',
                            Gio.SettingsBindFlags.DEFAULT)
         self.select_font_dropdown.connect('notify::selected', self.__on_input_changed)
@@ -86,4 +87,29 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __copy_output_to_clipboard(self, *args):
         Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
         self.toast_overlay.add_toast(Adw.Toast(title=_('Copied to clipboard')))
+
+    def __create_fonts_dropdown(self):
+
+        string_list_items = "\n".ljust(11).join(
+            [f'<item>{font}</item>' for font in full_fonts_list]
+        )
+
+        drop_down_ui_string = f"""<interface>
+  <object class="GtkDropDown" id="fonts-dropdown">
+    <property name="model">
+      <object class="GtkStringList" id="string-list">
+        <items>
+          {string_list_items}
+        </items>
+      </object>
+    </property>
+    <property name="enable-search">true</property>
+    <property name="expression">
+      <lookup type="GtkStringObject" name="string"></lookup>
+    </property>
+  </object>
+</interface>"""
+
+        builder = Gtk.Builder.new_from_string(drop_down_ui_string, -1)
+        return builder.get_object('fonts-dropdown')
 
