@@ -40,8 +40,20 @@
 
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/overview.png</image>
-      <caption>Overview</caption>
+      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
+      <caption>Alligator font</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
+      <caption>Dotmatrix font</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
+      <caption>Fraktur font</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
+      <caption>Poison font</caption>
     </screenshot>
   </screenshots>
 
