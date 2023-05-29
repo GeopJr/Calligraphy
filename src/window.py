@@ -17,15 +17,15 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import pyfiglet
+from gi.repository import Adw, Gdk, Gio, Gtk
+
 from .fonts_list import full_fonts_list
 
-from gi.repository import Adw, Gtk, Gio, Gdk
 
-import pyfiglet
-
-@Gtk.Template(resource_path='/io/gitlab/gregorni/Calligraphy/window.ui')
+@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/window.ui")
 class CalligraphyWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'CalligraphyWindow'
+    __gtype_name__ = "CalligraphyWindow"
 
     window_box = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
@@ -37,26 +37,27 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        settings = Gio.Settings(schema_id='io.gitlab.gregorni.Calligraphy')
-        settings.bind('width', self, 'default-width',
-                           Gio.SettingsBindFlags.DEFAULT)
-        settings.bind('height', self, 'default-height',
-                           Gio.SettingsBindFlags.DEFAULT)
-        settings.bind('is-maximized', self, 'maximized',
-                           Gio.SettingsBindFlags.DEFAULT)
+        settings = Gio.Settings(schema_id="io.gitlab.gregorni.Calligraphy")
+        settings.bind("width", self, "default-width", Gio.SettingsBindFlags.DEFAULT)
+        settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
+        settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
 
         self.input_buffer = self.input_text_view.get_buffer()
-        self.input_buffer.connect('changed', self.__on_input_changed)
+        self.input_buffer.connect("changed", self.__on_input_changed)
 
         self.output_buffer = self.output_text_view.get_buffer()
 
-        self.to_clipboard_btn.connect('clicked', self.__copy_output_to_clipboard)
+        self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
 
         self.select_font_dropdown = self.__create_fonts_dropdown()
 
-        settings.bind('selected-font', self.select_font_dropdown, 'selected',
-                           Gio.SettingsBindFlags.DEFAULT)
-        self.select_font_dropdown.connect('notify::selected', self.__on_input_changed)
+        settings.bind(
+            "selected-font",
+            self.select_font_dropdown,
+            "selected",
+            Gio.SettingsBindFlags.DEFAULT,
+        )
+        self.select_font_dropdown.connect("notify::selected", self.__on_input_changed)
         self.toolbar.prepend(self.select_font_dropdown)
 
     def do_size_allocate(self, width, height, baseline):
@@ -75,23 +76,26 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         # Retrieve all the visible text between the two bounds
         text = self.input_buffer.get_text(start, end, False)
 
-        return str(pyfiglet.figlet_format(text, self.select_font_dropdown.get_selected_item().get_string()))
+        return str(
+            pyfiglet.figlet_format(
+                text, self.select_font_dropdown.get_selected_item().get_string()
+            )
+        )
 
     def __on_input_changed(self, *args):
         self.output_buffer.set_text(self.__text_as_figlet())
-        if self.__text_as_figlet() == '':
+        if self.__text_as_figlet() == "":
             self.to_clipboard_btn.set_sensitive(False)
         else:
             self.to_clipboard_btn.set_sensitive(True)
 
     def __copy_output_to_clipboard(self, *args):
         Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
-        self.toast_overlay.add_toast(Adw.Toast(title=_('Copied to clipboard')))
+        self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __create_fonts_dropdown(self):
-
         string_list_items = "\n".ljust(11).join(
-            [f'<item>{font}</item>' for font in full_fonts_list]
+            [f"<item>{font}</item>" for font in full_fonts_list]
         )
 
         drop_down_ui_string = f"""<interface>
@@ -111,5 +115,4 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 </interface>"""
 
         builder = Gtk.Builder.new_from_string(drop_down_ui_string, -1)
-        return builder.get_object('fonts-dropdown')
-
+        return builder.get_object("fonts-dropdown")
