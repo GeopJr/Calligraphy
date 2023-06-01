@@ -84,10 +84,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __on_input_changed(self, *args):
         self.output_buffer.set_text(self.__text_as_figlet())
-        if self.__text_as_figlet() == "":
-            self.to_clipboard_btn.set_sensitive(False)
-        else:
-            self.to_clipboard_btn.set_sensitive(True)
+        self.to_clipboard_btn.set_sensitive(self.__text_as_figlet() != "")
 
     def __copy_output_to_clipboard(self, *args):
         Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
