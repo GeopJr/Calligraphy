@@ -10,6 +10,6 @@ Categories=GTK;GNOME;TextTools;
 # Translators: These are search terms for the application;
 # the translation should contain the original list AND the translated strings.
 # The list must end with a semicolon.
-Keywords=ascii;convert;conversion;text;
+Keywords=ascii;convert;conversion;text;каліграфія;конвертувати;текст;аскі;конвертировать;аски;калиграфия;
 StartupNotify=true
 X-Purism-FormFactor=Workstation;Mobile;
