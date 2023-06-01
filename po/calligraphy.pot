@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-03 16:17+0200\n"
+"POT-Creation-Date: 2023-06-01 09:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/io.gitlab.gregorni.Calligraphy.desktop.in:3
-msgid "calligraphy"
-msgstr ""
-
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7
-msgid "No description"
-msgstr ""
-
-#: src/main.py:68
+#. Translators: Translate as "Calligraphy"
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
 msgid "Calligraphy"
 msgstr ""
 
-#: src/main.py:70
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
+msgid "Turn your text into ASCII banners"
+msgstr ""
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
 msgid "Calligraphy Contributors"
 msgstr ""
 
-#: src/main.py:75
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters. Spice up your online conversations by adding some extra "
+"oompf to your messages!"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:25
+msgid "ascii"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
+msgid "convert"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:27
+msgid "conversion"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
+msgid "text"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:45
+msgid "Alligator font"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:49
+msgid "Dotmatrix font"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:53
+msgid "Fraktur font"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:57
+msgid "Poison font"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:79
+msgid "First Release! 🎉"
+msgstr ""
+
+#: src/main.py:79
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr ""
 
-#: src/main.py:82
+#: src/main.py:87
 msgid "Code and Design Borrowed from"
 msgstr ""
 
-#: src/window.py:84
-msgid "Nothing to copy"
-msgstr ""
-
-#: src/window.py:87
+#: src/window.py:94
 msgid "Copied to clipboard"
 msgstr ""
 
@@ -53,23 +98,23 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: src/window.blp:40
+#: src/window.blp:41
 msgid "Message"
 msgstr ""
 
-#: src/window.blp:71
+#: src/window.blp:72
 msgid "Output"
 msgstr ""
 
-#: src/window.blp:110
+#: src/window.blp:112
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: src/window.blp:131
+#: src/window.blp:133
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.blp:136
+#: src/window.blp:138
 msgid "_About Calligraphy"
 msgstr ""
 
