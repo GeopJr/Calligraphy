@@ -106,7 +106,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     </property>
     <property name="enable-search">true</property>
     <property name="expression">
-      <lookup type="GtkStringObject" name="string"></lookup>
+      <lookup type="GtkStringObject" name="string"/>
     </property>
   </object>
 </interface>"""
