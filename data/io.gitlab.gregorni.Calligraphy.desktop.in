@@ -1,99 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-	<id>io.gitlab.gregorni.Calligraphy.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
-
-  <name>Calligraphy</name>
-  <developer_name>Calligraphy Contributors</developer_name>
-  <summary>Turn your text into ASCII banners</summary>
-
-	<description>
-	  <p>
-	    Calligraphy turns short texts into large, impressive banners made up of ASCII Characters.
-	    Spice up your online conversations by adding some extra oompf to your messages!
-	  </p>
-	</description>
-
-  <categories>
-    <category>GTK</category>
-    <category>GNOME</category>
-    <category>TextTools</category>
-  </categories>
-
-  <keywords>
-    <keyword>ascii</keyword>
-    <keyword>convert</keyword>
-    <keyword>conversion</keyword>
-    <keyword>text</keyword>
-  </keywords>
-
-  <requires>
-    <internet>offline-only</internet>
-    <display_length compare="ge">360</display_length>
-  </requires>
-
-  <recommends>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>touch</control>
-  </recommends>
-
-  <screenshots>
-    <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
-      <caption>Alligator font</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
-      <caption>Dotmatrix font</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
-      <caption>Fraktur font</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
-      <caption>Poison font</caption>
-    </screenshot>
-  </screenshots>
-
-  <launchable type="desktop-id">io.gitlab.gregorni.Calligraphy.desktop</launchable>
-
-  <url type="homepage">https://gitlab.com/gregorni/Calligraphy</url>
-  <url type="bugtracker">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
-  <url type="help">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
-  <url type="vcs-browser">https://gitlab.com/gregorni/Calligraphy</url>
-  <url type="contribute">https://gitlab.com/gregorni/Calligraphy</url>
-  <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
-
-  <update_contact>gregorniehl@web.de</update_contact>
-
-  <content_rating type="oars-1.1" />
-
-  <project_group>GNOME</project_group>
-
-  <releases>
-    <release version="1.0.0" date="2023-05-31">
-      <description>
-        <p>First Release! 🎉</p>
-      </description>
-    </release>
-  </releases>
-
-  <kudos>
-      <!--
-        GNOME Software kudos:
-        https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
-      -->
-      <kudo>ModernToolkit</kudo>
-      <kudo>HiDpiIcon</kudo>
-  </kudos>
-
-  <custom>
-    <value key="Purism::form_factor">workstation</value>
-    <value key="Purism::form_factor">mobile</value>
-  </custom>
-
-</component>
-
+[Desktop Entry]
+# Translators: Translate as "Calligraphy"
+Name=Calligraphy
+Comment=Turn your text into ASCII banners
+Exec=calligraphy %u
+Icon=io.gitlab.gregorni.Calligraphy
+Terminal=false
+Type=Application
+Categories=GTK;GNOME;TextTools;
+# Translators: These are search terms for the application;
+# the translation should contain the original list AND the translated strings.
+# The list must end with a semicolon.
+Keywords=ascii;convert;conversion;text;
+StartupNotify=true
+X-Purism-FormFactor=Workstation;Mobile;
