@@ -63,8 +63,6 @@ class CalligraphyApplication(Adw.Application):
         """
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ["gregorni https://gitlab.com/gregorni"]
-        # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = "gregorni https://gitlab.com/gregorni\nvolkov <volkovissocool@gmail.com>\nIrénée Thirion <irenee.thirion@e.email>"
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
@@ -75,7 +73,8 @@ class CalligraphyApplication(Adw.Application):
             version="1.0.0",
             developers=devs_list,
             artists=["kramo https://kramo.hu"],
-            translator_credits=translators_list,
+            # TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+            translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Calligraphy Contributors"),
             license_type=Gtk.License.GPL_3_0,
             website="https://gitlab.com/gregorni/Calligraphy",
