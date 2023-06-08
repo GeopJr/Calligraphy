@@ -20,7 +20,7 @@
 import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
-from .fonts_list import full_fonts_list
+from .fonts_list import fonts_list
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/window.ui")
@@ -92,7 +92,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __create_fonts_dropdown(self):
         string_list_items = "\n".ljust(11).join(
-            [f"<item>{font}</item>" for font in full_fonts_list]
+            [f"<item>{font}</item>" for font in fonts_list]
         )
 
         drop_down_ui_string = f"""<interface>
