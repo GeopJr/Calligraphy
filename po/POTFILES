@@ -3,5 +3,6 @@ data/io.gitlab.gregorni.Calligraphy.appdata.xml.in
 data/io.gitlab.gregorni.Calligraphy.gschema.xml
 src/main.py
 src/window.py
-src/window.blp
+src/save_file.py
+src/gtk/window.blp
 src/gtk/help-overlay.blp
