@@ -24,7 +24,7 @@ from .fonts_list import fonts_list
 from .save_file import SaveFile
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/window.ui")
+@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/window.ui")
 class CalligraphyWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CalligraphyWindow"
 
