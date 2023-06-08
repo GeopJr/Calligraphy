@@ -17,18 +17,22 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gtk, Adw, GLib, Gio
+from gi.repository import Adw, Gio, GLib, Gtk
+
 
 class SaveFile:
     def save(self, parent):
         self.parent = parent
+
         def __on_response(_dialog, response):
             """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
                 self.on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
-            title=_("Select a location"), parent=self.parent, action=Gtk.FileChooserAction.SAVE
+            title=_("Select a location"),
+            parent=self.parent,
+            action=Gtk.FileChooserAction.SAVE,
         )
 
         dialog.set_modal(True)
@@ -39,7 +43,9 @@ class SaveFile:
     def on_save_file(self, file):
         print(f"Output file: {file.get_path()}")
         text = self.parent.output_buffer.get_text(
-            self.parent.output_buffer.get_start_iter(), self.parent.output_buffer.get_end_iter(), False
+            self.parent.output_buffer.get_start_iter(),
+            self.parent.output_buffer.get_end_iter(),
+            False,
         )
         if not text:
             return

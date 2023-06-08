@@ -73,7 +73,9 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __text_as_figlet(self):
         # Retrieve all the visible text between the two bounds
-        text = self.input_buffer.get_text(self.input_buffer.get_start_iter(), self.input_buffer.get_end_iter(), False)
+        text = self.input_buffer.get_text(
+            self.input_buffer.get_start_iter(), self.input_buffer.get_end_iter(), False
+        )
 
         return str(
             pyfiglet.figlet_format(

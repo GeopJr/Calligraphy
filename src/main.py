@@ -24,7 +24,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gio, Gtk, GLib
+from gi.repository import Adw, Gio, GLib, Gtk
 
 from .window import CalligraphyWindow
 
