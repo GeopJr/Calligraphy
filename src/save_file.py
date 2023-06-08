@@ -28,7 +28,7 @@ class SaveFile:
                 self.on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
-            title=_("Select a file"), parent=self.parent, action=Gtk.FileChooserAction.SAVE
+            title=_("Select a location"), parent=self.parent, action=Gtk.FileChooserAction.SAVE
         )
 
         dialog.set_modal(True)
