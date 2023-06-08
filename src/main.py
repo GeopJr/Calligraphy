@@ -39,6 +39,8 @@ class CalligraphyApplication(Adw.Application):
         )
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.__on_about_action)
+        self.create_action("next-font", self.__on_next_font, ["<primary>plus"])
+        self.create_action("previous-font", self.__on_previous_font, ["<primary>minus"])
 
     def do_activate(self):
         """Called when the application is activated.
@@ -50,6 +52,18 @@ class CalligraphyApplication(Adw.Application):
         if not win:
             win = CalligraphyWindow(application=self)
         win.present()
+
+    def __on_next_font(self, *args):
+        dropdown = self.props.active_window.select_font_dropdown
+        new_selected = dropdown.get_selected() + 1
+        if new_selected < len(dropdown.get_model()):
+            dropdown.set_selected(new_selected)
+
+    def __on_previous_font(self, *args):
+        dropdown = self.props.active_window.select_font_dropdown
+        new_selected = dropdown.get_selected() - 1
+        if new_selected >= 0:
+            dropdown.set_selected(new_selected)
 
     def __on_about_action(self, *args):
         """If you contributed code or translations,
