@@ -24,7 +24,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gio, Gtk
+from gi.repository import Adw, Gio, Gtk, GLib
 
 from .window import CalligraphyWindow
 
@@ -41,6 +41,11 @@ class CalligraphyApplication(Adw.Application):
         self.create_action("about", self.__on_about_action)
         self.create_action("next-font", self.__on_next_font, ["<primary>plus"])
         self.create_action("previous-font", self.__on_previous_font, ["<primary>minus"])
+        self.create_action("copy-output", self.__on_copy_output, ["<primary>c"])
+        self.create_action("save-output", self.__on_save_output, ["<primary>s"])
+        self.create_action(
+            "open-output", self.__open_output, param=GLib.VariantType("s")
+        )
 
     def do_activate(self):
         """Called when the application is activated.
@@ -52,6 +57,39 @@ class CalligraphyApplication(Adw.Application):
         if not win:
             win = CalligraphyWindow(application=self)
         win.present()
+
+    def __on_copy_output(self, *args):
+        self.props.active_window.copy_output_to_clipboard()
+
+    def __on_save_output(self, *args):
+        self.props.active_window.save_output_to_file()
+
+    def __open_output(self, app, data):
+        file_path = data.unpack()
+        file = open(file_path, "r")
+        fid = file.fileno()
+        connection = Gio.bus_get_sync(Gio.BusType.SESSION, None)
+        proxy = Gio.DBusProxy.new_sync(
+            connection,
+            Gio.DBusProxyFlags.NONE,
+            None,
+            "org.freedesktop.portal.Desktop",
+            "/org/freedesktop/portal/desktop",
+            "org.freedesktop.portal.OpenURI",
+            None,
+        )
+
+        try:
+            proxy.call_with_unix_fd_list_sync(
+                "OpenFile",
+                GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
+                Gio.DBusCallFlags.NONE,
+                -1,
+                Gio.UnixFDList.new_from_array([fid]),
+                None,
+            )
+        except Exception as e:
+            print(f"Error: {e}")
 
     def __on_next_font(self, *args):
         dropdown = self.props.active_window.select_font_dropdown
@@ -112,7 +150,7 @@ class CalligraphyApplication(Adw.Application):
 
         about.present()
 
-    def create_action(self, name, callback, shortcuts=None):
+    def create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
 
         Args:
@@ -121,7 +159,7 @@ class CalligraphyApplication(Adw.Application):
               activated
             shortcuts: an optional list of accelerators
         """
-        action = Gio.SimpleAction.new(name, None)
+        action = Gio.SimpleAction.new(name, param)
         action.connect("activate", callback)
         self.add_action(action)
         if shortcuts:
