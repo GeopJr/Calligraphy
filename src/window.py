@@ -21,6 +21,7 @@ import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
 from .fonts_list import fonts_list
+from .save_file import SaveFile
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/window.ui")
@@ -31,6 +32,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     output_text_view = Gtk.Template.Child()
     input_text_view = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
+    to_file_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     toolbar = Gtk.Template.Child()
 
@@ -47,7 +49,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         self.output_buffer = self.output_text_view.get_buffer()
 
-        self.to_clipboard_btn.connect("clicked", self.__copy_output_to_clipboard)
+        self.to_clipboard_btn.connect("clicked", self.copy_output_to_clipboard)
+        self.to_file_btn.connect("clicked", self.save_output_to_file)
 
         self.select_font_dropdown = self.__create_fonts_dropdown()
 
@@ -69,12 +72,10 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def __text_as_figlet(self):
-        # Retrieve the iterator at the start of the buffer
-        start = self.input_buffer.get_start_iter()
-        # Retrieve the iterator at the end of the buffer
-        end = self.input_buffer.get_end_iter()
         # Retrieve all the visible text between the two bounds
-        text = self.input_buffer.get_text(start, end, False)
+        text = self.input_buffer.get_text(
+            self.input_buffer.get_start_iter(), self.input_buffer.get_end_iter(), False
+        )
 
         return str(
             pyfiglet.figlet_format(
@@ -85,10 +86,15 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __on_input_changed(self, *args):
         self.output_buffer.set_text(self.__text_as_figlet())
         self.to_clipboard_btn.set_sensitive(self.__text_as_figlet() != "")
+        self.to_file_btn.set_sensitive(self.__text_as_figlet() != "")
 
-    def __copy_output_to_clipboard(self, *args):
-        Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
-        self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
+    def save_output_to_file(self, *args):
+        SaveFile().save(self)
+
+    def copy_output_to_clipboard(self, *args):
+        if self.__text_as_figlet() != "":
+            Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
+            self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __create_fonts_dropdown(self):
         string_list_items = "\n".ljust(11).join(
