@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
-"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
-"POT-Creation-Date: 2023-06-01 09:59+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-09 12:04+0300\n"
 "PO-Revision-Date: 2023-06-02 09:55+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:124
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -35,7 +35,7 @@ msgstr "Transformez du texte en bannières ASCII"
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convertir;conversion;texte;convert;text;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:126
 msgid "Calligraphy Contributors"
 msgstr "Les contributeurs de Calligraphy"
 
@@ -46,8 +46,8 @@ msgid ""
 "oompf to your messages!"
 msgstr ""
 "Calligraphy transforme les textes courts en grandes bannières "
-"impressionnantes de caractères ASCII. Ajoutez du piquant à vos "
-"conversations en ligne en pimentant vos messages !"
+"impressionnantes de caractères ASCII. Ajoutez du piquant à vos conversations "
+"en ligne en pimentant vos messages !"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:25
 msgid "ascii"
@@ -85,53 +85,103 @@ msgstr "Police Poison"
 msgid "First Release! 🎉"
 msgstr "Première version ! 🎉"
 
-#: src/main.py:79
+#: src/main.py:131
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Les contributeurs de Calligraphy"
 
-#: src/main.py:87
+#: src/main.py:139
 msgid "Code and Design Borrowed from"
 msgstr "Code et Design empruntés à"
 
-#: src/window.py:94
+#: src/window.py:97
 msgid "Copied to clipboard"
 msgstr "Copié vers le presse-papiers"
 
-#: src/window.blp:28
+#: src/save_file.py:33
+msgid "Select a location"
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:71
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:78
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr ""
+
+#: src/save_file.py:80
+msgid "Open"
+msgstr ""
+
+#: src/gtk/window.blp:28
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/window.blp:41
+#: src/gtk/window.blp:41
 msgid "Message"
 msgstr "Message"
 
-#: src/window.blp:72
+#: src/gtk/window.blp:72
 msgid "Output"
 msgstr "Résultat"
 
-#: src/window.blp:112
+#: src/gtk/window.blp:112
 msgid "Copy to Clipboard"
 msgstr "Copier vers le presse-papiers"
 
-#: src/window.blp:133
+#: src/gtk/window.blp:122
+msgid "Save to File"
+msgstr ""
+
+#: src/gtk/window.blp:143
 msgid "_Keyboard Shortcuts"
 msgstr "Raccourcis _clavier"
 
-#: src/window.blp:138
+#: src/gtk/window.blp:148
 msgid "_About Calligraphy"
 msgstr "À _propos de Calligraphy"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
+msgid "Text View"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Next Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Previous Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:24
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Copy Output"
+msgstr "Résultat"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Save Output to File"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Général"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Afficher les raccourcis"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
