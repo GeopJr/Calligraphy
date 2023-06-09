@@ -7,21 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
-"POT-Creation-Date: 2023-06-01 09:59+0200\n"
-"PO-Revision-Date: 2023-06-01 11:11+0300\n"
+"POT-Creation-Date: 2023-06-09 12:04+0300\n"
+"PO-Revision-Date: 2023-06-09 12:10+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:124
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -37,7 +37,7 @@ msgstr "Преобразовывает текст в ASCII банеры"
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;conversion;text;аски;конвертация;текст;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:126
 msgid "Calligraphy Contributors"
 msgstr "Сообщество Calligraphy"
 
@@ -86,53 +86,102 @@ msgstr "Шрифт Poison"
 msgid "First Release! 🎉"
 msgstr "Первый релиз!🎉"
 
-#: src/main.py:79
+#: src/main.py:131
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Сообщество Calligraphy"
 
-#: src/main.py:87
+#: src/main.py:139
 msgid "Code and Design Borrowed from"
 msgstr "Код и дизайн заимствован у"
 
-#: src/window.py:94
+#: src/window.py:97
 msgid "Copied to clipboard"
 msgstr "Скопировано в буфер обмена"
 
-#: src/window.blp:28
+#: src/save_file.py:33
+msgid "Select a location"
+msgstr "Выберите расположение"
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:71
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "Не удалось сохранить \"{display_name}\""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:78
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "\"{display_name}\" сохранен"
+
+#: src/save_file.py:80
+msgid "Open"
+msgstr "Открыть"
+
+#: src/gtk/window.blp:28
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: src/window.blp:41
+#: src/gtk/window.blp:41
 msgid "Message"
 msgstr "Сообщение"
 
-#: src/window.blp:72
+#: src/gtk/window.blp:72
 msgid "Output"
 msgstr "Вывод"
 
-#: src/window.blp:112
+#: src/gtk/window.blp:112
 msgid "Copy to Clipboard"
 msgstr "Скопировать в буфер обмена"
 
-#: src/window.blp:133
+#: src/gtk/window.blp:122
+msgid "Save to File"
+msgstr "Сохранить в файл"
+
+#: src/gtk/window.blp:143
 msgid "_Keyboard Shortcuts"
 msgstr "_Горячие клавиши"
 
-#: src/window.blp:138
+#: src/gtk/window.blp:148
 msgid "_About Calligraphy"
 msgstr "_Про Calligraphy"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
+msgid "Text View"
+msgstr "Обозревание текста"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Next Font"
+msgstr "Следующий шрифт"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Previous Font"
+msgstr "Предыдущий шрифт"
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Copy Output"
+msgstr "Скопировать вывод в буфер обмена"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Save Output to File"
+msgstr "Скопировать вывод в файл"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Общие"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Показать горячие клавиши"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Выйти"
