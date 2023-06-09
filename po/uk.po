@@ -1,12 +1,12 @@
-# Ukrainian translation for the calligraphy' package.
-# Copyright (C) 2023 THE calligraphy' COPYRIGHT HOLDER
+# Ukrainian translation for the calligraphy package.
+# Copyright (C) 2023 THE calligraphy'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the calligraphy package.
 # volkov <volkovissocool@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
 "POT-Creation-Date: 2023-06-01 09:59+0200\n"
 "PO-Revision-Date: 2023-06-01 11:16+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"

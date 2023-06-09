@@ -1,12 +1,12 @@
-# French translation for the calligraphy' package.
-# Copyright (C) 2023 THE calligraphy' COPYRIGHT HOLDER
+# French translation for the calligraphy package.
+# Copyright (C) 2023 THE calligraphy'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the calligraphy package.
 # Irénée Thirion <irenee.thirion@e.email>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
 "POT-Creation-Date: 2023-06-01 09:59+0200\n"
 "PO-Revision-Date: 2023-06-02 09:55+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
