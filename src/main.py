@@ -92,16 +92,10 @@ class CalligraphyApplication(Adw.Application):
             print(f"Error: {e}")
 
     def __on_next_font(self, *args):
-        dropdown = self.props.active_window.select_font_dropdown
-        new_selected = dropdown.get_selected() + 1
-        if new_selected < len(dropdown.get_model()):
-            dropdown.set_selected(new_selected)
+        self.props.active_window.change_font()
 
     def __on_previous_font(self, *args):
-        dropdown = self.props.active_window.select_font_dropdown
-        new_selected = dropdown.get_selected() - 1
-        if new_selected >= 0:
-            dropdown.set_selected(new_selected)
+        self.props.active_window.change_font(-1)
 
     def __on_about_action(self, *args):
         """If you contributed code or translations,

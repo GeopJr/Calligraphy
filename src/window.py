@@ -96,12 +96,22 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
+    def __on_scrolled(self, scroll, dx, dy):
+        self.change_font(int(dy / 5))
+
+    def change_font(self, step=1):
+        dropdown = self.select_font_dropdown
+        dropdown.set_selected(
+            max(min(dropdown.get_selected() + step, len(dropdown.get_model())) - 1, 0)
+        )
+
     def __create_fonts_dropdown(self):
         string_list_items = "\n".ljust(11).join(
             [f"<item>{font}</item>" for font in fonts_list]
         )
 
-        drop_down_ui_string = f"""<interface>
+        builder = Gtk.Builder.new_from_string(
+            f"""<interface>
   <object class="GtkDropDown" id="fonts-dropdown">
     <property name="model">
       <object class="GtkStringList" id="string-list">
@@ -114,8 +124,18 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     <property name="expression">
       <lookup type="GtkStringObject" name="string"/>
     </property>
+    <child>
+      <object class="GtkEventControllerScroll" id="scroller">
+        <property name="flags">
+          vertical
+        </property>
+      </object>
+    </child>
   </object>
-</interface>"""
+</interface>""",
+            -1,
+        )
+        scroller = builder.get_object("scroller")
+        scroller.connect("scroll", self.__on_scrolled)
 
-        builder = Gtk.Builder.new_from_string(drop_down_ui_string, -1)
         return builder.get_object("fonts-dropdown")
