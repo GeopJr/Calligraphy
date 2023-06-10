@@ -22,6 +22,7 @@ from gi.repository import Adw, Gdk, Gio, Gtk
 
 from .fonts_list import fonts_list
 from .save_file import SaveFile
+from math import ceil
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/window.ui")
@@ -97,12 +98,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):
-        self.change_font(int(dy / 5))
+        self.change_font(dy/4)
 
     def change_font(self, step=1):
         dropdown = self.select_font_dropdown
         dropdown.set_selected(
-            max(min(dropdown.get_selected() + step, len(dropdown.get_model())) - 1, 0)
+            max(min(dropdown.get_selected() + step, len(dropdown.get_model()) - 1), 0)
         )
 
     def __create_fonts_dropdown(self):
