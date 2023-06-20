@@ -118,7 +118,7 @@ class CalligraphyApplication(Adw.Application):
             application_name=_("Calligraphy"),
             application_icon="io.gitlab.gregorni.Calligraphy",
             developer_name=_("Calligraphy Contributors"),
-            version="1.0.0",
+            version="2.0",
             developers=devs_list,
             artists=["kramo https://kramo.hu"],
             translator_credits=translators_list,
