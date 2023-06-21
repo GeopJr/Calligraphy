@@ -64,7 +64,7 @@ class CalligraphyApplication(Adw.Application):
         # This is a Python list: Add your string to the list (separated by a comma)
         devs_list = ["gregorni https://gitlab.com/gregorni"]
         # This is a string: Add your name to the string (separated by a newline '\n')
-        translators_list = "gregorni https://gitlab.com/gregorni\nvolkov <volkovissocool@gmail.com>\nIrénée Thirion <irenee.thirion@e.email>\nQuentin PAGÈS"
+        translators_list = "gregorni https://gitlab.com/gregorni\nvolkov <volkovissocool@gmail.com>\nIrénée Thirion <irenee.thirion@e.email>\nSabri Ünal <libreajans@gmail.com>\nQuentin PAGÈS"
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
