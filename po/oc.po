@@ -1,14 +1,14 @@
-# Occitan translation.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Occitan translation for the calligraphy package.
+# Copyright (C) 2023 THE calligraphy'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the calligraphy package.
 # Quentin PAGÈS, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 09:59+0200\n"
-"PO-Revision-Date: 2023-06-05 06:57+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
+"POT-Creation-Date: 2023-06-09 12:04+0300\n"
+"PO-Revision-Date: 2023-06-21 15:06+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
 "Language: oc\n"
@@ -19,9 +19,9 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:124
 msgid "Calligraphy"
-msgstr "Calligrafia"
+msgstr "Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
@@ -33,11 +33,11 @@ msgstr "Passatz vòstre tèxt en bandièra ASCII"
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
-msgstr "ascii;convertir;conversion;tèxt;"
+msgstr "ascii;convert;convertir;conversion;text;tèxt;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:126
 msgid "Calligraphy Contributors"
-msgstr "Contributors de Calligrafia"
+msgstr "Contributors de Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -45,7 +45,7 @@ msgid ""
 "ASCII Characters. Spice up your online conversations by adding some extra "
 "oompf to your messages!"
 msgstr ""
-"Calligrafia passa vòstre tèxt en grandas e longas bandièras fachas en "
+"Calligraphy passa vòstre tèxt en grandas e longas bandièras fachas en "
 "caractèrs ASCII. Ajustatz un quicòm a vòstras conversacions en linha en "
 "apondent de picant a vòstres messatges !"
 
@@ -85,53 +85,102 @@ msgstr "polissa Poison"
 msgid "First Release! 🎉"
 msgstr "Primièra version !"
 
-#: src/main.py:79
+#: src/main.py:131
 msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr "Copyright © 2023 Les contributors de Calligrafia"
+msgstr "Copyright © 2023 Les contributors de Calligraphy"
 
-#: src/main.py:87
+#: src/main.py:139
 msgid "Code and Design Borrowed from"
 msgstr "Còdi e design manlevats de"
 
-#: src/window.py:94
+#: src/window.py:97
 msgid "Copied to clipboard"
 msgstr "Copiat al quichapapièrs"
 
-#: src/window.blp:28
+#: src/save_file.py:33
+msgid "Select a location"
+msgstr "Causir un emplaçament"
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:71
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr "Enregistrament impossible de « {display_name} »"
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:78
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr "« {display_name} » enregistrat"
+
+#: src/save_file.py:80
+msgid "Open"
+msgstr "Dobrir"
+
+#: src/gtk/window.blp:28
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: src/window.blp:41
+#: src/gtk/window.blp:41
 msgid "Message"
 msgstr "Messatge"
 
-#: src/window.blp:72
+#: src/gtk/window.blp:72
 msgid "Output"
 msgstr "Sortida"
 
-#: src/window.blp:112
+#: src/gtk/window.blp:112
 msgid "Copy to Clipboard"
 msgstr "Copiar al quicha-papièrs"
 
-#: src/window.blp:133
+#: src/gtk/window.blp:122
+msgid "Save to File"
+msgstr "Enregistrar lo fichièr"
+
+#: src/gtk/window.blp:143
 msgid "_Keyboard Shortcuts"
 msgstr "_Acorchis clavièr"
 
-#: src/window.blp:138
+#: src/gtk/window.blp:148
 msgid "_About Calligraphy"
-msgstr "_A prepaus de Calligrafia"
+msgstr "_A prepaus de Calligraphy"
 
 #: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Text View"
+msgstr "Vista tèxte"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Next Font"
+msgstr "Polissa seguenta"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Previous Font"
+msgstr "Polissa precedenta"
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Copy Output"
+msgstr "Copiar la sortida"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Save Output to File"
+msgstr "Enregistrar la sortida"
+
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "General"
 msgstr "General"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Afichar los acorchis"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sortir"
