@@ -1,0 +1,139 @@
+# Turkish translation of calligraphy.
+# Copyright (C) 2023 calligraphy's COPYRIGHT HOLDER
+# This file is distributed under the same license as the calligraphy package.
+#
+# Sabri Ünal <libreajans@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: calligraphy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-01 09:59+0200\n"
+"PO-Revision-Date: 2023-06-02 13:59+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"Language-Team: Türkçe <takim@gnome.org.tr>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. Translators: Translate as "Calligraphy"
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
+msgid "Calligraphy"
+msgstr "Calligraphy"
+
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
+msgid "Turn your text into ASCII banners"
+msgstr "Metninizi ASCII bannerlara dönüştürün"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;"
+msgstr "ascii;convert;conversion;text;dönüştür;dönüşüm;metin;"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
+msgid "Calligraphy Contributors"
+msgstr "Calligraphy Katkıcıları"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters. Spice up your online conversations by adding some extra "
+"oompf to your messages!"
+msgstr ""
+"Calligraphy, kısa metinleri ASCII Karakterlerinden oluşan büyük, "
+"etkileyici bannerlara dönüştürür. İletilerinize biraz güç takviye "
+"ekleyerek çevrimiçi sohbetlerinizi renklendirin!"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:25
+msgid "ascii"
+msgstr "ascii"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
+msgid "convert"
+msgstr "dönüştür"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:27
+msgid "conversion"
+msgstr "dönüşüm"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
+msgid "text"
+msgstr "metin"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:45
+msgid "Alligator font"
+msgstr "Alligator yazı tipi"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:49
+msgid "Dotmatrix font"
+msgstr "Dotmatrix yazı tipi"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:53
+msgid "Fraktur font"
+msgstr "Fraktur yazı tipi"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:57
+msgid "Poison font"
+msgstr "Poison yazı tipi"
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:79
+msgid "First Release! 🎉"
+msgstr "İlk sürüm! 🎉"
+
+#: src/main.py:79
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr "Telif Hakkı © 2023 Calligraphy Katkıcıları"
+
+#: src/main.py:87
+msgid "Code and Design Borrowed from"
+msgstr "Kod ve Tasarımın Ödünç Alındığı Kaynak"
+
+#: src/window.py:94
+msgid "Copied to clipboard"
+msgstr "Panoya kopyalandı"
+
+#: src/window.blp:28
+msgid "Main Menu"
+msgstr "Ana Menü"
+
+#: src/window.blp:41
+msgid "Message"
+msgstr "İleti"
+
+#: src/window.blp:72
+msgid "Output"
+msgstr "Çıktı"
+
+#: src/window.blp:112
+msgid "Copy to Clipboard"
+msgstr "Panoya Kopyala"
+
+#: src/window.blp:133
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: src/window.blp:138
+msgid "_About Calligraphy"
+msgstr "Calligraphy _Hakkında"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Kısayolları Göster"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
