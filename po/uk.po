@@ -89,7 +89,7 @@ msgstr "Перший реліз! 🎉"
 #. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/main.py:123
 msgid "translator-credits"
-msgstr ""
+msgstr "volkov <volkovissocool@gmail.com>"
 
 #: src/main.py:124
 msgid "Copyright © 2023 Calligraphy Contributors"
