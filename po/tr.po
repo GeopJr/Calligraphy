@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-01 09:59+0200\n"
+"POT-Creation-Date: 2023-07-15 13:59+0200\n"
 "PO-Revision-Date: 2023-06-02 13:59+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:72
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:116
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -37,7 +37,7 @@ msgstr "Metninizi ASCII bannerlara dönüştürün"
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;conversion;text;dönüştür;dönüşüm;metin;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:74
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:118
 msgid "Calligraphy Contributors"
 msgstr "Calligraphy Katkıcıları"
 
@@ -47,9 +47,9 @@ msgid ""
 "ASCII Characters. Spice up your online conversations by adding some extra "
 "oompf to your messages!"
 msgstr ""
-"Calligraphy, kısa metinleri ASCII Karakterlerinden oluşan büyük, "
-"etkileyici bannerlara dönüştürür. İletilerinize biraz güç takviye "
-"ekleyerek çevrimiçi sohbetlerinizi renklendirin!"
+"Calligraphy, kısa metinleri ASCII Karakterlerinden oluşan büyük, etkileyici "
+"bannerlara dönüştürür. İletilerinize biraz güç takviye ekleyerek çevrimiçi "
+"sohbetlerinizi renklendirin!"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:25
 msgid "ascii"
@@ -87,53 +87,108 @@ msgstr "Poison yazı tipi"
 msgid "First Release! 🎉"
 msgstr "İlk sürüm! 🎉"
 
-#: src/main.py:79
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/main.py:123
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.py:124
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Telif Hakkı © 2023 Calligraphy Katkıcıları"
 
-#: src/main.py:87
+#: src/main.py:132
 msgid "Code and Design Borrowed from"
 msgstr "Kod ve Tasarımın Ödünç Alındığı Kaynak"
 
-#: src/window.py:94
+#: src/window.py:97
 msgid "Copied to clipboard"
 msgstr "Panoya kopyalandı"
 
-#: src/window.blp:28
+#: src/save_file.py:33
+msgid "Select a location"
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:71
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:78
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr ""
+
+#: src/save_file.py:80
+msgid "Open"
+msgstr ""
+
+#: src/gtk/window.blp:28
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: src/window.blp:41
+#: src/gtk/window.blp:41
 msgid "Message"
 msgstr "İleti"
 
-#: src/window.blp:72
+#: src/gtk/window.blp:72
 msgid "Output"
 msgstr "Çıktı"
 
-#: src/window.blp:112
+#: src/gtk/window.blp:112
 msgid "Copy to Clipboard"
 msgstr "Panoya Kopyala"
 
-#: src/window.blp:133
+#: src/gtk/window.blp:122
+msgid "Save to File"
+msgstr ""
+
+#: src/gtk/window.blp:143
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/window.blp:138
+#: src/gtk/window.blp:148
 msgid "_About Calligraphy"
 msgstr "Calligraphy _Hakkında"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
+msgid "Text View"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Next Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Previous Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:24
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Copy Output"
+msgstr "Çıktı"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Save Output to File"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
 msgid "General"
 msgstr "Genel"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/help-overlay.blp:38
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Kısayolları Göster"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"

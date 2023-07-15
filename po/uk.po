@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
-"Report-Msgid-Bugs-To: https://gitlab.com/gregorni/Calligraphy/-/issues\n"
-"POT-Creation-Date: 2023-06-09 12:04+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 13:59+0200\n"
 "PO-Revision-Date: 2023-06-09 12:08+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:124
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:116
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -37,7 +37,7 @@ msgstr "Перетворіть свій текст на банери ASCII"
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;conversion;text;аскі;перетворення;текст;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:126
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:118
 msgid "Calligraphy Contributors"
 msgstr "Спільнота Calligraphy"
 
@@ -86,11 +86,16 @@ msgstr "Шрифт Poison"
 msgid "First Release! 🎉"
 msgstr "Перший реліз! 🎉"
 
-#: src/main.py:131
+#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#: src/main.py:123
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.py:124
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Спільнота Calligraphy"
 
-#: src/main.py:139
+#: src/main.py:132
 msgid "Code and Design Borrowed from"
 msgstr "Код та дизайн запозичено у"
 
