@@ -66,19 +66,19 @@ msgstr "text"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:45
 msgid "Alligator font"
-msgstr "Alligator Schriftart"
+msgstr "Schriftart Alligator"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:49
 msgid "Dotmatrix font"
-msgstr "Dotmatrix Schriftart"
+msgstr "Schriftart Dotmatrix"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:53
 msgid "Fraktur font"
-msgstr "Fraktur Schriftart"
+msgstr "Schriftart Fraktur"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:57
 msgid "Poison font"
-msgstr "Poison Schriftart"
+msgstr "Schriftart Poison"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:79
 msgid "First Release! 🎉"
@@ -103,23 +103,23 @@ msgstr "In die Zwischenablage kopiert"
 
 #: src/save_file.py:33
 msgid "Select a location"
-msgstr ""
+msgstr "Speicherort auswählen"
 
 #. Translators: Do not translate "{display_name}"
 #: src/save_file.py:71
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "\"{display_name}\" konnte nicht gespeichert werden"
 
 #. Translators: Do not translate "{display_name}"
 #: src/save_file.py:78
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "\"{display_name}\" wurde gespeichert"
 
 #: src/save_file.py:80
 msgid "Open"
-msgstr ""
+msgstr "Öffnen"
 
 #: src/gtk/window.blp:28
 msgid "Main Menu"
@@ -139,7 +139,7 @@ msgstr "In die Zwischenablage kopieren"
 
 #: src/gtk/window.blp:122
 msgid "Save to File"
-msgstr ""
+msgstr "Als Datei speichern"
 
 #: src/gtk/window.blp:143
 msgid "_Keyboard Shortcuts"
@@ -152,28 +152,27 @@ msgstr "_Über Calligraphy"
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Textansicht"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Next Font"
-msgstr ""
+msgstr "Nächste Schriftart"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Previous Font"
-msgstr ""
+msgstr "Vorherige Schriftart"
 
 #: src/gtk/help-overlay.blp:24
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Copy Output"
-msgstr "Output"
+msgstr "Output kopieren"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Output als Datei speichern"
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
