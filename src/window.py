@@ -100,6 +100,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __on_scrolled(self, scroll, dx, dy):
         self.scrolled_distance += dy / 2
+
         if abs(self.scrolled_distance) >= 1:
             self.change_font(min(1, max(-1, self.scrolled_distance)) <= -1)
             self.scrolled_distance = 0
