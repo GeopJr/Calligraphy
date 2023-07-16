@@ -95,7 +95,7 @@ class CalligraphyApplication(Adw.Application):
         self.props.active_window.change_font()
 
     def __on_previous_font(self, *args):
-        self.props.active_window.change_font(-1)
+        self.props.active_window.change_font(True)
 
     def __on_about_action(self, *args):
         """If you contributed code or translations,

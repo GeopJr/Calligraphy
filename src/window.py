@@ -63,6 +63,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.select_font_dropdown.connect("notify::selected", self.__on_input_changed)
         self.toolbar.prepend(self.select_font_dropdown)
 
+        self.scrolled_distance = 0
+
     def do_size_allocate(self, width, height, baseline):
         if width < 800:
             self.window_box.props.orientation = Gtk.Orientation.VERTICAL
@@ -97,12 +99,23 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):
-        self.change_font(dy / 4)
+        self.scrolled_distance += dy / 2
+        if abs(self.scrolled_distance) >= 1:
+            self.change_font(min(1, max(-1, self.scrolled_distance)) <= -1)
+            self.scrolled_distance = 0
 
-    def change_font(self, step=1):
+    def change_font(self, back=False):
         dropdown = self.select_font_dropdown
         dropdown.set_selected(
-            max(min(dropdown.get_selected() + step, len(dropdown.get_model()) - 1), 0)
+            max(
+                min(
+                    dropdown.get_selected() - 1
+                    if back
+                    else dropdown.get_selected() + 1,
+                    len(dropdown.get_model()) - 1,
+                ),
+                0,
+            )
         )
 
     def __create_fonts_dropdown(self):
@@ -114,7 +127,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             f"""<interface>
   <object class="GtkDropDown" id="fonts-dropdown">
     <property name="model">
-      <object class="GtkStringList" id="string-list">
+      <object class="GtkStringList" id="string_list">
         <items>
           {string_list_items}
         </items>
