@@ -126,7 +126,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         builder = Gtk.Builder.new_from_string(
             f"""<interface>
-  <object class="GtkDropDown" id="fonts-dropdown">
+  <object class="GtkDropDown" id="fonts_dropdown">
     <property name="model">
       <object class="GtkStringList" id="string_list">
         <items>
@@ -140,9 +140,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     </property>
     <child>
       <object class="GtkEventControllerScroll" id="scroller">
-        <property name="flags">
-          vertical
-        </property>
+        <property name="flags">vertical</property>
       </object>
     </child>
   </object>
@@ -152,4 +150,4 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         scroller = builder.get_object("scroller")
         scroller.connect("scroll", self.__on_scrolled)
 
-        return builder.get_object("fonts-dropdown")
+        return builder.get_object("fonts_dropdown")
