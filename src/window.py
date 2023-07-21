@@ -99,7 +99,11 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):
-        self.scrolled_distance += dy / 2
+        new_dy = dy / 50
+        if scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE:
+            new_dy = dy/ 2
+
+        self.scrolled_distance += new_dy
 
         if abs(self.scrolled_distance) >= 1:
             self.change_font(min(1, max(-1, self.scrolled_distance)) <= -1)
