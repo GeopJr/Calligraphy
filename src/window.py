@@ -20,7 +20,7 @@
 import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
-from .FONTS_LIST import FONTS_LIST
+from .fonts_list import FONTS_LIST
 from .save_file import SaveFile
 
 
