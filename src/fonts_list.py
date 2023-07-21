@@ -1,4 +1,4 @@
-fonts_list = [
+FONTS_LIST = [
     "3-d",
     "5lineoblique",
     "acrobatic",

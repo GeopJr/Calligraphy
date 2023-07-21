@@ -1,3 +1,5 @@
+default: black isort
+
 # Format with black formatter
 black:
     black src/
