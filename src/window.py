@@ -101,7 +101,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __on_scrolled(self, scroll, dx, dy):
         new_dy = dy / 50
         if scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE:
-            new_dy = dy/ 2
+            new_dy = dy / 2
 
         self.scrolled_distance += new_dy
 
