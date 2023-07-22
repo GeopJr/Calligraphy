@@ -119,7 +119,7 @@ class CalligraphyApplication(Adw.Application):
             version="2.0",
             developers=devs_list,
             artists=["kramo https://kramo.hu"],
-            # TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+            # Translators: 'Translator Name', 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
             translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Calligraphy Contributors"),
             license_type=Gtk.License.GPL_3_0,
