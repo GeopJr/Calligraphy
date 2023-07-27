@@ -7,18 +7,13 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
   default-height: 500;
   height-request: 300;
   width-request: 300;
-  content:
-  Adw.ToastOverlay toast_overlay {
-    child:
-    Box {
-      orientation: vertical;
-      hexpand: true;
-      vexpand: true;
 
-      HeaderBar {
-        styles [
-          "flat",
-        ]
+  content: Adw.ToastOverlay toast_overlay {
+    child:
+    Adw.ToolbarView {
+
+      [top]
+      Adw.HeaderBar {
 
         [start]
         MenuButton {
@@ -29,7 +24,7 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
         }
       }
 
-      Box window_box {
+      content: Box window_box {
         orientation: vertical;
         margin-bottom: 24;
         margin-start: 24;
@@ -129,6 +124,8 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
           }
         }
       }
+
+      ;
     }
 
     ;
