@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 13:59+0200\n"
+"POT-Creation-Date: 2023-08-07 18:03+0200\n"
 "PO-Revision-Date: 2023-06-09 12:08+0300\n"
 "Last-Translator: volkov <volkovissocool@gmail.com>\n"
 "Language-Team: \n"
@@ -86,7 +86,7 @@ msgstr "Шрифт Poison"
 msgid "First Release! 🎉"
 msgstr "Перший реліз! 🎉"
 
-#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#. Translators: 'Translator Name', 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/main.py:123
 msgid "translator-credits"
 msgstr "volkov <volkovissocool@gmail.com>"
@@ -99,7 +99,7 @@ msgstr "Copyright © 2023 Спільнота Calligraphy"
 msgid "Code and Design Borrowed from"
 msgstr "Код та дизайн запозичено у"
 
-#: src/window.py:97
+#: src/window.py:99
 msgid "Copied to clipboard"
 msgstr "Скопійовано в буфер обміну"
 
@@ -123,31 +123,31 @@ msgstr "\"{display_name}\" збережено"
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/gtk/window.blp:28
+#: src/gtk/window.blp:23
 msgid "Main Menu"
 msgstr "Головне меню"
 
-#: src/gtk/window.blp:41
+#: src/gtk/window.blp:36
 msgid "Message"
 msgstr "Повідомлення"
 
-#: src/gtk/window.blp:72
+#: src/gtk/window.blp:67
 msgid "Output"
 msgstr "Вивід"
 
-#: src/gtk/window.blp:112
+#: src/gtk/window.blp:107
 msgid "Copy to Clipboard"
 msgstr "Скопіювати в буфер обміну"
 
-#: src/gtk/window.blp:122
+#: src/gtk/window.blp:117
 msgid "Save to File"
 msgstr "Зберегти у файл"
 
-#: src/gtk/window.blp:143
+#: src/gtk/window.blp:140
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/gtk/window.blp:148
+#: src/gtk/window.blp:145
 msgid "_About Calligraphy"
 msgstr "_Про Calligraphy"
 

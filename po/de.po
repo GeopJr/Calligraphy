@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 13:59+0200\n"
+"POT-Creation-Date: 2023-08-07 18:03+0200\n"
 "PO-Revision-Date: 2023-06-01 10:03+0200\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -84,7 +84,7 @@ msgstr "Schriftart Poison"
 msgid "First Release! 🎉"
 msgstr "Erste Version! 🎉"
 
-#. TRANSLATORS: eg. 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+#. Translators: 'Translator Name', 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
 #: src/main.py:123
 msgid "translator-credits"
 msgstr "gregorni https://gitlab.com/gregorni"
@@ -97,7 +97,7 @@ msgstr "Copyright © 2023 Mitwirkende von Calligraphy"
 msgid "Code and Design Borrowed from"
 msgstr "Code und Design entlehnt von"
 
-#: src/window.py:97
+#: src/window.py:99
 msgid "Copied to clipboard"
 msgstr "In die Zwischenablage kopiert"
 
@@ -121,31 +121,31 @@ msgstr "\"{display_name}\" wurde gespeichert"
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/gtk/window.blp:28
+#: src/gtk/window.blp:23
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: src/gtk/window.blp:41
+#: src/gtk/window.blp:36
 msgid "Message"
 msgstr "Nachricht"
 
-#: src/gtk/window.blp:72
+#: src/gtk/window.blp:67
 msgid "Output"
 msgstr "Output"
 
-#: src/gtk/window.blp:112
+#: src/gtk/window.blp:107
 msgid "Copy to Clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: src/gtk/window.blp:122
+#: src/gtk/window.blp:117
 msgid "Save to File"
 msgstr "Als Datei speichern"
 
-#: src/gtk/window.blp:143
+#: src/gtk/window.blp:140
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastenkürzel"
 
-#: src/gtk/window.blp:148
+#: src/gtk/window.blp:145
 msgid "_About Calligraphy"
 msgstr "_Über Calligraphy"
 
