@@ -98,8 +98,8 @@ class CalligraphyApplication(Adw.Application):
         self.props.active_window.change_font(True)
 
     def __on_about_action(self, *args):
-        """If you contributed code or translations,
-        feel free to add yourself to the appropriate list.
+        """If you contributed code to the project,
+        feel free to add yourself to the devs list.
         To add yourself into the list, you can add your
         name/username, and optionally an email or URL:
 
