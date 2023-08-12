@@ -46,18 +46,22 @@
   <screenshots>
     <screenshot>
       <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Alligator font</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Dotmatrix font</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Fraktur font</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
+      <!--Translators: This is a screenshot caption-->
       <caption>Poison font</caption>
     </screenshot>
   </screenshots>
