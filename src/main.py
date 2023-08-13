@@ -119,7 +119,12 @@ class CalligraphyApplication(Adw.Application):
             version="2.0",
             developers=devs_list,
             artists=["kramo https://kramo.hu"],
-            # Translators: 'Translator Name', 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
+            # Translators: Translate this string as your translator credits.
+            # Name only:    gregorni
+            # Name + URL:   gregorni https://gitlab.com/gregorni/
+            # Name + Email: gregorni <gregorniehl@web.de>
+            # Do not remove existing names.
+            # Names are separated with newlines.
             translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Calligraphy Contributors"),
             license_type=Gtk.License.GPL_3_0,
