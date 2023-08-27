@@ -66,22 +66,21 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.scrolled_distance = 0
 
     def do_size_allocate(self, width, height, baseline):
-        if width < 800:
-            self.window_box.props.orientation = Gtk.Orientation.VERTICAL
-        else:
-            self.window_box.props.orientation = Gtk.Orientation.HORIZONTAL
+        self.window_box.props.orientation = (
+            Gtk.Orientation.VERTICAL if width < 800 else Gtk.Orientation.HORIZONTAL
+        )
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def __text_as_figlet(self):
-        # Retrieve all the visible text between the two bounds
-        text = self.input_buffer.get_text(
-            self.input_buffer.get_start_iter(), self.input_buffer.get_end_iter(), False
-        )
-
         return str(
             pyfiglet.figlet_format(
-                text, self.select_font_dropdown.get_selected_item().get_string()
+                self.input_buffer.get_text(
+                    self.input_buffer.get_start_iter(),
+                    self.input_buffer.get_end_iter(),
+                    False,
+                ),
+                self.select_font_dropdown.get_selected_item().get_string(),
             )
         )
 
@@ -99,11 +98,11 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):
-        new_dy = dy / 50
-        if scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE:
-            new_dy = dy / 2
-
-        self.scrolled_distance += new_dy
+        self.scrolled_distance += dy / (
+            2
+            if scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
+            else 50
+        )
 
         if abs(self.scrolled_distance) >= 1:
             self.change_font(min(1, max(-1, self.scrolled_distance)) <= -1)
@@ -152,7 +151,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 </interface>""",
             -1,
         )
-        scroller = builder.get_object("scroller")
-        scroller.connect("scroll", self.__on_scrolled)
+        builder.get_object("scroller").connect("scroll", self.__on_scrolled)
 
         return builder.get_object("fonts_dropdown")
