@@ -50,7 +50,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.output_buffer = self.output_text_view.get_buffer()
 
         self.to_clipboard_btn.connect("clicked", self.copy_output_to_clipboard)
-        self.to_file_btn.connect("clicked", self.save_output_to_file)
+        self.to_file_btn.connect("clicked", lambda *_: SaveFile().save(self))
 
         self.select_font_dropdown = self.__create_fonts_dropdown()
 
@@ -88,9 +88,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.output_buffer.set_text(self.__text_as_figlet())
         self.to_clipboard_btn.set_sensitive(self.__text_as_figlet() != "")
         self.to_file_btn.set_sensitive(self.__text_as_figlet() != "")
-
-    def save_output_to_file(self, *args):
-        SaveFile().save(self)
 
     def copy_output_to_clipboard(self, *args):
         if self.__text_as_figlet() != "":
