@@ -125,27 +125,29 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
 
         builder = Gtk.Builder.new_from_string(
-            f"""<interface>
-  <object class="GtkDropDown" id="fonts_dropdown">
-    <property name="width-request">130</property>
-    <property name="model">
-      <object class="GtkStringList" id="string_list">
-        <items>
-          {string_list_items}
-        </items>
-      </object>
-    </property>
-    <property name="enable-search">true</property>
-    <property name="expression">
-      <lookup type="GtkStringObject" name="string"/>
-    </property>
-    <child>
-      <object class="GtkEventControllerScroll" id="scroller">
-        <property name="flags">vertical</property>
-      </object>
-    </child>
-  </object>
-</interface>""",
+            f"""
+            <interface>
+              <object class="GtkDropDown" id="fonts_dropdown">
+                <property name="width-request">130</property>
+                <property name="model">
+                  <object class="GtkStringList" id="string_list">
+                    <items>
+                      {string_list_items}
+                    </items>
+                  </object>
+                </property>
+                <property name="enable-search">true</property>
+                <property name="expression">
+                  <lookup type="GtkStringObject" name="string"/>
+                </property>
+                <child>
+                  <object class="GtkEventControllerScroll" id="scroller">
+                    <property name="flags">vertical</property>
+                  </object>
+                </child>
+              </object>
+            </interface>
+            """,
             -1,
         )
         builder.get_object("scroller").connect("scroll", self.__on_scrolled)
