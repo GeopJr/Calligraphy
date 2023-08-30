@@ -5,7 +5,7 @@
 	<project_license>GPL-3.0-or-later</project_license>
 
   <name>Calligraphy</name>
-  <developer_name>Calligraphy Contributors</developer_name>
+  <developer_name>gregorni</developer_name>
   <summary>Turn your text into ASCII banners</summary>
 
 	<description>
