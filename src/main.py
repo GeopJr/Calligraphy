@@ -37,7 +37,7 @@ class CalligraphyApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Calligraphy",
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
-        self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
+        self.create_action("quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"])
         self.create_action("about", self.__on_about_action)
         self.create_action("next-font", self.__on_next_font, ["<primary>plus"])
         self.create_action("previous-font", self.__on_previous_font, ["<primary>minus"])
