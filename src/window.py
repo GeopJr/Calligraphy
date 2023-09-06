@@ -129,6 +129,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             <interface>
               <object class="GtkDropDown" id="fonts_dropdown">
                 <property name="width-request">130</property>
+                <property name="tooltip-text">{_('Scroll to change font')}</property>
                 <property name="model">
                   <object class="GtkStringList" id="string_list">
                     <items>
