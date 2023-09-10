@@ -32,8 +32,8 @@
             "sources": [
 	    	{
 	            "type": "file",
-	            "url": "https://files.pythonhosted.org/packages/f9/02/48293654fb2e4fdeb4d927f00a380230a832744b6c9af757373a72d018d1/pyfiglet-0.8.post1.tar.gz",
-	            "sha256": "c6c2321755d09267b438ec7b936825a4910fec696292139e664ca8670e103639"
+	            "url": "https://files.pythonhosted.org/packages/ff/36/7a733cccae7b61a868f7ae5722cc7edf0504dcabe7e13fc6cf4dc446a764/pyfiglet-1.0.0.tar.gz",
+	            "sha256": "506c704ca0f06844660d2cbffad51fc650c2e56b764266ad96e2371a0f6cbf7b"
 	    	}
 	    ]
     	},
