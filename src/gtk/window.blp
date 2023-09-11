@@ -3,8 +3,6 @@ using Adw 1;
 
 template $CalligraphyWindow : Adw.ApplicationWindow {
   title: "Calligraphy";
-  default-width: 350;
-  default-height: 500;
   height-request: 300;
   width-request: 300;
 
@@ -46,16 +44,16 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
             ]
 
             ScrolledWindow {
-              margin-top: 12;
-              margin-bottom: 0;
-              margin-start: 12;
-              margin-end: 12;
 
               styles [
                 "scrolled-window",
               ]
 
               TextView input_text_view {
+                margin-top: 12;
+                margin-bottom: 0;
+                margin-start: 12;
+                margin-end: 12;
                 hexpand: true;
                 vexpand: true;
               }
@@ -74,51 +72,51 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
               "text-box",
             ]
 
-            ScrolledWindow {
-              margin-top: 12;
-              margin-bottom: 0;
-              margin-start: 12;
-              margin-end: 12;
+            Adw.ToolbarView {
 
-              TextView output_text_view {
-                monospace: true;
-                hexpand: true;
-                vexpand: true;
-                editable: false;
-                cursor-visible: false;
-                accessible-role: none;
-              }
-            }
+              content: ScrolledWindow {
 
-            Box toolbar {
-              styles [
-                "toolbar",
-              ]
-
-              // The fonts DropDown goes here, see window.py
-
-              Box {
-                hexpand: true;
+                TextView output_text_view {
+                  margin-top: 12;
+                  margin-bottom: 0;
+                  margin-start: 12;
+                  margin-end: 12;
+                  monospace: true;
+                  hexpand: true;
+                  vexpand: true;
+                  editable: false;
+                  cursor-visible: false;
+                  accessible-role: none;
+                }
               }
 
-              Button to_clipboard_btn {
-                sensitive: false;
-                icon-name: "edit-copy-symbolic";
-                tooltip-text: _("Copy to Clipboard");
-                halign: end;
+              ;
+
+              [bottom]
+              Box toolbar {
                 styles [
-                  "raised",
+                  "toolbar",
                 ]
-              }
 
-              Button to_file_btn {
-                sensitive: false;
-                icon-name: "document-save-symbolic";
-                tooltip-text: _("Save to File");
-                halign: end;
-                styles [
-                  "raised",
-                ]
+                // The fonts DropDown goes here, see window.py
+
+                Box {
+                  hexpand: true;
+                }
+
+                Button to_clipboard_btn {
+                  sensitive: false;
+                  icon-name: "edit-copy-symbolic";
+                  tooltip-text: _("Copy to Clipboard");
+                  halign: end;
+                }
+
+                Button to_file_btn {
+                  sensitive: false;
+                  icon-name: "document-save-symbolic";
+                  tooltip-text: _("Save to File");
+                  halign: end;
+                }
               }
             }
           }
