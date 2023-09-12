@@ -80,7 +80,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                     self.input_buffer.get_end_iter(),
                     False,
                 ),
-                self.select_font_dropdown.get_selected_item().get_string(),
+                FONTS_LIST[self.select_font_dropdown.get_selected_item().get_string()],
             )
         )
 
@@ -128,7 +128,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             f"""
             <interface>
               <object class="GtkDropDown" id="fonts_dropdown">
-                <property name="width-request">130</property>
+                <property name="width-request">150</property>
                 <property name="tooltip-text">{_('Scroll to change font')}</property>
                 <property name="model">
                   <object class="GtkStringList" id="string_list">
