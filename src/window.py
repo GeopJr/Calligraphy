@@ -130,6 +130,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
               <object class="GtkDropDown" id="fonts_dropdown">
                 <property name="width-request">150</property>
                 <property name="tooltip-text">{_('Scroll to change font')}</property>
+
                 <property name="model">
                   <object class="GtkStringList" id="string_list">
                     <items>
@@ -137,10 +138,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                     </items>
                   </object>
                 </property>
+
                 <property name="enable-search">true</property>
                 <property name="expression">
                   <lookup type="GtkStringObject" name="string"/>
                 </property>
+
                 <child>
                   <object class="GtkEventControllerScroll" id="scroller">
                     <property name="flags">vertical</property>
