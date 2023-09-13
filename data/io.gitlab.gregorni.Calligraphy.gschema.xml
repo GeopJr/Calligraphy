@@ -2,10 +2,10 @@
 <schemalist gettext-domain="calligraphy">
 	<schema id="io.gitlab.gregorni.Calligraphy" path="/io/gitlab/gregorni/Calligraphy/">
 	  <key name="width" type="i">
-      <default>1500</default>
+      <default>1200</default>
     </key>
     <key name="height" type="i">
-      <default>1000</default>
+      <default>600</default>
     </key>
     <key name="is-maximized" type="b">
       <default>false</default>
