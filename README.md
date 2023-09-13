@@ -21,6 +21,12 @@ The easiest way to work on this project is by cloning it with GNOME Builder:
 3. Clone `https://gitlab.com/gregorni/Calligraphy.git` (or your fork)
 4. Run the project with the ▶ button at the top, or by pressing `Ctrl`+`Shift`+`Space`.
 
+## Translation
+
+[![Translation status](https://hosted.weblate.org/widget/calligraphy/horizontal-auto.svg)](https://hosted.weblate.org/engage/calligraphy/)
+
+Calligraphy uses [Weblate](https://hosted.weblate.org/engage/calligraphy/) for translation. Translations can be contributed there, or via a simple merge request. Don't forget to translate `"translator-credits"` with your credits!
+
 ## Code of Conduct
 
 This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct)
