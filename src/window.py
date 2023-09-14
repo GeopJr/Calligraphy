@@ -30,6 +30,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     window_box = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
+    hint_label = Gtk.Template.Child()
     input_text_view = Gtk.Template.Child()
     to_clipboard_btn = Gtk.Template.Child()
     to_file_btn = Gtk.Template.Child()
@@ -85,13 +86,17 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
 
     def __on_input_changed(self, *args):
-        self.output_buffer.set_text(self.__text_as_figlet())
-        self.to_clipboard_btn.set_sensitive(self.__text_as_figlet() != "")
-        self.to_file_btn.set_sensitive(self.__text_as_figlet() != "")
+        new_text = self.__text_as_figlet()
+        is_something = new_text != ""
+        self.output_buffer.set_text(new_text)
+        self.to_clipboard_btn.set_sensitive(is_something)
+        self.to_file_btn.set_sensitive(is_something)
+        self.hint_label.set_visible(not is_something)
 
     def copy_output_to_clipboard(self, *args):
-        if self.__text_as_figlet() != "":
-            Gdk.Display.get_default().get_clipboard().set(self.__text_as_figlet())
+        new_text = self.__text_as_figlet()
+        if new_text != "":
+            Gdk.Display.get_default().get_clipboard().set(new_text)
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):

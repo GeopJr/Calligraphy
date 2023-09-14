@@ -3,7 +3,7 @@ using Adw 1;
 
 template $CalligraphyWindow : Adw.ApplicationWindow {
   title: "Calligraphy";
-  height-request: 300;
+  height-request: 296;
   width-request: 300;
 
   content: Adw.ToastOverlay toast_overlay {
@@ -22,100 +22,116 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
         }
       }
 
-      content: Box window_box {
-        orientation: vertical;
-        margin-bottom: 24;
-        margin-start: 24;
-        margin-end: 24;
-        spacing: 15;
-        homogeneous: true;
+      content: ScrolledWindow {
 
-        Adw.PreferencesGroup {
-          title: _("Message");
+        Box window_box {
+          orientation: vertical;
+          margin-bottom: 24;
+          margin-start: 24;
+          margin-end: 24;
+          spacing: 15;
+          homogeneous: true;
 
-          Box {
-            orientation: vertical;
-            hexpand: true;
-            vexpand: true;
+          Adw.PreferencesGroup {
+            title: _("Message");
 
-            styles [
-              "card",
-              "text-box",
-            ]
-
-            ScrolledWindow {
+            Box {
+              orientation: vertical;
+              hexpand: true;
+              vexpand: true;
 
               styles [
-                "scrolled-window",
+                "card",
+                "text-box",
               ]
 
-              TextView input_text_view {
-                margin-top: 12;
-                margin-bottom: 0;
-                margin-start: 12;
-                margin-end: 12;
-                hexpand: true;
-                vexpand: true;
+              ScrolledWindow {
+
+                Overlay {
+
+                  child: TextView input_text_view {
+                    margin-top: 12;
+                    margin-start: 12;
+                    margin-end: 12;
+                    hexpand: true;
+                    vexpand: true;
+                  }
+
+                  ;
+
+                  [overlay]
+                  Label hint_label {
+                    margin-top: 12;
+                    margin-start: 12;
+                    margin-end: 12;
+                    label: _("Start typing…");
+                    halign: start;
+                    valign: start;
+
+                    styles [
+                      "dim-label"
+                    ]
+                  }
+                }
               }
             }
           }
-        }
 
-        Adw.PreferencesGroup {
-          title: _("Output");
+          Adw.PreferencesGroup {
+            title: _("Output");
 
-          Box {
-            orientation: vertical;
+            Box {
+              orientation: vertical;
 
-            styles [
-              "card",
-              "text-box",
-            ]
+              styles [
+                "card",
+                "text-box",
+              ]
 
-            Adw.ToolbarView {
+              Adw.ToolbarView {
 
-              content: ScrolledWindow {
+                content: ScrolledWindow {
 
-                TextView output_text_view {
-                  margin-top: 12;
-                  margin-bottom: 0;
-                  margin-start: 12;
-                  margin-end: 12;
-                  monospace: true;
-                  hexpand: true;
-                  vexpand: true;
-                  editable: false;
-                  cursor-visible: false;
-                  accessible-role: none;
-                }
-              }
-
-              ;
-
-              [bottom]
-              Box toolbar {
-                styles [
-                  "toolbar",
-                ]
-
-                // The fonts DropDown goes here, see window.py
-
-                Box {
-                  hexpand: true;
+                  TextView output_text_view {
+                    margin-top: 12;
+                    margin-start: 12;
+                    margin-end: 12;
+                    monospace: true;
+                    hexpand: true;
+                    vexpand: true;
+                    editable: false;
+                    cursor-visible: false;
+                    accessible-role: none;
+                  }
                 }
 
-                Button to_clipboard_btn {
-                  sensitive: false;
-                  icon-name: "edit-copy-symbolic";
-                  tooltip-text: _("Copy to Clipboard");
-                  halign: end;
-                }
+                ;
 
-                Button to_file_btn {
-                  sensitive: false;
-                  icon-name: "document-save-symbolic";
-                  tooltip-text: _("Save to File");
-                  halign: end;
+                [bottom]
+                Box toolbar {
+                  styles [
+                    "toolbar",
+                  ]
+
+                  // The fonts DropDown goes here, see window.py
+
+                  Box {
+                    hexpand: true;
+                  }
+
+                  Button to_clipboard_btn {
+                    sensitive: false;
+                    icon-name: "edit-copy-symbolic";
+                    tooltip-text: _("Copy to Clipboard");
+                    halign: end;
+                  }
+
+                  Button to_file_btn {
+                    sensitive: false;
+                    icon-name: "document-save-symbolic";
+                    tooltip-text: _("Save to File");
+                    halign: end;
+                  }
                 }
               }
             }

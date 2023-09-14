@@ -1,7 +1,7 @@
 [Desktop Entry]
 # Translators: Translate as "Calligraphy"
 Name=Calligraphy
-Comment=Turn your text into ASCII banners
+Comment=Turn text into ASCII banners
 Exec=calligraphy %u
 Icon=io.gitlab.gregorni.Calligraphy
 Terminal=false

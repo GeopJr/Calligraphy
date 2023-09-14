@@ -19,7 +19,7 @@
 
 FONTS_LIST = {
     "3D": "3-d",
-    "5-line Obelique": "5lineoblique",
+    "5-line Oblique": "5lineoblique",
     "Acrobatic": "acrobatic",
     "Alligator Italic": "alligator",
     "Alligator": "alligator2",
