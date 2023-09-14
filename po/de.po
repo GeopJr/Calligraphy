@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-07 18:03+0200\n"
+"POT-Creation-Date: 2023-09-14 21:46+0200\n"
 "PO-Revision-Date: 2023-06-01 10:03+0200\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -18,13 +18,14 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:116
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:119
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
-msgid "Turn your text into ASCII banners"
+#, fuzzy
+msgid "Turn text into ASCII banners"
 msgstr "Verwandeln Sie Text in eindrucksvolle ASCII-Banner"
 
 #. Translators: These are search terms for the application;
@@ -34,9 +35,9 @@ msgstr "Verwandeln Sie Text in eindrucksvolle ASCII-Banner"
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;conversion;text;konvertieren;konversion;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8 src/main.py:118
-msgid "Calligraphy Contributors"
-msgstr "Mitwirkende von Calligraphy"
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
+msgid "gregorni"
+msgstr ""
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -48,56 +49,73 @@ msgstr ""
 "Banner aus ASCII-Zeichen. Peppen Sie Ihre Onlinekonversationen auf, indem "
 "Sie Ihrer Meinung etwas Nachdruck verleihen!"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:25
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
 msgid "ascii"
 msgstr "ascii"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
 msgid "convert"
 msgstr "konvertieren"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:27
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:30
 msgid "conversion"
 msgstr "konversion"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
 msgid "text"
 msgstr "text"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:45
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
 msgid "Alligator font"
 msgstr "Schriftart Alligator"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:49
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
 msgid "Dotmatrix font"
 msgstr "Schriftart Dotmatrix"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:53
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
 msgid "Fraktur font"
 msgstr "Schriftart Fraktur"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:57
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
 msgid "Poison font"
 msgstr "Schriftart Poison"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:79
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:87
 msgid "First Release! 🎉"
 msgstr "Erste Version! 🎉"
 
-#. Translators: 'Translator Name', 'Translator Name <your.email@domain.com>' or 'Translator Name https://website.example'
-#: src/main.py:123
+#: src/main.py:121
+msgid "Calligraphy Contributors"
+msgstr "Mitwirkende von Calligraphy"
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.com/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:131
 msgid "translator-credits"
 msgstr "gregorni https://gitlab.com/gregorni"
 
-#: src/main.py:124
+#: src/main.py:132
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Mitwirkende von Calligraphy"
 
-#: src/main.py:132
+#: src/main.py:140
 msgid "Code and Design Borrowed from"
 msgstr "Code und Design entlehnt von"
 
-#: src/window.py:99
+#: src/window.py:103
 msgid "Copied to clipboard"
 msgstr "In die Zwischenablage kopiert"
 
@@ -106,22 +124,22 @@ msgid "Select a location"
 msgstr "Speicherort auswählen"
 
 #. Translators: Do not translate "{display_name}"
-#: src/save_file.py:71
+#: src/save_file.py:72
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
 msgstr "\"{display_name}\" konnte nicht gespeichert werden"
 
 #. Translators: Do not translate "{display_name}"
-#: src/save_file.py:78
+#: src/save_file.py:79
 #, python-brace-format
 msgid "\"{display_name}\" saved"
 msgstr "\"{display_name}\" wurde gespeichert"
 
-#: src/save_file.py:80
+#: src/save_file.py:81
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/gtk/window.blp:23
+#: src/gtk/window.blp:21
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
@@ -130,22 +148,26 @@ msgid "Message"
 msgstr "Nachricht"
 
 #: src/gtk/window.blp:67
+msgid "Start typing…"
+msgstr ""
+
+#: src/gtk/window.blp:81
 msgid "Output"
 msgstr "Output"
 
-#: src/gtk/window.blp:107
+#: src/gtk/window.blp:125
 msgid "Copy to Clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: src/gtk/window.blp:117
+#: src/gtk/window.blp:132
 msgid "Save to File"
 msgstr "Als Datei speichern"
 
-#: src/gtk/window.blp:140
+#: src/gtk/window.blp:154
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastenkürzel"
 
-#: src/gtk/window.blp:145
+#: src/gtk/window.blp:159
 msgid "_About Calligraphy"
 msgstr "_Über Calligraphy"
 
