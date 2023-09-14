@@ -61,10 +61,11 @@ class SaveFile:
 
     def __save_file_complete(self, file, result):
         info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
-        if info:
-            display_name = info.get_attribute_string("standard::display-name")
-        else:
-            display_name = file.get_basename()
+        display_name = (
+            info.get_attribute_string("standard::display-name")
+            if info
+            else file.get_basename()
+        )
 
         toast = Adw.Toast(
             # Translators: Do not translate "{display_name}"
@@ -80,4 +81,5 @@ class SaveFile:
             toast.set_button_label(_("Open"))
             toast.props.action_name = "app.open-output"
             toast.props.action_target = GLib.Variant("s", file.get_path())
+
         self.parent.toast_overlay.add_toast(toast)

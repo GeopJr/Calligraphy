@@ -26,6 +26,7 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gio, GLib, Gtk
 
+from .save_file import SaveFile
 from .window import CalligraphyWindow
 
 
@@ -39,10 +40,24 @@ class CalligraphyApplication(Adw.Application):
         )
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"])
         self.create_action("about", self.__on_about_action)
-        self.create_action("next-font", self.__on_next_font, ["<primary>plus"])
-        self.create_action("previous-font", self.__on_previous_font, ["<primary>minus"])
-        self.create_action("copy-output", self.__on_copy_output, ["<primary>c"])
-        self.create_action("save-output", self.__on_save_output, ["<primary>s"])
+        self.create_action(
+            "next-font", lambda *_: self.win.change_font(), ["<primary>plus"]
+        )
+        self.create_action(
+            "previous-font",
+            lambda *_: self.win.change_font(back=True),
+            ["<primary>minus"],
+        )
+        self.create_action(
+            "copy-output",
+            lambda *_: self.win.copy_output_to_clipboard(),
+            ["<primary><shift>c"],
+        )
+        self.create_action(
+            "save-output",
+            lambda *_: self.win.save_output_to_file(),
+            ["<primary><shift>s", "<primary>s"],
+        )
         self.create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
@@ -53,16 +68,10 @@ class CalligraphyApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
-        win = self.props.active_window
-        if not win:
-            win = CalligraphyWindow(application=self)
-        win.present()
-
-    def __on_copy_output(self, *args):
-        self.props.active_window.copy_output_to_clipboard()
-
-    def __on_save_output(self, *args):
-        self.props.active_window.save_output_to_file()
+        self.win = self.props.active_window
+        if not self.win:
+            self.win = CalligraphyWindow(application=self)
+        self.win.present()
 
     def __open_output(self, app, data):
         file_path = data.unpack()
@@ -91,12 +100,6 @@ class CalligraphyApplication(Adw.Application):
         except Exception as e:
             print(f"Error: {e}")
 
-    def __on_next_font(self, *args):
-        self.props.active_window.change_font()
-
-    def __on_previous_font(self, *args):
-        self.props.active_window.change_font(True)
-
     def __on_about_action(self, *args):
         """If you contributed code to the project,
         feel free to add yourself to the devs list.
@@ -112,7 +115,7 @@ class CalligraphyApplication(Adw.Application):
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
-            transient_for=self.props.active_window,
+            transient_for=self.win,
             application_name=_("Calligraphy"),
             application_icon="io.gitlab.gregorni.Calligraphy",
             developer_name=_("Calligraphy Contributors"),

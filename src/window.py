@@ -51,7 +51,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.output_buffer = self.output_text_view.get_buffer()
 
         self.to_clipboard_btn.connect("clicked", self.copy_output_to_clipboard)
-        self.to_file_btn.connect("clicked", lambda *_: SaveFile().save(self))
+        self.to_file_btn.connect("clicked", self.save_output_to_file)
 
         self.select_font_dropdown = self.__create_fonts_dropdown()
 
@@ -65,6 +65,9 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.toolbar.prepend(self.select_font_dropdown)
 
         self.scrolled_distance = 0
+
+        self.output_text = ""
+        self.output_exists = False
 
     def do_size_allocate(self, width, height, baseline):
         self.window_box.props.orientation = (
@@ -86,18 +89,22 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
 
     def __on_input_changed(self, *args):
-        new_text = self.__text_as_figlet()
-        is_something = new_text != ""
-        self.output_buffer.set_text(new_text)
-        self.to_clipboard_btn.set_sensitive(is_something)
-        self.to_file_btn.set_sensitive(is_something)
-        self.hint_label.set_visible(not is_something)
+        self.output_text = self.__text_as_figlet()
+        self.output_exists = self.output_text != ""
+
+        self.output_buffer.set_text(self.output_text)
+        self.to_clipboard_btn.set_sensitive(self.output_exists)
+        self.to_file_btn.set_sensitive(self.output_exists)
+        self.hint_label.set_visible(not self.output_exists)
 
     def copy_output_to_clipboard(self, *args):
-        new_text = self.__text_as_figlet()
-        if new_text != "":
-            Gdk.Display.get_default().get_clipboard().set(new_text)
+        if self.output_exists:
+            Gdk.Display.get_default().get_clipboard().set(self.output_text)
             self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
+
+    def save_output_to_file(self, *args):
+        if self.output_exists:
+            SaveFile().save(self)
 
     def __on_scrolled(self, scroll, dx, dy):
         self.scrolled_distance += dy / (
