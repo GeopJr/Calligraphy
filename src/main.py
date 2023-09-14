@@ -25,6 +25,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gio, GLib, Gtk
+
 from .window import CalligraphyWindow
 
 
@@ -48,11 +49,13 @@ class CalligraphyApplication(Adw.Application):
         )
         self.create_action(
             "copy-output",
+            # TODO: lambda is only there to prevent Python from checking if self.win exists
             lambda *_: self.win.copy_output_to_clipboard(),
             ["<primary><shift>c"],
         )
         self.create_action(
             "save-output",
+            # TODO: lambda is only there to prevent Python from checking if self.win exists
             lambda *_: self.win.save_output_to_file(),
             ["<primary><shift>s", "<primary>s"],
         )
