@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the calligraphy package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: calligraphy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-14 21:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: Translate as "Calligraphy"
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:119
+msgid "Calligraphy"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
+msgid "gregorni"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters. Spice up your online conversations by adding some extra "
+"oompf to your messages!"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
+msgid "ascii"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
+msgid "convert"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:30
+msgid "conversion"
+msgstr ""
+
+#. Translators: This is a search term and should be lowercase
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
+msgid "text"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
+msgid "Alligator font"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
+msgid "Dotmatrix font"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
+msgid "Fraktur font"
+msgstr ""
+
+#. Translators: This is a screenshot caption
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
+msgid "Poison font"
+msgstr ""
+
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:87
+msgid "First Release! 🎉"
+msgstr ""
+
+#: src/main.py:121
+msgid "Calligraphy Contributors"
+msgstr ""
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.com/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:131
+msgid "translator-credits"
+msgstr ""
+
+#: src/main.py:132
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr ""
+
+#: src/main.py:140
+msgid "Code and Design Borrowed from"
+msgstr ""
+
+#: src/window.py:103
+msgid "Copied to clipboard"
+msgstr ""
+
+#: src/save_file.py:33
+msgid "Select a location"
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:72
+#, python-brace-format
+msgid "Unable to save \"{display_name}\""
+msgstr ""
+
+#. Translators: Do not translate "{display_name}"
+#: src/save_file.py:79
+#, python-brace-format
+msgid "\"{display_name}\" saved"
+msgstr ""
+
+#: src/save_file.py:81
+msgid "Open"
+msgstr ""
+
+#: src/gtk/window.blp:21
+msgid "Main Menu"
+msgstr ""
+
+#: src/gtk/window.blp:36
+msgid "Message"
+msgstr ""
+
+#: src/gtk/window.blp:67
+msgid "Start typing…"
+msgstr ""
+
+#: src/gtk/window.blp:81
+msgid "Output"
+msgstr ""
+
+#: src/gtk/window.blp:125
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: src/gtk/window.blp:132
+msgid "Save to File"
+msgstr ""
+
+#: src/gtk/window.blp:154
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/gtk/window.blp:159
+msgid "_About Calligraphy"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Text View"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Next Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Previous Font"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Copy Output"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Save Output to File"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:38
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:43
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
