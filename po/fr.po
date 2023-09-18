@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-07 18:03+0200\n"
-"PO-Revision-Date: 2023-09-16 14:03+0000\n"
-"Last-Translator: ButterflyOfFire <boffire@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2023-09-19 21:59+0000\n"
+"Last-Translator: \"J. Lavoie\" <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0.2\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -130,17 +130,17 @@ msgstr "Sélectionnez un emplacement"
 #: src/save_file.py:72
 #, python-brace-format
 msgid "Unable to save \"{display_name}\""
-msgstr ""
+msgstr "Impossible d'enregistrer « {display_name} »"
 
 #. Translators: Do not translate "{display_name}"
 #: src/save_file.py:79
 #, python-brace-format
 msgid "\"{display_name}\" saved"
-msgstr ""
+msgstr "« {display_name} » enregistré"
 
 #: src/save_file.py:81
 msgid "Open"
-msgstr ""
+msgstr "Ouvrir"
 
 #: src/gtk/window.blp:21
 msgid "Main Menu"
@@ -152,7 +152,7 @@ msgstr "Message"
 
 #: src/gtk/window.blp:67
 msgid "Start typing…"
-msgstr ""
+msgstr "Commencez à écrire…"
 
 #: src/gtk/window.blp:81
 msgid "Output"
@@ -164,7 +164,7 @@ msgstr "Copier vers le presse-papiers"
 
 #: src/gtk/window.blp:132
 msgid "Save to File"
-msgstr ""
+msgstr "Enregistrer comme fichier"
 
 #: src/gtk/window.blp:154
 msgid "_Keyboard Shortcuts"
@@ -177,28 +177,27 @@ msgstr "À _propos de Calligraphy"
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Text View"
-msgstr ""
+msgstr "Vue texte"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Next Font"
-msgstr ""
+msgstr "Police suivante"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Previous Font"
-msgstr ""
+msgstr "Police précédente"
 
 #: src/gtk/help-overlay.blp:24
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Copy Output"
-msgstr "Résultat"
+msgstr "Copier le résultat"
 
 #: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Save Output to File"
-msgstr ""
+msgstr "Enregistrer le résultat comme fichier"
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
