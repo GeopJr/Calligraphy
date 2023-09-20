@@ -70,14 +70,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.output_exists = False
 
     def do_size_allocate(self, width, height, baseline):
-        self.window_box.props.orientation = (
+        self.window_box.set_orientation(
             Gtk.Orientation.VERTICAL if width < 800 else Gtk.Orientation.HORIZONTAL
         )
 
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
-    def __text_as_figlet(self):
-        return str(
+    def __on_input_changed(self, *args):
+        self.output_text = str(
             pyfiglet.figlet_format(
                 self.input_buffer.get_text(
                     self.input_buffer.get_start_iter(),
@@ -87,9 +87,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                 FONTS_LIST[self.select_font_dropdown.get_selected_item().get_string()],
             )
         )
-
-    def __on_input_changed(self, *args):
-        self.output_text = self.__text_as_figlet()
         self.output_exists = self.output_text != ""
 
         self.output_buffer.set_text(self.output_text)
@@ -118,14 +115,11 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.scrolled_distance = 0
 
     def change_font(self, back=False):
-        dropdown = self.select_font_dropdown
-        dropdown.set_selected(
+        self.select_font_dropdown.set_selected(
             max(
                 min(
-                    dropdown.get_selected() - 1
-                    if back
-                    else dropdown.get_selected() + 1,
-                    len(dropdown.get_model()) - 1,
+                    self.select_font_dropdown.get_selected() + (-1 if back else +1),
+                    len(self.select_font_dropdown.get_model()) - 1,
                 ),
                 0,
             )

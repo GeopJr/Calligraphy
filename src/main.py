@@ -37,29 +37,33 @@ class CalligraphyApplication(Adw.Application):
             application_id="io.gitlab.gregorni.Calligraphy",
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
-        self.create_action("quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"])
-        self.create_action("about", self.__on_about_action)
-        self.create_action(
-            "next-font", lambda *_: self.win.change_font(), ["<primary>plus"]
+        self.__create_action(
+            "quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"]
         )
-        self.create_action(
+        self.__create_action("about", self.__on_about_action)
+        self.__create_action(
+            "next-font",
+            lambda *_: self.get_active_window().change_font(),
+            ["<primary>plus"],
+        )
+        self.__create_action(
             "previous-font",
-            lambda *_: self.win.change_font(back=True),
+            lambda *_: self.get_active_window().change_font(back=True),
             ["<primary>minus"],
         )
-        self.create_action(
+        self.__create_action(
             "copy-output",
-            # TODO: lambda is only there to prevent Python from checking if self.win exists
-            lambda *_: self.win.copy_output_to_clipboard(),
+            # TODO: lambda is only there to prevent Python from checking if self.get_active_window() exists
+            lambda *_: self.get_active_window().copy_output_to_clipboard(),
             ["<primary><shift>c"],
         )
-        self.create_action(
+        self.__create_action(
             "save-output",
-            # TODO: lambda is only there to prevent Python from checking if self.win exists
-            lambda *_: self.win.save_output_to_file(),
+            # TODO: lambda is only there to prevent Python from checking if self.get_active_window() exists
+            lambda *_: self.get_active_window().save_output_to_file(),
             ["<primary><shift>s", "<primary>s"],
         )
-        self.create_action(
+        self.__create_action(
             "open-output", self.__open_output, param=GLib.VariantType("s")
         )
 
@@ -69,37 +73,32 @@ class CalligraphyApplication(Adw.Application):
         We raise the application's main window, creating it if
         necessary.
         """
-        self.win = self.props.active_window
-        if not self.win:
-            self.win = CalligraphyWindow(application=self)
-        self.win.present()
+        win = self.get_active_window()
+        if not win:
+            win = CalligraphyWindow(application=self)
+        win.present()
 
     def __open_output(self, app, data):
-        file_path = data.unpack()
-        file = open(file_path, "r")
-        fid = file.fileno()
-        connection = Gio.bus_get_sync(Gio.BusType.SESSION, None)
-        proxy = Gio.DBusProxy.new_sync(
-            connection,
-            Gio.DBusProxyFlags.NONE,
-            None,
-            "org.freedesktop.portal.Desktop",
-            "/org/freedesktop/portal/desktop",
-            "org.freedesktop.portal.OpenURI",
-            None,
-        )
-
         try:
-            proxy.call_with_unix_fd_list_sync(
+            file = open(data.unpack(), "r")
+            Gio.DBusProxy.new_sync(
+                Gio.bus_get_sync(Gio.BusType.SESSION, None),
+                Gio.DBusProxyFlags.NONE,
+                None,
+                "org.freedesktop.portal.Desktop",
+                "/org/freedesktop/portal/desktop",
+                "org.freedesktop.portal.OpenURI",
+                None,
+            ).call_with_unix_fd_list_sync(
                 "OpenFile",
                 GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
                 Gio.DBusCallFlags.NONE,
                 -1,
-                Gio.UnixFDList.new_from_array([fid]),
+                Gio.UnixFDList.new_from_array([file.fileno()]),
                 None,
             )
         except Exception as e:
-            print(f"Error: {e}")
+            print(f"Error saving file: {e}")
 
     def __on_about_action(self, *args):
         """If you contributed code to the project,
@@ -108,40 +107,32 @@ class CalligraphyApplication(Adw.Application):
         name/username, and optionally an email or URL:
 
         Name only:    gregorni
-        Name + URL:   gregorni https://gitlab.com/gregorni/
+        Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
         Name + Email: gregorni <gregorniehl@web.de>
         """
-        # This is a Python list: Add your string to the list (separated by a comma)
-        devs_list = ["gregorni https://gitlab.com/gregorni"]
 
         """Callback for the app.about action."""
         about = Adw.AboutWindow(
-            transient_for=self.win,
+            transient_for=self.get_active_window(),
             application_name=_("Calligraphy"),
             application_icon="io.gitlab.gregorni.Calligraphy",
             developer_name=_("Calligraphy Contributors"),
             version="2.0",
-            developers=devs_list,
+            # This is a Python list: Add your string to the list (separated by a comma)
+            developers=["gregorni https://gitlab.gnome.org/gregorni"],
             artists=["kramo https://kramo.hu"],
             # Translators: Translate this string as your translator credits.
             # Name only:    gregorni
-            # Name + URL:   gregorni https://gitlab.com/gregorni/
+            # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
             # Name + Email: gregorni <gregorniehl@web.de>
             # Do not remove existing names.
             # Names are separated with newlines.
             translator_credits=_("translator-credits"),
             copyright=_("Copyright © 2023 Calligraphy Contributors"),
             license_type=Gtk.License.GPL_3_0,
-            website="https://gitlab.com/gregorni/Calligraphy",
-            issue_url="https://gitlab.com/gregorni/Calligraphy/-/issues",
+            website="https://gitlab.gnome.org/gregorni/Calligraphy",
+            issue_url="https://gitlab.gnome.org/gregorni/Calligraphy/-/issues",
             support_url="https://matrix.to/#/#gregorni-apps:matrix.org",
-        )
-
-        about.add_acknowledgement_section(
-            _("Code and Design Borrowed from"),
-            [
-                "Telegraph https://github.com/fkinoshita/Telegraph",
-            ],
         )
 
         about.add_legal_section(
@@ -152,7 +143,7 @@ class CalligraphyApplication(Adw.Application):
 
         about.present()
 
-    def create_action(self, name, callback, shortcuts=None, param=None):
+    def __create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
 
         Args:
@@ -170,5 +161,4 @@ class CalligraphyApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    app = CalligraphyApplication()
-    return app.run(sys.argv)
+    return CalligraphyApplication().run(sys.argv)
