@@ -126,10 +126,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
 
     def __create_fonts_dropdown(self):
-        string_list_items = "\n".ljust(11).join(
-            [f"<item>{font}</item>" for font in FONTS_LIST]
-        )
-
         builder = Gtk.Builder.new_from_string(
             f"""
             <interface>
@@ -140,7 +136,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                 <property name="model">
                   <object class="GtkStringList" id="string_list">
                     <items>
-                      {string_list_items}
+                      {"".join([f"<item>{font}</item>" for font in FONTS_LIST])}
                     </items>
                   </object>
                 </property>
