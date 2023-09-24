@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-14 21:46+0200\n"
-"PO-Revision-Date: 2023-09-14 14:53+0000\n"
+"PO-Revision-Date: 2023-09-25 15:59+0000\n"
 "Last-Translator: Fyodor Sobolev <fyodor-sobolev@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -28,9 +28,8 @@ msgstr "Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
-#, fuzzy
 msgid "Turn text into ASCII banners"
-msgstr "Преобразовывает текст в ASCII банеры"
+msgstr "Преобразовывает текст в ASCII баннеры"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
@@ -41,7 +40,7 @@ msgstr "ascii;convert;conversion;text;аски;конвертация;текст
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
 msgid "gregorni"
-msgstr ""
+msgstr "gregorni"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -152,7 +151,7 @@ msgstr "Сообщение"
 
 #: src/gtk/window.blp:67
 msgid "Start typing…"
-msgstr ""
+msgstr "Начните печатать…"
 
 #: src/gtk/window.blp:81
 msgid "Output"
