@@ -16,7 +16,7 @@ gnome.compile_resources('calligraphy',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
-  dependencies: blueprints,
+  dependencies: [blueprints, appstream_file],
 )
 
 python = import('python')

@@ -101,39 +101,24 @@ class CalligraphyApplication(Adw.Application):
             print(f"Error saving file: {e}")
 
     def __on_about_action(self, *args):
-        """If you contributed code to the project,
-        feel free to add yourself to the devs list.
-        To add yourself into the list, you can add your
-        name/username, and optionally an email or URL:
-
-        Name only:    gregorni
-        Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-        Name + Email: gregorni <gregorniehl@web.de>
-        """
-
         """Callback for the app.about action."""
-        about = Adw.AboutWindow(
-            transient_for=self.get_active_window(),
-            application_name=_("Calligraphy"),
-            application_icon="io.gitlab.gregorni.Calligraphy",
-            developer_name=_("Calligraphy Contributors"),
-            version="2.0",
-            # This is a Python list: Add your string to the list (separated by a comma)
-            developers=["gregorni https://gitlab.gnome.org/gregorni"],
-            artists=["kramo https://kramo.hu"],
-            # Translators: Translate this string as your translator credits.
-            # Name only:    gregorni
-            # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-            # Name + Email: gregorni <gregorniehl@web.de>
-            # Do not remove existing names.
-            # Names are separated with newlines.
-            translator_credits=_("translator-credits"),
-            copyright=_("Copyright © 2023 Calligraphy Contributors"),
-            license_type=Gtk.License.GPL_3_0,
-            website="https://gitlab.gnome.org/gregorni/Calligraphy",
-            issue_url="https://gitlab.gnome.org/gregorni/Calligraphy/-/issues",
-            support_url="https://matrix.to/#/#gregorni-apps:matrix.org",
+        about = Adw.AboutWindow.new_from_appdata(
+            "/io/gitlab/gregorni/Calligraphy/appdata.xml"
         )
+        about.set_transient_for(self.get_active_window())
+        about.set_artists(["kramo https://kramo.hu"])
+        about.set_developer_name(_("Calligraphy Contributors"))
+        # These are Python lists: Add your string to the list (separated by a comma)
+        # See the translator comment below for possible formats
+        about.set_developers(["gregorni https://gitlab.gnome.org/gregorni"])
+        about.set_copyright(_("Copyright © 2023 Calligraphy Contributors"))
+        # Translators: Translate this string as your translator credits.
+        # Name only:    gregorni
+        # Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
+        # Name + Email: gregorni <gregorniehl@web.de>
+        # Do not remove existing names.
+        # Names are separated with newlines.
+        about.set_translator_credits(_("translator-credits"))
 
         about.add_legal_section(
             title="pyfiglet",
