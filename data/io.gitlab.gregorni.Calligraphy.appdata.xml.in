@@ -46,22 +46,22 @@
 
   <screenshots>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
+      <image>https://gitlab.gnome.org/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Alligator font</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
+      <image>https://gitlab.gnome.org/gregorni/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Dotmatrix font</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
+      <image>https://gitlab.gnome.org/gregorni/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Fraktur font</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.com/gregorni/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
+      <image>https://gitlab.gnome.org/gregorni/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Poison font</caption>
     </screenshot>
@@ -69,11 +69,11 @@
 
   <launchable type="desktop-id">io.gitlab.gregorni.Calligraphy.desktop</launchable>
 
-  <url type="homepage">https://gitlab.com/gregorni/Calligraphy</url>
-  <url type="bugtracker">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
-  <url type="help">https://gitlab.com/gregorni/Calligraphy/-/issues</url>
-  <url type="vcs-browser">https://gitlab.com/gregorni/Calligraphy</url>
-  <url type="contribute">https://gitlab.com/gregorni/Calligraphy</url>
+  <url type="homepage">https://gitlab.gnome.org/gregorni/Calligraphy</url>
+  <url type="bugtracker">https://gitlab.gnome.org/gregorni/Calligraphy/-/issues</url>
+  <url type="help">https://gitlab.gnome.org/gregorni/Calligraphy/-/issues</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/gregorni/Calligraphy</url>
+  <url type="contribute">https://gitlab.gnome.org/gregorni/Calligraphy</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
 
   <update_contact>gregorniehl@web.de</update_contact>
