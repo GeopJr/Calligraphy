@@ -7,8 +7,8 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
   width-request: 300;
 
   content: Adw.ToastOverlay toast_overlay {
-    child:
-    Adw.ToolbarView {
+
+    child: Adw.ToolbarView {
 
       [top]
       Adw.HeaderBar {
@@ -33,55 +33,9 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
           homogeneous: true;
 
           Adw.PreferencesGroup {
-            title: _("Message");
-
-            Box {
-              orientation: vertical;
-              hexpand: true;
-              vexpand: true;
-
-              styles [
-                "card",
-                "text-box",
-              ]
-
-              ScrolledWindow {
-
-                Overlay {
-
-                  child: TextView input_text_view {
-                    margin-top: 12;
-                    margin-start: 12;
-                    margin-end: 12;
-                    hexpand: true;
-                    vexpand: true;
-                  }
-
-                  ;
-
-                  [overlay]
-                  Label hint_label {
-                    margin-top: 12;
-                    margin-start: 12;
-                    margin-end: 12;
-                    label: _("Start typing…");
-                    halign: start;
-                    valign: start;
-
-                    styles [
-                      "dim-label"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-
-          Adw.PreferencesGroup {
             title: _("Output");
 
-            Box {
-              orientation: vertical;
+            Adw.Bin {
 
               styles [
                 "card",
@@ -115,7 +69,7 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
 
                   // The fonts DropDown goes here, see window.py
 
-                  Box {
+                  Adw.Bin {
                     hexpand: true;
                   }
 
@@ -140,6 +94,42 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
       }
 
       ;
+
+      [bottom]
+      Revealer {
+        reveal-child: true;
+
+        Adw.Clamp {
+          margin-bottom: 12;
+          margin-top: 12;
+
+          Overlay {
+            css-name: "entry";
+            margin-start: 12;
+            margin-end: 12;
+
+            styles [
+              "text-box"
+            ]
+
+            TextView input_text_view {
+              margin-top: 6;
+              margin-bottom: 6;
+            }
+
+            [overlay]
+            Label hint_label {
+              label: _("Type here…");
+              halign: start;
+              can-target: false;
+
+              styles [
+                "dim-label"
+              ]
+            }
+          }
+        }
+      }
     }
 
     ;
