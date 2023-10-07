@@ -10,18 +10,6 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
 
     child: Adw.ToolbarView {
 
-      [top]
-      Adw.HeaderBar {
-
-        [start]
-        MenuButton {
-          primary: true;
-          menu-model: primary_menu;
-          icon-name: "open-menu-symbolic";
-          tooltip-text: _("Main Menu");
-        }
-      }
-
       content: ScrolledWindow {
 
         Adw.NavigationView main_nav_view {
@@ -29,90 +17,106 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
           Adw.NavigationPage {
             title: _("Calligraphy");
 
-            Adw.ViewStack welcome_stack {
+            Adw.ToolbarView {
+              [top]
+              Adw.HeaderBar {
 
-              Adw.ViewStackPage {
-                name: "welcome";
-
-                child: Adw.StatusPage {
-                  icon-name: "io.gitlab.gregorni.Calligraphy";
-                  title: _("Create ASCII Banners");
-                  description: _("Type something to get started");
+                [start]
+                MenuButton {
+                  primary: true;
+                  menu-model: primary_menu;
+                  icon-name: "open-menu-symbolic";
+                  tooltip-text: _("Main Menu");
                 }
-
-                ;
               }
 
-              Adw.ViewStackPage {
-                name: "fonts-list";
+              content: Adw.ViewStack welcome_stack {
 
-                child: Box window_box {
-                  orientation: vertical;
-                  margin-bottom: 24;
-                  margin-start: 24;
-                  margin-end: 24;
-                  spacing: 15;
-                  homogeneous: true;
+                Adw.ViewStackPage {
+                  name: "welcome";
 
-                  Adw.PreferencesGroup {
-                    title: _("Output");
+                  child: Adw.StatusPage {
+                    icon-name: "io.gitlab.gregorni.Calligraphy";
+                    title: _("Create ASCII Banners");
+                    description: _("Type something to get started");
+                  }
 
-                    Adw.Bin {
-                      styles [
-                        "card",
-                        "text-box",
-                      ]
+                  ;
+                }
 
-                      Adw.ToolbarView {
+                Adw.ViewStackPage {
+                  name: "fonts-list";
 
-                        content: ScrolledWindow {
+                  child: Box window_box {
+                    orientation: vertical;
+                    margin-bottom: 24;
+                    margin-start: 24;
+                    margin-end: 24;
+                    spacing: 15;
+                    homogeneous: true;
 
-                          TextView output_text_view {
-                            margin-top: 12;
-                            margin-start: 12;
-                            margin-end: 12;
-                            monospace: true;
-                            hexpand: true;
-                            vexpand: true;
-                            editable: false;
-                            cursor-visible: false;
-                            accessible-role: none;
-                          }
-                        }
+                    Adw.PreferencesGroup {
+                      title: _("Output");
 
-                        ;
+                      Adw.Bin {
+                        styles [
+                          "card",
+                          "text-box",
+                        ]
 
-                        [bottom]
-                        Box toolbar {
-                          styles [
-                            "toolbar",
-                          ]
+                        Adw.ToolbarView {
 
-                          // The fonts DropDown goes here, see window.py
+                          content: ScrolledWindow {
 
-                          Adw.Bin {
-                            hexpand: true;
-                          }
-
-                          Button to_clipboard_btn {
-                            icon-name: "edit-copy-symbolic";
-                            tooltip-text: _("Copy to Clipboard");
-                            halign: end;
+                            TextView output_text_view {
+                              margin-top: 12;
+                              margin-start: 12;
+                              margin-end: 12;
+                              monospace: true;
+                              hexpand: true;
+                              vexpand: true;
+                              editable: false;
+                              cursor-visible: false;
+                              accessible-role: none;
+                            }
                           }
 
-                          Button to_file_btn {
-                            icon-name: "document-save-symbolic";
-                            tooltip-text: _("Save to File");
-                            halign: end;
+                          ;
+
+                          [bottom]
+                          Box toolbar {
+                            styles [
+                              "toolbar",
+                            ]
+
+                            // The fonts DropDown goes here, see window.py
+
+                            Adw.Bin {
+                              hexpand: true;
+                            }
+
+                            Button to_clipboard_btn {
+                              icon-name: "edit-copy-symbolic";
+                              tooltip-text: _("Copy to Clipboard");
+                              halign: end;
+                            }
+
+                            Button to_file_btn {
+                              icon-name: "document-save-symbolic";
+                              tooltip-text: _("Save to File");
+                              halign: end;
+                            }
                           }
                         }
                       }
                     }
                   }
-                }
 
-                ;
+                  ;
+                }
               }
+
+              ;
             }
           }
         }
