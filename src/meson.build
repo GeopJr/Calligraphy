@@ -41,7 +41,8 @@ calligraphy_sources = [
   'main.py',
   'window.py',
   'fonts_list.py',
-  'save_file.py'
+  'save_file.py',
+  'get_text_view_text.py',
 ]
 
 install_data(calligraphy_sources, install_dir: moduledir)

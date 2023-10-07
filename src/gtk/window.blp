@@ -24,68 +24,94 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
 
       content: ScrolledWindow {
 
-        Box window_box {
-          orientation: vertical;
-          margin-bottom: 24;
-          margin-start: 24;
-          margin-end: 24;
-          spacing: 15;
-          homogeneous: true;
+        Adw.NavigationView main_nav_view {
 
-          Adw.PreferencesGroup {
-            title: _("Output");
+          Adw.NavigationPage {
+            title: _("Calligraphy");
 
-            Adw.Bin {
-              styles [
-                "card",
-                "text-box",
-              ]
+            Adw.ViewStack welcome_stack {
 
-              Adw.ToolbarView {
+              Adw.ViewStackPage {
+                name: "welcome";
 
-                content: ScrolledWindow {
+                child: Adw.StatusPage {
+                  icon-name: "io.gitlab.gregorni.Calligraphy";
+                  title: _("Create ASCII Banners");
+                  description: _("Type something to get started");
+                }
 
-                  TextView output_text_view {
-                    margin-top: 12;
-                    margin-start: 12;
-                    margin-end: 12;
-                    monospace: true;
-                    hexpand: true;
-                    vexpand: true;
-                    editable: false;
-                    cursor-visible: false;
-                    accessible-role: none;
+                ;
+              }
+
+              Adw.ViewStackPage {
+                name: "fonts-list";
+
+                child: Box window_box {
+                  orientation: vertical;
+                  margin-bottom: 24;
+                  margin-start: 24;
+                  margin-end: 24;
+                  spacing: 15;
+                  homogeneous: true;
+
+                  Adw.PreferencesGroup {
+                    title: _("Output");
+
+                    Adw.Bin {
+                      styles [
+                        "card",
+                        "text-box",
+                      ]
+
+                      Adw.ToolbarView {
+
+                        content: ScrolledWindow {
+
+                          TextView output_text_view {
+                            margin-top: 12;
+                            margin-start: 12;
+                            margin-end: 12;
+                            monospace: true;
+                            hexpand: true;
+                            vexpand: true;
+                            editable: false;
+                            cursor-visible: false;
+                            accessible-role: none;
+                          }
+                        }
+
+                        ;
+
+                        [bottom]
+                        Box toolbar {
+                          styles [
+                            "toolbar",
+                          ]
+
+                          // The fonts DropDown goes here, see window.py
+
+                          Adw.Bin {
+                            hexpand: true;
+                          }
+
+                          Button to_clipboard_btn {
+                            icon-name: "edit-copy-symbolic";
+                            tooltip-text: _("Copy to Clipboard");
+                            halign: end;
+                          }
+
+                          Button to_file_btn {
+                            icon-name: "document-save-symbolic";
+                            tooltip-text: _("Save to File");
+                            halign: end;
+                          }
+                        }
+                      }
+                    }
                   }
                 }
 
                 ;
-
-                [bottom]
-                Box toolbar {
-                  styles [
-                    "toolbar",
-                  ]
-
-                  // The fonts DropDown goes here, see window.py
-
-                  Adw.Bin {
-                    hexpand: true;
-                  }
-
-                  Button to_clipboard_btn {
-                    sensitive: false;
-                    icon-name: "edit-copy-symbolic";
-                    tooltip-text: _("Copy to Clipboard");
-                    halign: end;
-                  }
-
-                  Button to_file_btn {
-                    sensitive: false;
-                    icon-name: "document-save-symbolic";
-                    tooltip-text: _("Save to File");
-                    halign: end;
-                  }
-                }
               }
             }
           }

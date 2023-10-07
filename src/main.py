@@ -26,6 +26,7 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gio, GLib, Gtk
 
+from .save_file import SaveFile
 from .window import CalligraphyWindow
 
 
@@ -59,8 +60,7 @@ class CalligraphyApplication(Adw.Application):
         )
         self.__create_action(
             "save-output",
-            # TODO: lambda is only there to prevent Python from checking if self.get_active_window() exists
-            lambda *_: self.get_active_window().save_output_to_file(),
+            lambda *_: SaveFile().save(self.get_active_window()),
             ["<primary><shift>s", "<primary>s"],
         )
         self.__create_action(

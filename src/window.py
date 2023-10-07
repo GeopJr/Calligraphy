@@ -20,6 +20,7 @@
 import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
+from . import get_text_view_text
 from .fonts_list import FONTS_LIST
 from .save_file import SaveFile
 
@@ -36,6 +37,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     to_file_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     toolbar = Gtk.Template.Child()
+    welcome_stack = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -51,7 +53,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.output_buffer = self.output_text_view.get_buffer()
 
         self.to_clipboard_btn.connect("clicked", self.copy_output_to_clipboard)
-        self.to_file_btn.connect("clicked", self.save_output_to_file)
+        self.to_file_btn.connect("clicked", lambda *_: SaveFile().save(self))
 
         self.select_font_dropdown = self.__create_fonts_dropdown()
 
@@ -66,9 +68,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         self.scrolled_distance = 0
 
-        self.output_text = ""
-        self.output_exists = False
-
     def do_size_allocate(self, width, height, baseline):
         self.window_box.set_orientation(
             Gtk.Orientation.VERTICAL if width < 800 else Gtk.Orientation.HORIZONTAL
@@ -77,31 +76,24 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
 
     def __on_input_changed(self, *args):
-        self.output_text = str(
-            pyfiglet.figlet_format(
-                self.input_buffer.get_text(
-                    self.input_buffer.get_start_iter(),
-                    self.input_buffer.get_end_iter(),
-                    False,
-                ),
-                FONTS_LIST[self.select_font_dropdown.get_selected_item().get_string()],
-            )
-        )
-        self.output_exists = self.output_text != ""
+        input_text = get_text_view_text.get(self.input_buffer)
+        output_text = pyfiglet.figlet_format(
+            input_text.strip(),
+            FONTS_LIST[self.select_font_dropdown.get_selected_item().get_string()],
+        )  # Maybe use .strip() on this
 
-        self.output_buffer.set_text(self.output_text)
-        self.to_clipboard_btn.set_sensitive(self.output_exists)
-        self.to_file_btn.set_sensitive(self.output_exists)
-        self.hint_label.set_visible(not self.output_exists)
+        self.output_buffer.set_text(output_text)
+        self.hint_label.set_visible(input_text == "")
+
+        self.welcome_stack.set_visible_child_name(
+            "fonts-list" if output_text != "" else "welcome"
+        )
 
     def copy_output_to_clipboard(self, *args):
-        if self.output_exists:
-            Gdk.Display.get_default().get_clipboard().set(self.output_text)
-            self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
-
-    def save_output_to_file(self, *args):
-        if self.output_exists:
-            SaveFile().save(self)
+        Gdk.Display.get_default().get_clipboard().set(
+            get_text_view_text.get(self.output_buffer)
+        )
+        self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
 
     def __on_scrolled(self, scroll, dx, dy):
         self.scrolled_distance += (
@@ -136,7 +128,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                 <property name="model">
                   <object class="GtkStringList" id="string_list">
                     <items>
-                      {"".join([f"<item>{font}</item>" for font in FONTS_LIST])}
+                      {"".join(f"<item>{font}</item>" for font in FONTS_LIST)}
                     </items>
                   </object>
                 </property>

@@ -19,6 +19,8 @@
 
 from gi.repository import Adw, Gio, GLib, Gtk
 
+from . import get_text_view_text
+
 
 class SaveFile:
     def save(self, parent):
@@ -27,7 +29,7 @@ class SaveFile:
         def __on_response(_dialog, response):
             """Run if the user selects a file."""
             if response == Gtk.ResponseType.ACCEPT:
-                self.on_save_file(_dialog.get_file())
+                self.__on_save_file(_dialog.get_file())
 
         dialog = Gtk.FileChooserNative.new(
             title=_("Select a location"),
@@ -40,24 +42,18 @@ class SaveFile:
         dialog.set_current_name("output.txt")
         dialog.show()
 
-    def on_save_file(self, file):
+    def __on_save_file(self, file):
         print(f"Output file: {file.get_path()}")
-        text = self.parent.output_buffer.get_text(
-            self.parent.output_buffer.get_start_iter(),
-            self.parent.output_buffer.get_end_iter(),
-            False,
-        )
-        if not text:
-            return
-        bytes = GLib.Bytes.new(text.encode("utf-8"))
-        file.replace_contents_bytes_async(
-            bytes,
-            None,
-            False,
-            Gio.FileCreateFlags.NONE,
-            None,
-            self.__save_file_complete,
-        )
+        text = get_text_view_text.get(self.parent.output_buffer)
+        if text:
+            file.replace_contents_bytes_async(
+                GLib.Bytes.new(text.encode("utf-8")),
+                None,
+                False,
+                Gio.FileCreateFlags.NONE,
+                None,
+                self.__save_file_complete,
+            )
 
     def __save_file_complete(self, file, result):
         info = file.query_info("standard::display-name", Gio.FileQueryInfoFlags.NONE)
