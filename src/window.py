@@ -110,7 +110,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.select_font_dropdown.set_selected(
             max(
                 min(
-                    self.select_font_dropdown.get_selected() + (-1 if back else +1),
+                    self.select_font_dropdown.get_selected() + (-1 if back else 1),
                     len(self.select_font_dropdown.get_model()) - 1,
                 ),
                 0,
