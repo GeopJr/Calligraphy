@@ -74,7 +74,7 @@ class CalligraphyApplication(Adw.Application):
         necessary.
         """
         win = self.get_active_window()
-        if not win:
+        if win is None:
             win = CalligraphyWindow(application=self)
         win.present()
 
