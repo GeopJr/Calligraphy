@@ -1,5 +1,8 @@
 default: black isort
 
+format: black unimport isort
+test: codespell
+
 # Format with black formatter
 black:
     black src/
