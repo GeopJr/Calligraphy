@@ -11,3 +11,7 @@ isort:
 # Remove unused imports using unimport
 unimport:
     unimport src/
+
+# Check for typos with codespell
+codespell:
+    codespell -S po/
