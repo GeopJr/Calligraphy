@@ -5,8 +5,7 @@
 	<project_license>GPL-3.0-or-later</project_license>
 
   <name>Calligraphy</name>
-  <!--Translators: Leave this as is, or blank-->
-  <developer_name>gregorni</developer_name>
+  <developer_name translatable="no">gregorni</developer_name>
   <summary>Turn text into ASCII banners</summary>
 
 	<description>
@@ -45,7 +44,7 @@
   </recommends>
 
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image>https://gitlab.gnome.org/gregorni/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Alligator font</caption>
@@ -98,11 +97,6 @@
       <kudo>ModernToolkit</kudo>
       <kudo>HiDpiIcon</kudo>
   </kudos>
-
-  <custom>
-    <value key="Purism::form_factor">workstation</value>
-    <value key="Purism::form_factor">mobile</value>
-  </custom>
 
 </component>
 
