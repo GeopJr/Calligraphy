@@ -10,114 +10,98 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
 
     child: Adw.ToolbarView {
 
-      content: ScrolledWindow {
+      content: Adw.NavigationView main_nav_view {
 
-        Adw.NavigationView main_nav_view {
+        Adw.NavigationPage {
+          title: _("Calligraphy");
 
-          Adw.NavigationPage {
-            title: _("Calligraphy");
-
-            Adw.ToolbarView {
-              [top]
-              Adw.HeaderBar {
-
-                [start]
-                MenuButton {
-                  primary: true;
-                  menu-model: primary_menu;
-                  icon-name: "open-menu-symbolic";
-                  tooltip-text: _("Main Menu");
-                }
+          Adw.ToolbarView {
+            [top]
+            Adw.HeaderBar {
+              [start]
+              Button search_btn {
+                icon-name: "folder-saved-search-symbolic";
+                tooltip-text: _("Search Fonts");
+                sensitive: false;
               }
 
-              content: Adw.ViewStack welcome_stack {
+              [end]
+              MenuButton {
+                primary: true;
+                menu-model: primary_menu;
+                icon-name: "open-menu-symbolic";
+                tooltip-text: _("Main Menu");
+              }
+            }
 
-                Adw.ViewStackPage {
-                  name: "welcome";
+            [top]
+            SearchBar search_bar {
+              key-capture-widget: main_nav_view;
 
-                  child: Adw.StatusPage {
-                    icon-name: "io.gitlab.gregorni.Calligraphy";
-                    title: _("Create ASCII Banners");
-                    description: _("Type something to get started");
-                  }
+              Adw.Clamp {
+                SearchEntry search_entry {
+                  search-delay: 100;
+                  placeholder-text: _("Search for fonts");
+                }
+              }
+            }
 
-                  ;
+            content: Stack welcome_stack {
+              transition-type: crossfade;
+
+              StackPage {
+                name: "welcome";
+
+                child: Adw.StatusPage {
+                  icon-name: "io.gitlab.gregorni.Calligraphy";
+                  title: _("Create ASCII Banners");
+                  description: _("Type something to get started");
                 }
 
-                Adw.ViewStackPage {
-                  name: "fonts-list";
+                ;
+              }
 
-                  child: Box window_box {
-                    orientation: vertical;
-                    margin-bottom: 24;
-                    margin-start: 24;
-                    margin-end: 24;
-                    spacing: 15;
-                    homogeneous: true;
+              StackPage {
+                name: "fonts-list";
 
-                    Adw.PreferencesGroup {
-                      title: _("Output");
+                child: ScrolledWindow {
 
-                      Adw.Bin {
-                        styles [
-                          "card",
-                          "text-box",
-                        ]
+                  Adw.Clamp {
+                    maximum-size: 1000;
+                    tightening-threshold: 600;
 
-                        Adw.ToolbarView {
-
-                          content: ScrolledWindow {
-
-                            TextView output_text_view {
-                              margin-top: 12;
-                              margin-start: 12;
-                              margin-end: 12;
-                              monospace: true;
-                              hexpand: true;
-                              vexpand: true;
-                              editable: false;
-                              cursor-visible: false;
-                              accessible-role: none;
-                            }
-                          }
-
-                          ;
-
-                          [bottom]
-                          Box toolbar {
-                            styles [
-                              "toolbar",
-                            ]
-
-                            // The fonts DropDown goes here, see window.py
-
-                            Adw.Bin {
-                              hexpand: true;
-                            }
-
-                            Button to_clipboard_btn {
-                              icon-name: "edit-copy-symbolic";
-                              tooltip-text: _("Copy to Clipboard");
-                              halign: end;
-                            }
-
-                            Button to_file_btn {
-                              icon-name: "document-save-symbolic";
-                              tooltip-text: _("Save to File");
-                              halign: end;
-                            }
-                          }
-                        }
-                      }
+                    FlowBox preview_list_flowbox {
+                      selection-mode: none;
+                      margin-bottom: 24;
+                      margin-start: 12;
+                      margin-end: 12;
+                      column-spacing: 18;
+                      row-spacing: 12;
+                      max-children-per-line: 2;
+                      homogeneous: true;
+                      valign: start;
                     }
                   }
-
-                  ;
                 }
+
+                ;
               }
 
-              ;
+              StackPage {
+                name: "no-results";
+
+                child: Adw.StatusPage {
+                  title: _("No results founds");
+                  description: _("Try a different search");
+                  icon-name: "edit-find-symbolic";
+                  vexpand: true;
+                }
+
+                ;
+              }
             }
+
+            ;
           }
         }
       }
@@ -128,22 +112,37 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
       Revealer {
         reveal-child: true;
 
+        styles [
+          "toolbar",
+        ]
+
         Adw.Clamp {
-          margin-bottom: 12;
-          margin-top: 12;
+          maximum-size: 500;
+          tightening-threshold: 400;
 
           Overlay {
             css-name: "entry";
-            margin-start: 12;
-            margin-end: 12;
 
             styles [
               "text-box"
             ]
 
-            TextView input_text_view {
-              margin-top: 6;
-              margin-bottom: 6;
+            Box {
+              TextView input_text_view {
+                margin-top: 6;
+                margin-bottom: 6;
+                hexpand: true;
+              }
+
+              Button clear_input_btn {
+                icon-name: "edit-clear-symbolic";
+                halign: end;
+                visible: false;
+
+                styles [
+                  "dim-label",
+                ]
+              }
             }
 
             [overlay]

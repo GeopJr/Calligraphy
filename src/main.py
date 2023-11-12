@@ -24,9 +24,8 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
-from gi.repository import Adw, Gio, GLib, Gtk
+from gi.repository import Adw, Gio, Gtk
 
-from .save_file import SaveFile
 from .window import CalligraphyWindow
 
 
@@ -39,33 +38,12 @@ class CalligraphyApplication(Adw.Application):
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.__create_action(
+            "search", lambda *_: self.get_active_window().on_ctrl_f(), ["<primary>f"]
+        )
+        self.__create_action(
             "quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"]
         )
         self.__create_action("about", self.__on_about_action)
-        self.__create_action(
-            "next-font",
-            lambda *_: self.get_active_window().change_font(),
-            ["<primary>plus"],
-        )
-        self.__create_action(
-            "previous-font",
-            lambda *_: self.get_active_window().change_font(back=True),
-            ["<primary>minus"],
-        )
-        self.__create_action(
-            "copy-output",
-            # TODO: lambda is only there to prevent Python from checking if self.get_active_window() exists
-            lambda *_: self.get_active_window().copy_output_to_clipboard(),
-            ["<primary><shift>c"],
-        )
-        self.__create_action(
-            "save-output",
-            lambda *_: SaveFile().save(self.get_active_window()),
-            ["<primary><shift>s", "<primary>s"],
-        )
-        self.__create_action(
-            "open-output", self.__open_output, param=GLib.VariantType("s")
-        )
 
     def do_activate(self):
         """Called when the application is activated.
@@ -78,28 +56,6 @@ class CalligraphyApplication(Adw.Application):
             win = CalligraphyWindow(application=self)
         win.present()
 
-    def __open_output(self, app, data):
-        try:
-            file = open(data.unpack(), "r")
-            Gio.DBusProxy.new_sync(
-                Gio.bus_get_sync(Gio.BusType.SESSION, None),
-                Gio.DBusProxyFlags.NONE,
-                None,
-                "org.freedesktop.portal.Desktop",
-                "/org/freedesktop/portal/desktop",
-                "org.freedesktop.portal.OpenURI",
-                None,
-            ).call_with_unix_fd_list_sync(
-                "OpenFile",
-                GLib.Variant("(sha{sv})", ("", 0, {"ask": GLib.Variant("b", True)})),
-                Gio.DBusCallFlags.NONE,
-                -1,
-                Gio.UnixFDList.new_from_array([file.fileno()]),
-                None,
-            )
-        except Exception as e:
-            print(f"Error saving file: {e}")
-
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutWindow.new_from_appdata(
@@ -107,6 +63,7 @@ class CalligraphyApplication(Adw.Application):
         )
         about.set_transient_for(self.get_active_window())
         about.set_artists(["kramo https://kramo.hu"])
+        about.set_designers(["Brage Fuglseth https://bragefuglseth.dev"])
         about.set_developer_name(_("Calligraphy Contributors"))
         # These are Python lists: Add your string to the list (separated by a comma)
         # See the translator comment below for possible formats
