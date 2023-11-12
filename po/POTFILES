@@ -4,7 +4,10 @@ data/io.gitlab.gregorni.Calligraphy.gschema.xml
 
 src/main.py
 src/window.py
-src/save_file.py
+src/font_view_page.py
+src/font_preview_card.py
 
 src/gtk/window.blp
 src/gtk/help-overlay.blp
+src/gtk/font-view-page.blp
+src/gtk/font-preview-card.blp

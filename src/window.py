@@ -17,27 +17,31 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import re
+
 import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
 from . import get_text_view_text
+from .font_preview_card import FontPreviewCard
+from .font_view_page import FontViewPage
 from .fonts_list import FONTS_LIST
-from .save_file import SaveFile
 
 
 @Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/window.ui")
 class CalligraphyWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CalligraphyWindow"
 
-    window_box = Gtk.Template.Child()
-    output_text_view = Gtk.Template.Child()
+    search_btn = Gtk.Template.Child()
+    search_bar = Gtk.Template.Child()
+    search_entry = Gtk.Template.Child()
+    main_nav_view = Gtk.Template.Child()
     hint_label = Gtk.Template.Child()
     input_text_view = Gtk.Template.Child()
-    to_clipboard_btn = Gtk.Template.Child()
-    to_file_btn = Gtk.Template.Child()
+    clear_input_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
-    toolbar = Gtk.Template.Child()
     welcome_stack = Gtk.Template.Child()
+    preview_list_flowbox = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -47,107 +51,96 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
         settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
 
+        self.search_btn.connect(
+            "clicked",
+            lambda *_: self.search_bar.set_search_mode(
+                not self.search_bar.get_search_mode()
+            ),
+        )
+        self.preview_list_flowbox.set_filter_func(self.__filter_func)
+        self.search_entry.connect("search-changed", self.__on_search_changed)
+        self.search_results_count = 0
+
         self.input_buffer = self.input_text_view.get_buffer()
         self.input_buffer.connect("changed", self.__on_input_changed)
+        self.input_text_view.grab_focus()
+        self.notable_input = False
 
-        self.output_buffer = self.output_text_view.get_buffer()
+        self.clear_input_btn.connect("clicked", self.__on_input_cleared)
 
-        self.to_clipboard_btn.connect("clicked", self.copy_output_to_clipboard)
-        self.to_file_btn.connect("clicked", lambda *_: SaveFile().save(self))
+        self.preview_cards_list = []
 
-        self.select_font_dropdown = self.__create_fonts_dropdown()
+        for font_name in FONTS_LIST:
+            card = FontPreviewCard(parent_window=self, font_name=font_name)
+            self.preview_list_flowbox.append(card)
+            self.preview_cards_list.append(card)
 
-        settings.bind(
-            "selected-font",
-            self.select_font_dropdown,
-            "selected",
-            Gio.SettingsBindFlags.DEFAULT,
+    def __filter_func(self, flowbox_child):
+        search_term = self.search_entry.get_text()
+        matches_pattern = lambda pattern: re.search(search_term, pattern, re.IGNORECASE)
+        preview_card = flowbox_child.get_child()
+        child_matches = matches_pattern(preview_card.font_name) or matches_pattern(
+            preview_card.font
         )
-        self.select_font_dropdown.connect("notify::selected", self.__on_input_changed)
-        self.toolbar.prepend(self.select_font_dropdown)
+        if child_matches:
+            self.search_results_count += 1
+        return child_matches
 
-        self.scrolled_distance = 0
-
-    def do_size_allocate(self, width, height, baseline):
-        self.window_box.set_orientation(
-            Gtk.Orientation.VERTICAL if width < 800 else Gtk.Orientation.HORIZONTAL
-        )
-
-        Adw.ApplicationWindow.do_size_allocate(self, width, height, baseline)
+    def __on_search_changed(self, *args):
+        self.preview_list_flowbox.invalidate_filter()
+        if self.notable_input:
+            self.welcome_stack.set_visible_child_name(
+                "no-results" if self.search_results_count == 0 else "fonts-list"
+            )
+        else:
+            self.welcome_stack.set_visible_child_name("welcome")
+        self.search_results_count = 0
 
     def __on_input_changed(self, *args):
-        input_text = get_text_view_text.get(self.input_buffer)
-        output_text = pyfiglet.figlet_format(
-            input_text.strip(),
-            FONTS_LIST[self.select_font_dropdown.get_selected_item().get_string()],
-        )  # Maybe use .strip() on this
+        raw_input = get_text_view_text.get(self.input_buffer)
+        self.hint_label.set_visible(raw_input == "")
 
-        self.output_buffer.set_text(output_text)
-        self.hint_label.set_visible(input_text == "")
-
+        input_text = raw_input.strip()
+        self.notable_input = input_text != ""
         self.welcome_stack.set_visible_child_name(
-            "fonts-list" if output_text != "" else "welcome"
+            "fonts-list" if self.notable_input else "welcome"
         )
+        self.search_btn.set_sensitive(self.notable_input)
+        self.clear_input_btn.set_visible(raw_input)
 
-    def copy_output_to_clipboard(self, *args):
-        Gdk.Display.get_default().get_clipboard().set(
-            get_text_view_text.get(self.output_buffer)
+        if self.notable_input:
+            for card in self.preview_cards_list:
+                card.update_text(input_text)
+        else:
+            self.search_bar.set_search_mode(False)
+
+        current_nav_page = self.main_nav_view.get_visible_page()
+        if type(current_nav_page) is FontViewPage:
+            current_nav_page.update_text(input_text)
+
+    def __on_input_cleared(self, *args):
+        self.input_buffer.set_text("")
+        self.input_text_view.grab_focus()
+
+    def show_copied_toast(self, font_name):
+        text_to_convert = get_text_view_text.get(self.input_buffer).strip()
+        font = FONTS_LIST[font_name]
+        text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).strip()
+        Gdk.Display.get_default().get_clipboard().set(text_to_copy)
+
+        # Translators: Do not translate "{font_name}"
+        message = _("{font_name} output copied to clipboard").format(
+            font_name=font_name
         )
-        self.toast_overlay.add_toast(Adw.Toast(title=_("Copied to clipboard")))
+        self.toast_overlay.add_toast(Adw.Toast(title=message))
 
-    def __on_scrolled(self, scroll, dx, dy):
-        self.scrolled_distance += (
-            dy
-            if scroll.get_current_event_device().get_source() == Gdk.InputSource.MOUSE
-            else dy / 50
-        )
+    def go_to_details_page(self, font_name):
+        page = FontViewPage(font_name=font_name, parent_window=self)
+        self.main_nav_view.push(page)
+        self.__on_input_changed()
 
-        if abs(self.scrolled_distance) >= 1:
-            self.change_font(min(1, max(-1, self.scrolled_distance)) <= -1)
-            self.scrolled_distance = 0
-
-    def change_font(self, back=False):
-        self.select_font_dropdown.set_selected(
-            max(
-                min(
-                    self.select_font_dropdown.get_selected() + (-1 if back else 1),
-                    len(self.select_font_dropdown.get_model()) - 1,
-                ),
-                0,
-            )
-        )
-
-    def __create_fonts_dropdown(self):
-        builder = Gtk.Builder.new_from_string(
-            f"""
-            <interface>
-              <object class="GtkDropDown" id="fonts_dropdown">
-                <property name="width-request">150</property>
-                <property name="tooltip-text">{_('Scroll to change font')}</property>
-
-                <property name="model">
-                  <object class="GtkStringList" id="string_list">
-                    <items>
-                      {"".join(f"<item>{font}</item>" for font in FONTS_LIST)}
-                    </items>
-                  </object>
-                </property>
-
-                <property name="enable-search">true</property>
-                <property name="expression">
-                  <lookup type="GtkStringObject" name="string"/>
-                </property>
-
-                <child>
-                  <object class="GtkEventControllerScroll" id="scroller">
-                    <property name="flags">vertical</property>
-                  </object>
-                </child>
-              </object>
-            </interface>
-            """,
-            -1,
-        )
-        builder.get_object("scroller").connect("scroll", self.__on_scrolled)
-
-        return builder.get_object("fonts_dropdown")
+    def on_ctrl_f(self, *args):
+        showing_fonts_list = self.welcome_stack.get_visible_child_name() == "fonts-list"
+        on_details_page = type(self.main_nav_view.get_visible_page()) is FontViewPage
+        if showing_fonts_list and not on_details_page:
+            self.search_bar.set_search_mode(True)

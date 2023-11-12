@@ -10,8 +10,5 @@
     <key name="is-maximized" type="b">
       <default>false</default>
     </key>
-    <key name="selected-font" type="i">
-      <default>3</default>
-    </key>
 	</schema>
 </schemalist>

@@ -19,8 +19,9 @@
 
 
 def get(buffer):
+    include_hidden_chars = False
     return buffer.get_text(
         buffer.get_start_iter(),
         buffer.get_end_iter(),
-        False,
+        include_hidden_chars,
     )

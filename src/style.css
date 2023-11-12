@@ -1,4 +1,23 @@
 .text-box textview {
   background: none;
-  color: inherit;
+}
+
+.details-arrow {
+  padding-left: 60px;
+  padding-right: 12px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.8) 25%,
+    rgba(255, 255, 255, 1) 50%
+  );
+  border-radius: 0 12px 12px 0;
+}
+
+.font-card textview {
+  font-size: 7pt;
+}
+
+.card-overlaid-button {
+  border-radius: 12px;
 }

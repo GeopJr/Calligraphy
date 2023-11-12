@@ -1,0 +1,80 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FontPreviewCard : Box {
+  orientation: vertical;
+  height-request: 272;
+
+  Box {
+    margin-bottom: 5;
+    margin-top: 5;
+
+    Label font_name_label {
+      use-markup: true;
+      xalign: 0;
+      hexpand: true;
+    }
+
+    [end]
+    Button copy_btn {
+      icon-name: "edit-copy-symbolic";
+
+      styles [
+        "flat",
+      ]
+    }
+  }
+
+  Adw.Bin {
+
+    styles [
+      "card",
+      "text-box",
+      "font-card",
+    ]
+
+    child: Overlay {
+      [overlay]
+      Button show_details_btn {
+        styles [
+          "flat",
+          "card-overlaid-button",
+        ]
+      }
+
+      child: Overlay {
+        [overlay]
+        Image {
+          halign: end;
+          width-request: 35;
+          icon-name: "go-next-symbolic";
+
+          styles [
+            "details-arrow",
+          ]
+        }
+
+        child: TextView output_text_view {
+          margin-top: 12;
+          margin-bottom: 12;
+          margin-start: 18;
+          margin-end: 18;
+          width-request: 210;
+          editable: false;
+          monospace: true;
+          cursor-visible: false;
+          hexpand: true;
+          vexpand: true;
+          accessible-role: none;
+          valign: center;
+        }
+
+        ;
+      }
+
+      ;
+    }
+
+    ;
+  }
+}
