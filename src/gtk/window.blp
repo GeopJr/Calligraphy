@@ -41,7 +41,7 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
               Adw.Clamp {
                 SearchEntry search_entry {
                   search-delay: 100;
-                  placeholder-text: _("Search for fonts");
+                  placeholder-text: _("Search fonts");
                 }
               }
             }
@@ -91,7 +91,7 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
                 name: "no-results";
 
                 child: Adw.StatusPage {
-                  title: _("No results founds");
+                  title: _("No Results Found");
                   description: _("Try a different search");
                   icon-name: "edit-find-symbolic";
                   vexpand: true;
@@ -163,10 +163,19 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
             Revealer warning_revealer {
               transition-type: slide_left;
 
-              Image {
+              MenuButton {
                 icon-name: "dialog-warning-symbolic";
                 width-request: 30;
-                tooltip-text: _("Non-alphabetic characters may not be supported in every font");
+
+                styles [
+                  "warning",
+                ]
+
+                popover: Popover {
+                  child: Label {
+                    label: _("Non-alphabetic characters may not be supported in every font");
+                  };
+                };
               }
             }
           }
