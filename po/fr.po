@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-07 18:03+0200\n"
-"PO-Revision-Date: 2023-09-19 21:59+0000\n"
-"Last-Translator: \"J. Lavoie\" <j.lavoie@net-c.ca>\n"
+"PO-Revision-Date: 2023-11-20 05:10+0000\n"
+"Last-Translator: Louremipsum <Louremipsum@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.2\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -27,7 +27,6 @@ msgstr "Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
-#, fuzzy
 msgid "Turn text into ASCII banners"
 msgstr "Transformez du texte en bannières ASCII"
 
@@ -40,7 +39,7 @@ msgstr "ascii;convertir;conversion;texte;convert;text;"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
 msgid "gregorni"
-msgstr ""
+msgstr "Irène,Louremipsum"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -108,7 +107,9 @@ msgstr "Les contributeurs de Calligraphy"
 #. Names are separated with newlines.
 #: src/main.py:131
 msgid "translator-credits"
-msgstr "Irénée Thirion <irenee.thirion@e.email>"
+msgstr ""
+"Irénée Thirion <irenee.thirion@e.email>\n"
+"Louremipsum"
 
 #: src/main.py:132
 msgid "Copyright © 2023 Calligraphy Contributors"
