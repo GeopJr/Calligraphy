@@ -32,7 +32,7 @@ from .fonts_list import FONTS_LIST
 class CalligraphyWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CalligraphyWindow"
 
-    search_btn = Gtk.Template.Child()
+    search_toggle = Gtk.Template.Child()
     search_bar = Gtk.Template.Child()
     search_entry = Gtk.Template.Child()
     main_nav_view = Gtk.Template.Child()
@@ -52,12 +52,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         settings.bind("height", self, "default-height", Gio.SettingsBindFlags.DEFAULT)
         settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
 
-        self.search_btn.connect(
-            "clicked",
-            lambda *_: self.search_bar.set_search_mode(
-                not self.search_bar.get_search_mode()
-            ),
-        )
+        self.search_toggle.connect("toggled", self.__on_search_toggled)
+
         self.preview_list_flowbox.set_filter_func(self.__filter_func)
         self.search_entry.connect("search-changed", self.__on_search_changed)
         self.search_results_count = 0
@@ -99,6 +95,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             self.welcome_stack.set_visible_child_name("welcome")
         self.search_results_count = 0
 
+    def __on_search_toggled(self, *args):
+        open_search = self.search_toggle.get_active()
+        self.search_bar.set_search_mode(open_search)
+        if open_search:
+            self.search_entry.grab_focus()
+        else:
+            self.search_entry.set_text("")
+
     def __on_input_changed(self, *args):
         raw_input = get_text_view_text.get(self.input_buffer)
         self.hint_label.set_visible(raw_input == "")
@@ -108,7 +112,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.welcome_stack.set_visible_child_name(
             "fonts-list" if self.notable_input else "welcome"
         )
-        self.search_btn.set_sensitive(self.notable_input)
+        self.search_toggle.set_sensitive(self.notable_input)
         self.clear_input_btn.set_visible(raw_input)
 
         self.warning_revealer.set_reveal_child(
@@ -147,8 +151,9 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.__on_input_changed()
 
     def on_ctrl_f(self, *args):
-        showing_fonts_list = self.welcome_stack.get_visible_child_name() == "fonts-list"
         on_details_page = type(self.main_nav_view.get_visible_page()) is FontViewPage
-        if showing_fonts_list and not on_details_page:
-            self.search_bar.set_search_mode(True)
-            self.search_entry.grab_focus()
+
+        if self.notable_input and not on_details_page:
+            open_search = not self.search_toggle.get_active()
+            self.search_toggle.set_active(open_search)
+            self.__on_search_toggled()
