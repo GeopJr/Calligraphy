@@ -120,41 +120,54 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
           maximum-size: 500;
           tightening-threshold: 400;
 
-          Overlay {
-            css-name: "entry";
+          Box {
+            spacing: 5;
+            Overlay {
+              css-name: "entry";
 
-            styles [
-              "text-box"
-            ]
+              styles [
+                "text-box"
+              ]
 
-            Box {
-              TextView input_text_view {
-                margin-top: 6;
-                margin-bottom: 6;
-                hexpand: true;
-                input-purpose: alpha;
+              Box {
+                TextView input_text_view {
+                  margin-top: 6;
+                  margin-bottom: 6;
+                  hexpand: true;
+                  input-purpose: alpha;
+                }
+
+                Button clear_input_btn {
+                  icon-name: "edit-clear-symbolic";
+                  halign: end;
+                  visible: false;
+
+                  styles [
+                    "dim-label",
+                  ]
+                }
               }
 
-              Button clear_input_btn {
-                icon-name: "edit-clear-symbolic";
-                halign: end;
-                visible: false;
+              [overlay]
+              Label hint_label {
+                label: _("Type here…");
+                halign: start;
+                can-target: false;
 
                 styles [
-                  "dim-label",
+                  "dim-label"
                 ]
               }
             }
 
-            [overlay]
-            Label hint_label {
-              label: _("Type here…");
-              halign: start;
-              can-target: false;
+            Revealer warning_revealer {
+              transition-type: slide_left;
 
-              styles [
-                "dim-label"
-              ]
+              Image {
+                icon-name: "dialog-warning-symbolic";
+                width-request: 30;
+                tooltip-text: _("Non-alphabetic characters may not be supported in every font");
+              }
             }
           }
         }

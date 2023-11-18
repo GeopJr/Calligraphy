@@ -42,6 +42,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     toast_overlay = Gtk.Template.Child()
     welcome_stack = Gtk.Template.Child()
     preview_list_flowbox = Gtk.Template.Child()
+    warning_revealer = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -77,7 +78,9 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __filter_func(self, flowbox_child):
         search_term = self.search_entry.get_text()
-        matches_pattern = lambda pattern: re.search(search_term, pattern, re.IGNORECASE)
+        matches_pattern = (
+            lambda pattern: re.search(search_term, pattern, re.IGNORECASE) is not None
+        )
         preview_card = flowbox_child.get_child()
         child_matches = matches_pattern(preview_card.font_name) or matches_pattern(
             preview_card.font
@@ -107,6 +110,10 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
         self.search_btn.set_sensitive(self.notable_input)
         self.clear_input_btn.set_visible(raw_input)
+
+        self.warning_revealer.set_reveal_child(
+            re.search(r"[^a-zA-Z\s]", input_text) is not None
+        )
 
         if self.notable_input:
             for card in self.preview_cards_list:
@@ -144,3 +151,4 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         on_details_page = type(self.main_nav_view.get_visible_page()) is FontViewPage
         if showing_fonts_list and not on_details_page:
             self.search_bar.set_search_mode(True)
+            self.search_entry.grab_focus()
