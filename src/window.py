@@ -138,7 +138,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         font = FONTS_LIST[font_name]
         text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).strip()
 
-        message =_("Output empty, not copying")
+        message = _("Output empty, not copying")
         if text_to_copy != "":
             Gdk.Display.get_default().get_clipboard().set(text_to_copy)
 
