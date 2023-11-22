@@ -130,11 +130,19 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
               ]
 
               Box {
-                TextView input_text_view {
-                  margin-top: 6;
-                  margin-bottom: 6;
+                ScrolledWindow {
+                  vexpand: true;
                   hexpand: true;
-                  input-purpose: alpha;
+                  vscrollbar-policy: external;
+                  max-content-height: 200;
+                  propagate-natural-height: true;
+
+                  TextView input_text_view {
+                    margin-top: 6;
+                    margin-bottom: 6;
+                    hexpand: true;
+                    input-purpose: alpha;
+                  }
                 }
 
                 Button clear_input_btn {
