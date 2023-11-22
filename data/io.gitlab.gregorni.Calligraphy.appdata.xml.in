@@ -83,7 +83,7 @@
 
   <releases>
     <release version="1.0.0" date="2023-05-31">
-      <description>
+      <description translatable="no">
         <p>First Release! 🎉</p>
       </description>
     </release>
@@ -97,6 +97,10 @@
       <kudo>ModernToolkit</kudo>
       <kudo>HiDpiIcon</kudo>
   </kudos>
+
+  <custom>
+    <value key="GnomeSoftware::key-colors">[(110, 109, 114)]</value>
+  </custom>
 
 </component>
 
