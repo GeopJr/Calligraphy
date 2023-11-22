@@ -136,7 +136,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def show_copied_toast(self, font_name):
         text_to_convert = get_text_view_text.get(self.input_buffer).strip()
         font = FONTS_LIST[font_name]
-        text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).strip()
+        text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).replace(" ", "\u00A0")
 
         Gdk.Display.get_default().get_clipboard().set(text_to_copy)
         # Translators: Do not translate "{font_name}"
