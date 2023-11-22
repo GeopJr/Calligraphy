@@ -21,6 +21,7 @@
 from gi.repository import Gtk
 from pyfiglet import Figlet
 
+from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
 
 
@@ -55,4 +56,8 @@ class FontPreviewCard(Gtk.Box):
 
     def update_text(self, text):
         first_line = text.splitlines()[0]
-        self.output_buffer.set_text(self.figlet.renderText(first_line))
+        output = self.figlet.renderText(first_line)
+        self.output_buffer.set_text(output)
+
+        output_exists = output != ""
+        update_button_sensitivity.update(self.copy_btn, output_exists)

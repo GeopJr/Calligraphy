@@ -138,15 +138,11 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         font = FONTS_LIST[font_name]
         text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).strip()
 
-        message = _("Output empty, not copying")
-        if text_to_copy != "":
-            Gdk.Display.get_default().get_clipboard().set(text_to_copy)
-
-            # Translators: Do not translate "{font_name}"
-            message = _("{font_name} output copied to clipboard").format(
-                font_name=font_name
-            )
-
+        Gdk.Display.get_default().get_clipboard().set(text_to_copy)
+        # Translators: Do not translate "{font_name}"
+        message = _("{font_name} output copied to clipboard").format(
+            font_name=font_name
+        )
         self.toast_overlay.add_toast(Adw.Toast(title=message))
 
     def go_to_details_page(self, font_name):

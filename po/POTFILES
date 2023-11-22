@@ -6,6 +6,9 @@ src/main.py
 src/window.py
 src/font_view_page.py
 src/font_preview_card.py
+src/fonts_list.py
+src/get_text_view_text.py
+src/update_button_sensitivity.py
 
 src/gtk/window.blp
 src/gtk/help-overlay.blp

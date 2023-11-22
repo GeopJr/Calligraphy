@@ -20,6 +20,7 @@
 import pyfiglet
 from gi.repository import Adw, Gtk
 
+from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
 
 
@@ -41,7 +42,11 @@ class FontViewPage(Adw.NavigationPage):
         self.copy_btn.connect("clicked", copy_callback)
 
     def update_text(self, text):
-        empty_text = text == ""
-        self.main_stack.set_visible_child_name("no-text" if empty_text else "text-view")
-        self.output_label.set_label(pyfiglet.figlet_format(text, font=self.font))
-        self.copy_btn.set_sensitive(not empty_text)
+        output = pyfiglet.figlet_format(text, font=self.font)
+        output_exists = output != ""
+        self.main_stack.set_visible_child_name(
+            "text-view" if output_exists else "no-text"
+        )
+        self.output_label.set_label(output)
+
+        update_button_sensitivity.update(self.copy_btn, output_exists)
