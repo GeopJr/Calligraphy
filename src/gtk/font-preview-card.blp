@@ -44,7 +44,7 @@ template $FontPreviewCard : Box {
 
       child: Overlay {
         [overlay]
-        Image {
+        Image details_arrow {
           halign: end;
           width-request: 35;
           icon-name: "go-next-symbolic";
@@ -55,8 +55,6 @@ template $FontPreviewCard : Box {
         }
 
         child: Stack display_stack {
-          transition-type: crossfade;
-
           StackPage {
             name: "no-text";
 
