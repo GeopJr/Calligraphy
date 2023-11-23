@@ -33,6 +33,7 @@ class FontPreviewCard(Gtk.Box):
     copy_btn = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
     show_details_btn = Gtk.Template.Child()
+    display_stack = Gtk.Template.Child()
 
     def __init__(self, parent_window, font_name, **kwargs):
         super().__init__(**kwargs)
@@ -61,3 +62,7 @@ class FontPreviewCard(Gtk.Box):
 
         output_exists = output != ""
         update_button_sensitivity.update(self.copy_btn, output_exists)
+
+        self.display_stack.set_visible_child_name(
+            "text" if output_exists else "no-text"
+        )

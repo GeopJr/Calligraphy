@@ -54,19 +54,44 @@ template $FontPreviewCard : Box {
           ]
         }
 
-        child: TextView output_text_view {
-          margin-top: 12;
-          margin-bottom: 12;
-          margin-start: 18;
-          margin-end: 18;
-          width-request: 210;
-          editable: false;
-          monospace: true;
-          cursor-visible: false;
-          hexpand: true;
-          vexpand: true;
-          accessible-role: none;
-          valign: center;
+        child: Stack display_stack {
+          transition-type: crossfade;
+
+          StackPage {
+            name: "no-text";
+
+            child: Label {
+              label: _("No Output");
+
+              styles [
+                "dim-label",
+                "title-2",
+              ]
+            }
+
+            ;
+          }
+
+          StackPage {
+            name: "text";
+
+            child: TextView output_text_view {
+              margin-top: 12;
+              margin-bottom: 12;
+              margin-start: 18;
+              margin-end: 18;
+              width-request: 210;
+              editable: false;
+              monospace: true;
+              cursor-visible: false;
+              hexpand: true;
+              vexpand: true;
+              accessible-role: none;
+              valign: center;
+            }
+
+            ;
+          }
         }
 
         ;
