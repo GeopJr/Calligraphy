@@ -1,17 +1,16 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $CalligraphyWindow : Adw.ApplicationWindow {
+template $CalligraphyWindow: Adw.ApplicationWindow {
   title: "Calligraphy";
   height-request: 296;
   width-request: 300;
 
   content: Adw.ToastOverlay toast_overlay {
-
     child: Adw.ToolbarView {
+      bottom-bar-style: raised;
 
       content: Adw.NavigationView main_nav_view {
-
         Adw.NavigationPage {
           title: _("Calligraphy");
 
@@ -56,16 +55,13 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
                   icon-name: "io.gitlab.gregorni.Calligraphy";
                   title: _("Create ASCII Banners");
                   description: _("Type something to get started");
-                }
-
-                ;
+                };
               }
 
               StackPage {
                 name: "fonts-list";
 
                 child: ScrolledWindow {
-
                   Adw.Clamp {
                     maximum-size: 1000;
                     tightening-threshold: 600;
@@ -82,9 +78,7 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
                       valign: start;
                     }
                   }
-                }
-
-                ;
+                };
               }
 
               StackPage {
@@ -95,107 +89,94 @@ template $CalligraphyWindow : Adw.ApplicationWindow {
                   description: _("Try a different search");
                   icon-name: "edit-find-symbolic";
                   vexpand: true;
-                }
-
-                ;
+                };
               }
-            }
-
-            ;
+            };
           }
         }
-      }
-
-      ;
+      };
 
       [bottom]
-      Revealer {
-        reveal-child: true;
+      Adw.Clamp {
+        maximum-size: 500;
+        tightening-threshold: 400;
 
         styles [
           "toolbar",
         ]
 
-        Adw.Clamp {
-          maximum-size: 500;
-          tightening-threshold: 400;
+        Box {
+          spacing: 5;
 
-          Box {
-            spacing: 5;
-            Overlay {
-              css-name: "entry";
+          Overlay {
+            css-name: "entry";
 
-              styles [
-                "text-box"
-              ]
+            styles [
+              "text-box"
+            ]
 
-              Box {
-                ScrolledWindow {
-                  vscrollbar-policy: external;
-                  max-content-height: 200;
-                  propagate-natural-height: true;
+            Box {
+              ScrolledWindow {
+                vscrollbar-policy: external;
+                max-content-height: 200;
+                propagate-natural-height: true;
 
-                  TextView input_text_view {
-                    margin-top: 6;
-                    margin-bottom: 6;
-                    hexpand: true;
-                    input-purpose: alpha;
-                  }
-                }
-
-                Button clear_input_btn {
-                  icon-name: "edit-clear-symbolic";
-                  halign: end;
-                  visible: false;
-                  tooltip-text: _("Clear Entry");
-                  vexpand: false;
-                  valign: center;
-
-                  styles [
-                    "clear-input-button",
-                  ]
+                TextView input_text_view {
+                  margin-top: 6;
+                  margin-bottom: 6;
+                  hexpand: true;
+                  input-purpose: alpha;
                 }
               }
 
-              [overlay]
-              Label hint_label {
-                label: _("Type here…");
-                halign: start;
-                can-target: false;
+              Button clear_input_btn {
+                icon-name: "edit-clear-symbolic";
+                halign: end;
+                visible: false;
+                tooltip-text: _("Clear Entry");
+                vexpand: false;
+                valign: center;
 
                 styles [
-                  "dim-label"
+                  "clear-input-button",
                 ]
               }
             }
 
-            Revealer warning_revealer {
-              transition-type: slide_left;
+            [overlay]
+            Label hint_label {
+              label: _("Type here…");
+              halign: start;
+              can-target: false;
 
-              MenuButton {
-                icon-name: "dialog-warning-symbolic";
-                width-request: 30;
+              styles [
+                "dim-label"
+              ]
+            }
+          }
 
-                styles [
-                  "warning",
-                ]
+          Revealer warning_revealer {
+            transition-type: slide_left;
 
-                popover: Popover {
-                  child: Label {
-                    label: _("Non-alphabetic characters may not be supported in every font");
-                  };
+            MenuButton {
+              icon-name: "dialog-warning-symbolic";
+              width-request: 30;
+
+              styles [
+                "warning",
+              ]
+
+              popover: Popover {
+                child: Label {
+                  label: _("Non-alphabetic characters may not be supported in every font");
                 };
-              }
+              };
             }
           }
         }
       }
-    }
-
-    ;
-  }
-
-  ;
+    };
+  };
 }
 
 menu primary_menu {

@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $FontPreviewCard : Box {
+template $FontPreviewCard: Box {
   orientation: vertical;
   height-request: 272;
 
@@ -26,7 +26,6 @@ template $FontPreviewCard : Box {
   }
 
   Adw.Bin {
-
     styles [
       "card",
       "text-box",
@@ -65,9 +64,7 @@ template $FontPreviewCard : Box {
                 "dim-label",
                 "title-2",
               ]
-            }
-
-            ;
+            };
           }
 
           StackPage {
@@ -86,18 +83,10 @@ template $FontPreviewCard : Box {
               vexpand: true;
               accessible-role: none;
               valign: center;
-            }
-
-            ;
+            };
           }
-        }
-
-        ;
-      }
-
-      ;
-    }
-
-    ;
+        };
+      };
+    };
   }
 }

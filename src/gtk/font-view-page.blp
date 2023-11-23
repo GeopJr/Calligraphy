@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $FontViewPage : Adw.NavigationPage {
+template $FontViewPage: Adw.NavigationPage {
   name: "font-view-page";
 
   Adw.ToolbarView {
@@ -32,10 +32,7 @@ template $FontViewPage : Adw.NavigationPage {
               "monospace",
             ]
           }
-        }
-
-        ;
-
+        };
       }
 
       StackPage {
@@ -49,12 +46,8 @@ template $FontViewPage : Adw.NavigationPage {
           styles [
             "dim-label",
           ]
-        }
-
-        ;
+        };
       }
-    }
-
-    ;
+    };
   }
 }
