@@ -20,6 +20,7 @@
 
 from gi.repository import Gtk
 from pyfiglet import Figlet
+import math
 
 from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
@@ -56,9 +57,19 @@ class FontPreviewCard(Gtk.Box):
         infinity = float("inf")
         self.figlet = Figlet(font=self.font, width=infinity)
 
+        thinnest_output_char = self.figlet.renderText(".")
+        if thinnest_output_char == "":
+            thinnest_output_char = self.figlet.renderText("i")
+        thinnest_non_whitespace = thinnest_output_char.strip().splitlines()[0].strip()
+        width_thinnest_char = len(thinnest_non_whitespace)
+
+        card_width_in_chars = 70
+        self.first_needed_chars = int(card_width_in_chars / width_thinnest_char)
+
     def update_text(self, text):
         first_line = text.splitlines()[0]
-        output = self.figlet.renderText(first_line)
+        only_needed_letters = first_line[:self.first_needed_chars]
+        output = self.figlet.renderText(only_needed_letters)
         self.output_buffer.set_text(output)
 
         output_exists = output != ""
