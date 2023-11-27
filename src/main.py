@@ -38,10 +38,10 @@ class CalligraphyApplication(Adw.Application):
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.__create_action(
-            "search", lambda *_: self.get_active_window().on_ctrl_f(), ["<primary>f"]
+            "search", lambda *args: self.get_active_window().on_ctrl_f(), ["<primary>f"]
         )
         self.__create_action(
-            "quit", lambda *_: self.quit(), ["<primary>q", "<primary>w"]
+            "quit", lambda *args: self.quit(), ["<primary>q", "<primary>w"]
         )
         self.__create_action("about", self.__on_about_action)
 

@@ -47,10 +47,10 @@ class FontPreviewCard(Gtk.Box):
 
         self.output_buffer = self.output_text_view.get_buffer()
 
-        copy_callback = lambda *_: parent_window.show_copied_toast(font_name)
+        copy_callback = lambda *args: parent_window.show_copied_toast(font_name)
         self.copy_btn.connect("clicked", copy_callback)
 
-        details_callback = lambda *_: parent_window.go_to_details_page(font_name)
+        details_callback = lambda *args: parent_window.go_to_details_page(font_name)
         self.show_details_btn.connect("clicked", details_callback)
 
         infinity = float("inf")

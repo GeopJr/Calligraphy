@@ -38,7 +38,7 @@ class FontViewPage(Adw.NavigationPage):
         self.font = FONTS_LIST[font_name]
         self.set_title(font_name)
 
-        copy_callback = lambda *_: parent_window.show_copied_toast(font_name)
+        copy_callback = lambda *args: parent_window.show_copied_toast(font_name)
         self.copy_btn.connect("clicked", copy_callback)
 
     def update_text(self, text):
