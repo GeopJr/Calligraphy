@@ -18,8 +18,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
-import math
-
 from gi.repository import Gtk
 from pyfiglet import Figlet
 
