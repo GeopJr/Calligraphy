@@ -2,7 +2,7 @@
 <schemalist gettext-domain="calligraphy">
 	<schema id="io.gitlab.gregorni.Calligraphy" path="/io/gitlab/gregorni/Calligraphy/">
 	  <key name="width" type="i">
-      <default>1200</default>
+      <default>800</default>
     </key>
     <key name="height" type="i">
       <default>600</default>
