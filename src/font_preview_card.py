@@ -18,9 +18,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
+import math
+
 from gi.repository import Gtk
 from pyfiglet import Figlet
-import math
 
 from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
@@ -68,7 +69,7 @@ class FontPreviewCard(Gtk.Box):
 
     def update_text(self, text):
         first_line = text.splitlines()[0]
-        only_needed_letters = first_line[:self.first_needed_chars]
+        only_needed_letters = first_line[: self.first_needed_chars]
         output = self.figlet.renderText(only_needed_letters)
         self.output_buffer.set_text(output)
 
