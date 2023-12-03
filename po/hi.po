@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-14 21:46+0200\n"
+"POT-Creation-Date: 2023-12-03 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:119
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
 msgstr ""
 
@@ -32,10 +32,6 @@ msgstr ""
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
-msgstr ""
-
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
-msgid "gregorni"
 msgstr ""
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
@@ -67,142 +63,140 @@ msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
-msgid "Alligator font"
+msgid "Landing Page"
 msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
-msgid "Dotmatrix font"
+msgid "Entry"
 msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
-msgid "Fraktur font"
+msgid "Search"
 msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
-msgid "Poison font"
+msgid "Detailed View"
 msgstr ""
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:87
-msgid "First Release! 🎉"
-msgstr ""
-
-#: src/main.py:121
+#: src/main.py:67
 msgid "Calligraphy Contributors"
+msgstr ""
+
+#: src/main.py:71
+msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr ""
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
-#. Name + URL:   gregorni https://gitlab.com/gregorni/
+#. Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
 #. Name + Email: gregorni <gregorniehl@web.de>
 #. Do not remove existing names.
 #. Names are separated with newlines.
-#: src/main.py:131
+#: src/main.py:78
 msgid "translator-credits"
 msgstr ""
 
-#: src/main.py:132
-msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr ""
-
-#: src/main.py:140
-msgid "Code and Design Borrowed from"
-msgstr ""
-
-#: src/window.py:103
-msgid "Copied to clipboard"
-msgstr ""
-
-#: src/save_file.py:33
-msgid "Select a location"
-msgstr ""
-
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:72
+#. Translators: Do not translate "{font_name}"
+#: src/window.py:145
 #, python-brace-format
-msgid "Unable to save \"{display_name}\""
+msgid "{font_name} output copied to clipboard"
 msgstr ""
 
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:79
-#, python-brace-format
-msgid "\"{display_name}\" saved"
+#: src/update_button_sensitivity.py:23
+msgid "Copy"
 msgstr ""
 
-#: src/save_file.py:81
-msgid "Open"
+#: src/update_button_sensitivity.py:23
+msgid "Output Empty"
 msgstr ""
 
-#: src/gtk/window.blp:21
+#: src/gtk/window.blp:23
+msgid "Search Fonts"
+msgstr ""
+
+#: src/gtk/window.blp:32
 msgid "Main Menu"
 msgstr ""
 
-#: src/gtk/window.blp:36
-msgid "Message"
+#: src/gtk/window.blp:43
+msgid "Search fonts"
 msgstr ""
 
-#: src/gtk/window.blp:67
-msgid "Start typing…"
+#: src/gtk/window.blp:56
+msgid "Create ASCII Banners"
 msgstr ""
 
-#: src/gtk/window.blp:81
-msgid "Output"
+#: src/gtk/window.blp:57
+msgid "Type something to get started"
 msgstr ""
 
-#: src/gtk/window.blp:125
-msgid "Copy to Clipboard"
+#: src/gtk/window.blp:88
+msgid "No Results Found"
 msgstr ""
 
-#: src/gtk/window.blp:132
-msgid "Save to File"
+#: src/gtk/window.blp:89
+msgid "Try a different search"
 msgstr ""
 
-#: src/gtk/window.blp:154
+#: src/gtk/window.blp:136
+msgid "Clear Entry"
+msgstr ""
+
+#: src/gtk/window.blp:148
+msgid "Type here…"
+msgstr ""
+
+#: src/gtk/window.blp:164
+msgid "Warning"
+msgstr ""
+
+#: src/gtk/window.blp:173
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+
+#: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/gtk/window.blp:159
+#: src/gtk/window.blp:192
 msgid "_About Calligraphy"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
-msgid "Text View"
+msgid "General"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
-msgid "Next Font"
+msgid "Toggle Search"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
-msgid "Previous Font"
+msgid "Show Shortcuts"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
-msgid "Copy Output"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Output to File"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:35
-msgctxt "shortcut window"
-msgid "General"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:38
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
 msgid "Quit"
+msgstr ""
+
+#: src/gtk/font-view-page.blp:13
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: src/gtk/font-view-page.blp:43
+msgid "No Text"
+msgstr ""
+
+#: src/gtk/font-view-page.blp:44
+msgid "Type something to create a banner"
+msgstr ""
+
+#: src/gtk/font-preview-card.blp:61
+msgid "No Output"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-14 21:46+0200\n"
+"POT-Creation-Date: 2023-12-03 16:11+0100\n"
 "PO-Revision-Date: 2023-09-25 15:59+0000\n"
 "Last-Translator: Fyodor Sobolev <fyodor-sobolev@protonmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/calligraphy/"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:119
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -37,10 +37,6 @@ msgstr "Преобразовывает текст в ASCII баннеры"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;conversion;text;аски;конвертация;текст;"
-
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
-msgid "gregorni"
-msgstr "gregorni"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -73,145 +69,207 @@ msgstr "текст"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
-msgid "Alligator font"
-msgstr "Шрифт Alligator"
+msgid "Landing Page"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
-msgid "Dotmatrix font"
-msgstr "Шрифт Dotmatrix"
+msgid "Entry"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
-msgid "Fraktur font"
-msgstr "Шрифт Fraktur"
+msgid "Search"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
-msgid "Poison font"
-msgstr "Шрифт Poison"
+#, fuzzy
+msgid "Detailed View"
+msgstr "Обозревание текста"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:87
-msgid "First Release! 🎉"
-msgstr "Первый релиз!🎉"
-
-#: src/main.py:121
+#: src/main.py:67
 msgid "Calligraphy Contributors"
 msgstr "Сообщество Calligraphy"
 
-#. Translators: Translate this string as your translator credits.
-#. Name only:    gregorni
-#. Name + URL:   gregorni https://gitlab.com/gregorni/
-#. Name + Email: gregorni <gregorniehl@web.de>
-#. Do not remove existing names.
-#. Names are separated with newlines.
-#: src/main.py:131
-msgid "translator-credits"
-msgstr "volkov <volkovissocool@gmail.com>"
-
-#: src/main.py:132
+#: src/main.py:71
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Сообщество Calligraphy"
 
-#: src/main.py:140
-msgid "Code and Design Borrowed from"
-msgstr "Код и дизайн заимствован у"
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:78
+msgid "translator-credits"
+msgstr "volkov <volkovissocool@gmail.com>"
 
-#: src/window.py:103
-msgid "Copied to clipboard"
+#. Translators: Do not translate "{font_name}"
+#: src/window.py:145
+#, fuzzy, python-brace-format
+msgid "{font_name} output copied to clipboard"
 msgstr "Скопировано в буфер обмена"
 
-#: src/save_file.py:33
-msgid "Select a location"
-msgstr "Выберите расположение"
+#: src/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr ""
 
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:72
-#, python-brace-format
-msgid "Unable to save \"{display_name}\""
-msgstr "Не удалось сохранить \"{display_name}\""
+#: src/update_button_sensitivity.py:23
+#, fuzzy
+msgid "Output Empty"
+msgstr "Вывод"
 
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:79
-#, python-brace-format
-msgid "\"{display_name}\" saved"
-msgstr "\"{display_name}\" сохранен"
+#: src/gtk/window.blp:23
+msgid "Search Fonts"
+msgstr ""
 
-#: src/save_file.py:81
-msgid "Open"
-msgstr "Открыть"
-
-#: src/gtk/window.blp:21
+#: src/gtk/window.blp:32
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: src/gtk/window.blp:36
-msgid "Message"
-msgstr "Сообщение"
+#: src/gtk/window.blp:43
+msgid "Search fonts"
+msgstr ""
 
-#: src/gtk/window.blp:67
-msgid "Start typing…"
-msgstr "Начните печатать…"
+#: src/gtk/window.blp:56
+#, fuzzy
+msgid "Create ASCII Banners"
+msgstr "Преобразовывает текст в ASCII баннеры"
 
-#: src/gtk/window.blp:81
-msgid "Output"
-msgstr "Вывод"
+#: src/gtk/window.blp:57
+msgid "Type something to get started"
+msgstr ""
 
-#: src/gtk/window.blp:125
-msgid "Copy to Clipboard"
-msgstr "Скопировать в буфер обмена"
+#: src/gtk/window.blp:88
+msgid "No Results Found"
+msgstr ""
 
-#: src/gtk/window.blp:132
-msgid "Save to File"
-msgstr "Сохранить в файл"
+#: src/gtk/window.blp:89
+msgid "Try a different search"
+msgstr ""
 
-#: src/gtk/window.blp:154
+#: src/gtk/window.blp:136
+msgid "Clear Entry"
+msgstr ""
+
+#: src/gtk/window.blp:148
+msgid "Type here…"
+msgstr ""
+
+#: src/gtk/window.blp:164
+msgid "Warning"
+msgstr ""
+
+#: src/gtk/window.blp:173
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+
+#: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
 msgstr "_Горячие клавиши"
 
-#: src/gtk/window.blp:159
+#: src/gtk/window.blp:192
 msgid "_About Calligraphy"
 msgstr "_Про Calligraphy"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
-msgid "Text View"
-msgstr "Обозревание текста"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "Next Font"
-msgstr "Следующий шрифт"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Previous Font"
-msgstr "Предыдущий шрифт"
-
-#: src/gtk/help-overlay.blp:24
-msgctxt "shortcut window"
-msgid "Copy Output"
-msgstr "Скопировать вывод в буфер обмена"
-
-#: src/gtk/help-overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Output to File"
-msgstr "Скопировать вывод в файл"
-
-#: src/gtk/help-overlay.blp:35
-msgctxt "shortcut window"
 msgid "General"
 msgstr "Общие"
 
-#: src/gtk/help-overlay.blp:38
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Toggle Search"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Показать горячие клавиши"
 
-#: src/gtk/help-overlay.blp:43
+#: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Выйти"
+
+#: src/gtk/font-view-page.blp:13
+msgid "Copy to Clipboard"
+msgstr "Скопировать в буфер обмена"
+
+#: src/gtk/font-view-page.blp:43
+msgid "No Text"
+msgstr ""
+
+#: src/gtk/font-view-page.blp:44
+msgid "Type something to create a banner"
+msgstr ""
+
+#: src/gtk/font-preview-card.blp:61
+#, fuzzy
+msgid "No Output"
+msgstr "Вывод"
+
+#~ msgid "gregorni"
+#~ msgstr "gregorni"
+
+#~ msgid "Alligator font"
+#~ msgstr "Шрифт Alligator"
+
+#~ msgid "Dotmatrix font"
+#~ msgstr "Шрифт Dotmatrix"
+
+#~ msgid "Fraktur font"
+#~ msgstr "Шрифт Fraktur"
+
+#~ msgid "Poison font"
+#~ msgstr "Шрифт Poison"
+
+#~ msgid "First Release! 🎉"
+#~ msgstr "Первый релиз!🎉"
+
+#~ msgid "Code and Design Borrowed from"
+#~ msgstr "Код и дизайн заимствован у"
+
+#~ msgid "Select a location"
+#~ msgstr "Выберите расположение"
+
+#, python-brace-format
+#~ msgid "Unable to save \"{display_name}\""
+#~ msgstr "Не удалось сохранить \"{display_name}\""
+
+#, python-brace-format
+#~ msgid "\"{display_name}\" saved"
+#~ msgstr "\"{display_name}\" сохранен"
+
+#~ msgid "Open"
+#~ msgstr "Открыть"
+
+#~ msgid "Message"
+#~ msgstr "Сообщение"
+
+#~ msgid "Start typing…"
+#~ msgstr "Начните печатать…"
+
+#~ msgid "Save to File"
+#~ msgstr "Сохранить в файл"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Next Font"
+#~ msgstr "Следующий шрифт"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Previous Font"
+#~ msgstr "Предыдущий шрифт"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Copy Output"
+#~ msgstr "Скопировать вывод в буфер обмена"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Output to File"
+#~ msgstr "Скопировать вывод в файл"
 
 #~ msgid "calligraphy"
 #~ msgstr "calligraphy"

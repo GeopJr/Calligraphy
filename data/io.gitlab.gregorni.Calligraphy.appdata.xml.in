@@ -45,24 +45,24 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/alligator.png</image>
+      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/landing-page.png</image>
       <!--Translators: This is a screenshot caption-->
-      <caption>Alligator font</caption>
+      <caption>Landing Page</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/dotmatrix.png</image>
+      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
       <!--Translators: This is a screenshot caption-->
-      <caption>Dotmatrix font</caption>
+      <caption>Entry</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/fraktur.png</image>
+      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/search.png</image>
       <!--Translators: This is a screenshot caption-->
-      <caption>Fraktur font</caption>
+      <caption>Search</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/poison.png</image>
+      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/detailed-view.png</image>
       <!--Translators: This is a screenshot caption-->
-      <caption>Poison font</caption>
+      <caption>Detailed View</caption>
     </screenshot>
   </screenshots>
 

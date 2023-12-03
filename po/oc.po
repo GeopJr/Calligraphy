@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-14 21:46+0200\n"
+"POT-Creation-Date: 2023-12-03 16:11+0100\n"
 "PO-Revision-Date: 2023-06-21 15:06+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/main.py:119
+#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -35,10 +35,6 @@ msgstr "Passatz vòstre tèxt en bandièra ASCII"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;convertir;conversion;text;tèxt;"
-
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:8
-msgid "gregorni"
-msgstr ""
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -72,142 +68,198 @@ msgstr "tèxte"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
-msgid "Alligator font"
-msgstr "polissa Alligator"
+msgid "Landing Page"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
-msgid "Dotmatrix font"
-msgstr "polissa Dotmatrix"
+msgid "Entry"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
-msgid "Fraktur font"
-msgstr "polissa Fraktur"
+msgid "Search"
+msgstr ""
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
-msgid "Poison font"
-msgstr "polissa Poison"
+#, fuzzy
+msgid "Detailed View"
+msgstr "Vista tèxte"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:87
-msgid "First Release! 🎉"
-msgstr "Primièra version !"
-
-#: src/main.py:121
+#: src/main.py:67
 msgid "Calligraphy Contributors"
 msgstr "Contributors de Calligraphy"
 
-#. Translators: Translate this string as your translator credits.
-#. Name only:    gregorni
-#. Name + URL:   gregorni https://gitlab.com/gregorni/
-#. Name + Email: gregorni <gregorniehl@web.de>
-#. Do not remove existing names.
-#. Names are separated with newlines.
-#: src/main.py:131
-msgid "translator-credits"
-msgstr "Quentin PAGÈS"
-
-#: src/main.py:132
+#: src/main.py:71
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Les contributors de Calligraphy"
 
-#: src/main.py:140
-msgid "Code and Design Borrowed from"
-msgstr "Còdi e design manlevats de"
+#. Translators: Translate this string as your translator credits.
+#. Name only:    gregorni
+#. Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
+#. Name + Email: gregorni <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:78
+msgid "translator-credits"
+msgstr "Quentin PAGÈS"
 
-#: src/window.py:103
-msgid "Copied to clipboard"
+#. Translators: Do not translate "{font_name}"
+#: src/window.py:145
+#, fuzzy, python-brace-format
+msgid "{font_name} output copied to clipboard"
 msgstr "Copiat al quichapapièrs"
 
-#: src/save_file.py:33
-msgid "Select a location"
-msgstr "Causir un emplaçament"
+#: src/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr ""
 
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:72
-#, python-brace-format
-msgid "Unable to save \"{display_name}\""
-msgstr "Enregistrament impossible de « {display_name} »"
+#: src/update_button_sensitivity.py:23
+#, fuzzy
+msgid "Output Empty"
+msgstr "Sortida"
 
-#. Translators: Do not translate "{display_name}"
-#: src/save_file.py:79
-#, python-brace-format
-msgid "\"{display_name}\" saved"
-msgstr "« {display_name} » enregistrat"
+#: src/gtk/window.blp:23
+msgid "Search Fonts"
+msgstr ""
 
-#: src/save_file.py:81
-msgid "Open"
-msgstr "Dobrir"
-
-#: src/gtk/window.blp:21
+#: src/gtk/window.blp:32
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: src/gtk/window.blp:36
-msgid "Message"
-msgstr "Messatge"
-
-#: src/gtk/window.blp:67
-msgid "Start typing…"
+#: src/gtk/window.blp:43
+msgid "Search fonts"
 msgstr ""
 
-#: src/gtk/window.blp:81
-msgid "Output"
-msgstr "Sortida"
+#: src/gtk/window.blp:56
+#, fuzzy
+msgid "Create ASCII Banners"
+msgstr "Passatz vòstre tèxt en bandièra ASCII"
 
-#: src/gtk/window.blp:125
-msgid "Copy to Clipboard"
-msgstr "Copiar al quicha-papièrs"
+#: src/gtk/window.blp:57
+msgid "Type something to get started"
+msgstr ""
 
-#: src/gtk/window.blp:132
-msgid "Save to File"
-msgstr "Enregistrar lo fichièr"
+#: src/gtk/window.blp:88
+msgid "No Results Found"
+msgstr ""
 
-#: src/gtk/window.blp:154
+#: src/gtk/window.blp:89
+msgid "Try a different search"
+msgstr ""
+
+#: src/gtk/window.blp:136
+msgid "Clear Entry"
+msgstr ""
+
+#: src/gtk/window.blp:148
+msgid "Type here…"
+msgstr ""
+
+#: src/gtk/window.blp:164
+msgid "Warning"
+msgstr ""
+
+#: src/gtk/window.blp:173
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+
+#: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
 msgstr "_Acorchis clavièr"
 
-#: src/gtk/window.blp:159
+#: src/gtk/window.blp:192
 msgid "_About Calligraphy"
 msgstr "_A prepaus de Calligraphy"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
-msgid "Text View"
-msgstr "Vista tèxte"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "Next Font"
-msgstr "Polissa seguenta"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Previous Font"
-msgstr "Polissa precedenta"
-
-#: src/gtk/help-overlay.blp:24
-msgctxt "shortcut window"
-msgid "Copy Output"
-msgstr "Copiar la sortida"
-
-#: src/gtk/help-overlay.blp:29
-msgctxt "shortcut window"
-msgid "Save Output to File"
-msgstr "Enregistrar la sortida"
-
-#: src/gtk/help-overlay.blp:35
-msgctxt "shortcut window"
 msgid "General"
 msgstr "General"
 
-#: src/gtk/help-overlay.blp:38
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Toggle Search"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Afichar los acorchis"
 
-#: src/gtk/help-overlay.blp:43
+#: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sortir"
+
+#: src/gtk/font-view-page.blp:13
+msgid "Copy to Clipboard"
+msgstr "Copiar al quicha-papièrs"
+
+#: src/gtk/font-view-page.blp:43
+msgid "No Text"
+msgstr ""
+
+#: src/gtk/font-view-page.blp:44
+msgid "Type something to create a banner"
+msgstr ""
+
+#: src/gtk/font-preview-card.blp:61
+#, fuzzy
+msgid "No Output"
+msgstr "Sortida"
+
+#~ msgid "Alligator font"
+#~ msgstr "polissa Alligator"
+
+#~ msgid "Dotmatrix font"
+#~ msgstr "polissa Dotmatrix"
+
+#~ msgid "Fraktur font"
+#~ msgstr "polissa Fraktur"
+
+#~ msgid "Poison font"
+#~ msgstr "polissa Poison"
+
+#~ msgid "First Release! 🎉"
+#~ msgstr "Primièra version !"
+
+#~ msgid "Code and Design Borrowed from"
+#~ msgstr "Còdi e design manlevats de"
+
+#~ msgid "Select a location"
+#~ msgstr "Causir un emplaçament"
+
+#, python-brace-format
+#~ msgid "Unable to save \"{display_name}\""
+#~ msgstr "Enregistrament impossible de « {display_name} »"
+
+#, python-brace-format
+#~ msgid "\"{display_name}\" saved"
+#~ msgstr "« {display_name} » enregistrat"
+
+#~ msgid "Open"
+#~ msgstr "Dobrir"
+
+#~ msgid "Message"
+#~ msgstr "Messatge"
+
+#~ msgid "Save to File"
+#~ msgstr "Enregistrar lo fichièr"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Next Font"
+#~ msgstr "Polissa seguenta"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Previous Font"
+#~ msgstr "Polissa precedenta"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Copy Output"
+#~ msgstr "Copiar la sortida"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Output to File"
+#~ msgstr "Enregistrar la sortida"
