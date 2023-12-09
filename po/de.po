@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2023-10-11 18:02+0000\n"
+"PO-Revision-Date: 2023-12-09 14:44+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -75,18 +75,17 @@ msgstr ""
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
 msgid "Entry"
-msgstr ""
+msgstr "Eintrag"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
-#, fuzzy
 msgid "Detailed View"
-msgstr "Textansicht"
+msgstr "Detaillierte Ansicht"
 
 #: src/main.py:67
 msgid "Calligraphy Contributors"
@@ -108,22 +107,21 @@ msgstr "gregorni https://gitlab.com/gregorni"
 
 #. Translators: Do not translate "{font_name}"
 #: src/window.py:145
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{font_name} output copied to clipboard"
-msgstr "In die Zwischenablage kopiert"
+msgstr "{font_name}-Ausgabe in die Zwischenablage kopiert"
 
 #: src/update_button_sensitivity.py:23
 msgid "Copy"
-msgstr ""
+msgstr "Kopieren"
 
 #: src/update_button_sensitivity.py:23
-#, fuzzy
 msgid "Output Empty"
-msgstr "Output"
+msgstr ""
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
-msgstr ""
+msgstr "Schriftarten suchen"
 
 #: src/gtk/window.blp:32
 msgid "Main Menu"
@@ -131,20 +129,19 @@ msgstr "Hauptmenü"
 
 #: src/gtk/window.blp:43
 msgid "Search fonts"
-msgstr ""
+msgstr "Schriftarten suchen"
 
 #: src/gtk/window.blp:56
-#, fuzzy
 msgid "Create ASCII Banners"
-msgstr "Verwandeln Sie Text in ASCII-Banner"
+msgstr "ASCII-Banner erstellen"
 
 #: src/gtk/window.blp:57
 msgid "Type something to get started"
-msgstr ""
+msgstr "Etwas eingeben und loslegen"
 
 #: src/gtk/window.blp:88
 msgid "No Results Found"
-msgstr ""
+msgstr "Keine Ergebnisse gefunden"
 
 #: src/gtk/window.blp:89
 msgid "Try a different search"
@@ -152,19 +149,21 @@ msgstr ""
 
 #: src/gtk/window.blp:136
 msgid "Clear Entry"
-msgstr ""
+msgstr "Eintrag löschen"
 
 #: src/gtk/window.blp:148
 msgid "Type here…"
-msgstr ""
+msgstr "Hier eingeben…"
 
 #: src/gtk/window.blp:164
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: src/gtk/window.blp:173
 msgid "Non-alphabetic characters may not be supported in every font"
 msgstr ""
+"Nicht-alphabetische Zeichen werden möglicherweise nicht von jeder Schriftart "
+"unterstützt"
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
@@ -182,7 +181,7 @@ msgstr "Allgemein"
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Toggle Search"
-msgstr ""
+msgstr "Suche umschalten"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
@@ -200,16 +199,15 @@ msgstr "In die Zwischenablage kopieren"
 
 #: src/gtk/font-view-page.blp:43
 msgid "No Text"
-msgstr ""
+msgstr "Kein Text"
 
 #: src/gtk/font-view-page.blp:44
 msgid "Type something to create a banner"
-msgstr ""
+msgstr "Etwas eingeben, um ein Banner zu erstellen"
 
 #: src/gtk/font-preview-card.blp:61
-#, fuzzy
 msgid "No Output"
-msgstr "Output"
+msgstr "Keine Output"
 
 #~ msgid "Alligator font"
 #~ msgstr "Schriftart Alligator"
