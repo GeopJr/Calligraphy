@@ -117,7 +117,7 @@ msgstr "Kopieren"
 
 #: src/update_button_sensitivity.py:23
 msgid "Output Empty"
-msgstr ""
+msgstr "Leere Ausgabe"
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
