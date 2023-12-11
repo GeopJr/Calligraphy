@@ -53,6 +53,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         settings.bind("is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT)
 
         self.search_toggle.connect("toggled", self.__on_search_toggled)
+        self.search_bar.connect_entry(self.search_entry)
 
         self.preview_list_flowbox.set_filter_func(self.__filter_func)
         self.search_entry.connect("search-changed", self.__on_search_changed)
@@ -98,10 +99,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __on_search_toggled(self, *args):
         open_search = self.search_toggle.get_active()
         self.search_bar.set_search_mode(open_search)
-        if open_search:
-            self.search_entry.grab_focus()
-        else:
-            self.search_entry.set_text("")
 
     def __on_input_changed(self, *args):
         raw_input = get_text_view_text.get(self.input_buffer)

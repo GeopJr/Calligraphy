@@ -37,12 +37,12 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
             SearchBar search_bar {
               key-capture-widget: main_nav_view;
 
-              Adw.Clamp {
+              child: Adw.Clamp {
                 SearchEntry search_entry {
                   search-delay: 100;
                   placeholder-text: _("Search fonts");
                 }
-              }
+              };
             }
 
             content: Stack welcome_stack {
