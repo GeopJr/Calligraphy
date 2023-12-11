@@ -153,7 +153,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.__on_input_changed()
 
     def on_ctrl_f(self, *args):
-        on_details_page = type(self.main_nav_view.get_visible_page()) is FontViewPage
+        on_details_page = type(self.main_nav_view.get_visible_page()) == FontViewPage
 
         if self.notable_input and not on_details_page:
             open_search = not self.search_toggle.get_active()
