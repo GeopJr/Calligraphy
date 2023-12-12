@@ -76,7 +76,7 @@
   <url type="vcs-browser">https://gitlab.gnome.org/World/Calligraphy</url>
   <url type="contribute">https://gitlab.gnome.org/World/Calligraphy</url>
   <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
-  <url type="translate">https://hosted.weblate.org/projects/letterpress/</url>
+  <url type="translate">https://hosted.weblate.org/projects/calligraphy/</url>
 
   <update_contact>gregorniehl@web.de</update_contact>
 
