@@ -78,7 +78,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __filter_func(self, flowbox_child):
         search_term = self.search_entry.get_text()
         matches_pattern = (
-            lambda pattern: re.search(search_term, pattern, re.IGNORECASE) is not None
+            lambda pattern: re.search(search_term, pattern, re.IGNORECASE) != None
         )
         preview_card = flowbox_child.get_child()
         child_matches = matches_pattern(preview_card.font_name) or matches_pattern(
@@ -111,7 +111,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.clear_input_btn.set_visible(raw_input)
 
         self.warning_revealer.set_reveal_child(
-            re.search(r"[^a-zA-Z\s]", input_text) is not None
+            re.search(r"[^a-zA-Z\s]", input_text) != None
         )
 
         if self.notable_input:
