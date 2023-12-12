@@ -5,6 +5,10 @@ template $FontPreviewCard: Box {
   orientation: vertical;
   height-request: 272;
 
+  styles [
+    "extra-padding-except-top",
+  ]
+
   Box {
     margin-bottom: 5;
     margin-top: 5;
@@ -28,8 +32,6 @@ template $FontPreviewCard: Box {
   Adw.Bin {
     styles [
       "card",
-      "text-box",
-      "font-card",
     ]
 
     child: Overlay {
@@ -37,7 +39,7 @@ template $FontPreviewCard: Box {
       Button show_details_btn {
         styles [
           "flat",
-          "card-overlaid-button",
+          "rounded-corners",
         ]
       }
 
@@ -83,6 +85,10 @@ template $FontPreviewCard: Box {
               vexpand: true;
               accessible-role: none;
               valign: center;
+
+              styles [
+                "font-size-7",
+              ]
             };
           }
         };

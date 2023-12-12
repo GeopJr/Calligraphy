@@ -2,7 +2,7 @@
 @define-color accent_bg_color @purple_5;
 @define-color accent_fg_color alpha(white, 1);
 
-.text-box textview {
+textview {
   background: none;
 }
 
@@ -18,12 +18,22 @@
   border-radius: 0 12px 12px 0;
 }
 
-.font-card textview {
+.font-size-7 {
   font-size: 7pt;
 }
 
-.card-overlaid-button {
+.rounded-corners {
   border-radius: 12px;
+}
+
+.more-rounded-corners {
+  border-radius: 16px;
+}
+
+.extra-padding-except-top {
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .clear-input-button {

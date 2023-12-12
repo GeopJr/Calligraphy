@@ -22,6 +22,7 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
                 icon-name: "folder-saved-search-symbolic";
                 tooltip-text: _("Search Fonts");
                 sensitive: false;
+                active: bind search_bar.search-mode-enabled bidirectional;
               }
 
               [end]
@@ -71,8 +72,7 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
                       margin-bottom: 24;
                       margin-start: 12;
                       margin-end: 12;
-                      column-spacing: 18;
-                      row-spacing: 12;
+                      column-spacing: 6; // The extra spacing is handled in style.css
                       max-children-per-line: 2;
                       homogeneous: true;
                       valign: start;
@@ -112,7 +112,6 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
             css-name: "entry";
 
             styles [
-              "text-box",
               "no-right-padding",
             ]
 
