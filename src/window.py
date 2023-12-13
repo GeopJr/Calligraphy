@@ -90,12 +90,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __on_search_changed(self, *args):
         self.preview_list_flowbox.invalidate_filter()
+
+        page_to_set = "welcome"
         if self.notable_input:
-            self.welcome_stack.set_visible_child_name(
-                "no-results" if self.search_results_count == 0 else "fonts-list"
-            )
-        else:
-            self.welcome_stack.set_visible_child_name("welcome")
+            page_to_set = "fonts-list"
+            if self.search_results_count == 0:
+                page_to_set = "no-results"
+
+            self.welcome_stack.set_visible_child_name(page_to_set)
         self.search_results_count = 0
 
     def __on_input_changed(self, *args):
@@ -104,9 +106,6 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         input_text = raw_input.strip()
         self.notable_input = input_text != ""
-        self.welcome_stack.set_visible_child_name(
-            "fonts-list" if self.notable_input else "welcome"
-        )
         self.search_toggle.set_sensitive(self.notable_input)
         self.clear_input_btn.set_visible(raw_input)
 
@@ -115,10 +114,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
 
         if self.notable_input:
+            page_to_set = "fonts-list"
             for card in self.preview_cards_list:
                 card.update_text(input_text)
         else:
+            page_to_set = "welcome"
             self.search_bar.set_search_mode(False)
+
+        self.welcome_stack.set_visible_child_name(page_to_set)
 
         current_nav_page = self.main_nav_view.get_visible_page()
         if type(current_nav_page) == FontViewPage:
@@ -131,8 +134,10 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def show_copied_toast(self, font_name):
         text_to_convert = get_text_view_text.get(self.input_buffer).strip()
         font = FONTS_LIST[font_name]
+
+        non_breaking_whitespace ="\u00A0"
         text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).replace(
-            " ", "\u00A0"
+            " ", non_breaking_whitespace
         )
 
         Gdk.Display.get_default().get_clipboard().set(text_to_copy)
