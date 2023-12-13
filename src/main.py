@@ -41,6 +41,11 @@ class CalligraphyApplication(Adw.Application):
             "search", lambda *args: self.get_active_window().on_ctrl_f(), ["<primary>f"]
         )
         self.__create_action(
+            "focus-input",
+            lambda *args: self.get_active_window().input_text_view.grab_focus(),
+            ["<primary>l"],
+        )
+        self.__create_action(
             "quit", lambda *args: self.quit(), ["<primary>q", "<primary>w"]
         )
         self.__create_action("about", self.__on_about_action)
