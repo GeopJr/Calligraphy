@@ -135,7 +135,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         text_to_convert = get_text_view_text.get(self.input_buffer).strip()
         font = FONTS_LIST[font_name]
 
-        non_breaking_whitespace ="\u00A0"
+        non_breaking_whitespace = "\u00A0"
         text_to_copy = pyfiglet.figlet_format(text_to_convert, font=font).replace(
             " ", non_breaking_whitespace
         )
