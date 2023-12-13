@@ -109,9 +109,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.search_toggle.set_sensitive(self.notable_input)
         self.clear_input_btn.set_visible(raw_input)
 
-        self.warning_revealer.set_reveal_child(
-            re.search(r"[^a-zA-Z\s]", input_text) != None
-        )
+        contains_invalid_char = re.search(r"[^a-zA-Z\s]", input_text) != None
+        self.warning_revealer.set_reveal_child(contains_invalid_char)
 
         if self.notable_input:
             page_to_set = "fonts-list"
