@@ -120,7 +120,8 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             page_to_set = "welcome"
             self.search_bar.set_search_mode(False)
 
-        self.welcome_stack.set_visible_child_name(page_to_set)
+        if not self.search_bar.get_search_mode():
+            self.welcome_stack.set_visible_child_name(page_to_set)
 
         current_nav_page = self.main_nav_view.get_visible_page()
         if type(current_nav_page) == FontViewPage:
