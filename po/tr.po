@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2023-10-26 02:03+0000\n"
+"PO-Revision-Date: 2023-12-17 23:10+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/tr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.1.1\n"
+"X-Generator: Weblate 5.3\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -71,23 +71,22 @@ msgstr "metin"
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
 msgid "Landing Page"
-msgstr ""
+msgstr "Giriş Sayfası"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
 msgid "Entry"
-msgstr ""
+msgstr "Girdi"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
-#, fuzzy
 msgid "Detailed View"
-msgstr "Metin Görünümü"
+msgstr "Ayrıntılı Görünüm"
 
 #: src/main.py:67
 msgid "Calligraphy Contributors"
@@ -109,22 +108,21 @@ msgstr "Sabri Ünal <libreajans@gmail.com>"
 
 #. Translators: Do not translate "{font_name}"
 #: src/window.py:145
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{font_name} output copied to clipboard"
-msgstr "Panoya kopyalandı"
+msgstr "{font_name} çıktısı panoya kopyalandı"
 
 #: src/update_button_sensitivity.py:23
 msgid "Copy"
-msgstr ""
+msgstr "Kopyala"
 
 #: src/update_button_sensitivity.py:23
-#, fuzzy
 msgid "Output Empty"
-msgstr "Çıktı"
+msgstr "Çıkış Boş"
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
-msgstr ""
+msgstr "Yazı Tipi Ara"
 
 #: src/gtk/window.blp:32
 msgid "Main Menu"
@@ -132,40 +130,39 @@ msgstr "Ana Menü"
 
 #: src/gtk/window.blp:43
 msgid "Search fonts"
-msgstr ""
+msgstr "Yazı tipi ara"
 
 #: src/gtk/window.blp:56
-#, fuzzy
 msgid "Create ASCII Banners"
-msgstr "Metni ASCII bannerlara dönüştür"
+msgstr "ASCII bannerlar oluştur"
 
 #: src/gtk/window.blp:57
 msgid "Type something to get started"
-msgstr ""
+msgstr "Başlamak için bir şey yazın"
 
 #: src/gtk/window.blp:88
 msgid "No Results Found"
-msgstr ""
+msgstr "Sonuç Bulunamadı"
 
 #: src/gtk/window.blp:89
 msgid "Try a different search"
-msgstr ""
+msgstr "Başka arama dene"
 
 #: src/gtk/window.blp:136
 msgid "Clear Entry"
-msgstr ""
+msgstr "Girdiyi Temizle"
 
 #: src/gtk/window.blp:148
 msgid "Type here…"
-msgstr ""
+msgstr "Buraya yazın…"
 
 #: src/gtk/window.blp:164
 msgid "Warning"
-msgstr ""
+msgstr "Uyarı"
 
 #: src/gtk/window.blp:173
 msgid "Non-alphabetic characters may not be supported in every font"
-msgstr ""
+msgstr "Alphabetik olmayan karakterler her yazı tipinde desteklenmeyebilir"
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
@@ -183,7 +180,7 @@ msgstr "Genel"
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Toggle Search"
-msgstr ""
+msgstr "Aramayı aç/kapat"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
@@ -201,16 +198,15 @@ msgstr "Panoya Kopyala"
 
 #: src/gtk/font-view-page.blp:43
 msgid "No Text"
-msgstr ""
+msgstr "Metin Yok"
 
 #: src/gtk/font-view-page.blp:44
 msgid "Type something to create a banner"
-msgstr ""
+msgstr "Banner oluşturmak için bir şey yazın"
 
 #: src/gtk/font-preview-card.blp:61
-#, fuzzy
 msgid "No Output"
-msgstr "Çıktı"
+msgstr "Çıktı Yok"
 
 #~ msgid "gregorni"
 #~ msgstr "gregorni"
