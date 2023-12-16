@@ -37,6 +37,7 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
             [top]
             SearchBar search_bar {
               key-capture-widget: main_nav_view;
+              sensitive: false;
 
               child: Adw.Clamp {
                 SearchEntry search_entry {

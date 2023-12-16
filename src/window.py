@@ -107,6 +107,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         input_text = raw_input.strip()
         self.notable_input = input_text != ""
         self.search_toggle.set_sensitive(self.notable_input)
+        self.search_bar.set_sensitive(self.notable_input)
         self.clear_input_btn.set_visible(raw_input)
 
         contains_invalid_char = re.search(r"[^a-zA-Z\s]", input_text) != None
