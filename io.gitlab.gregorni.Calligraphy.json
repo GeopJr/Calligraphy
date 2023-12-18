@@ -1,16 +1,16 @@
 {
-    "app-id" : "io.gitlab.gregorni.Calligraphy",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "calligraphy",
-    "finish-args" : [
+    "app-id": "io.gitlab.gregorni.Calligraphy",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "master",
+    "sdk": "org.gnome.Sdk",
+    "command": "calligraphy",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -21,30 +21,30 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
-    	"build-aux/blueprint-compiler.json",
-    	{
-    	    "name": "pyfiglet",
-	    "buildsystem": "simple",
-	    "build-commands": [
-	    	"pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyfiglet\" --no-build-isolation"
-	    ],
-            "sources": [
-	    	{
-	            "type": "file",
-	            "url": "https://files.pythonhosted.org/packages/8e/c3/8987ec451bcdefa71f6d182f6530d432d81aa26a5491fc9a6dc83b283525/pyfiglet-1.0.1.tar.gz",
-	            "sha256": "c7d9088a6f821bdf69c58d9757378085a76881626b2308e6bbda707121607f18"
-	    	}
-	    ]
-    	},
+    "modules": [
+        "build-aux/blueprint-compiler.json",
         {
-            "name" : "calligraphy",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "pyfiglet",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyfiglet\" --no-build-isolation"
+            ],
+            "sources": [
                 {
-                    "type" : "dir",
-                    "path" : "."
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/8e/c3/8987ec451bcdefa71f6d182f6530d432d81aa26a5491fc9a6dc83b283525/pyfiglet-1.0.1.tar.gz",
+                    "sha256": "c7d9088a6f821bdf69c58d9757378085a76881626b2308e6bbda707121607f18"
+                }
+            ]
+        },
+        {
+            "name": "calligraphy",
+            "builddir": true,
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
                 }
             ]
         }
