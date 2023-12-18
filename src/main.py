@@ -64,12 +64,11 @@ class CalligraphyApplication(Adw.Application):
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutWindow.new_from_appdata(
-            "/io/gitlab/gregorni/Calligraphy/appdata.xml"
+            "/io/gitlab/gregorni/Calligraphy/appdata.xml", "2.0"
         )
         about.set_transient_for(self.get_active_window())
         about.set_artists(["kramo https://kramo.hu"])
         about.set_designers(["Brage Fuglseth https://bragefuglseth.dev"])
-        about.set_developer_name(_("Calligraphy Contributors"))
         # These are Python lists: Add your string to the list (separated by a comma)
         # See the translator comment below for possible formats
         about.set_developers(["gregorni https://gitlab.gnome.org/gregorni"])
