@@ -14,9 +14,12 @@ template $FontPreviewCard: Box {
     margin-top: 5;
 
     Label font_name_label {
-      use-markup: true;
       xalign: 0;
       hexpand: true;
+
+      styles [
+        "heading",
+      ]
     }
 
     [end]

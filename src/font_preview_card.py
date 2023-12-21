@@ -43,7 +43,7 @@ class FontPreviewCard(Gtk.Box):
         self.font_name = font_name
         self.font = FONTS_LIST[font_name]
 
-        self.font_name_label.set_label(f"<b>{font_name}</b>")
+        self.font_name_label.set_label(font_name)
 
         self.output_buffer = self.output_text_view.get_buffer()
 
