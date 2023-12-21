@@ -29,70 +29,62 @@ template $FontPreviewCard: Box {
     }
   }
 
-  Adw.Bin {
+  Button show_details_btn {
     styles [
       "card",
+      "flat",
     ]
 
     child: Overlay {
+      can-target: false;
+
       [overlay]
-      Button show_details_btn {
+      Image details_arrow {
+        halign: end;
+        width-request: 35;
+        icon-name: "go-next-symbolic";
+
         styles [
-          "flat",
-          "rounded-corners",
-          "weaker-highlight", // This makes the hover state looks like an ActionRow's
+          "details-arrow",
         ]
       }
 
-      child: Overlay {
-        [overlay]
-        Image details_arrow {
-          halign: end;
-          width-request: 35;
-          icon-name: "go-next-symbolic";
+      child: Stack display_stack {
+        StackPage {
+          name: "no-text";
 
-          styles [
-            "details-arrow",
-          ]
+          child: Label {
+            label: _("No Output");
+
+            styles [
+              "dim-label",
+              "title-2",
+            ]
+          };
         }
 
-        child: Stack display_stack {
-          StackPage {
-            name: "no-text";
+        StackPage {
+          name: "text";
 
-            child: Label {
-              label: _("No Output");
+          child: TextView output_text_view {
+            margin-top: 12;
+            margin-bottom: 12;
+            margin-start: 18;
+            margin-end: 18;
+            width-request: 210;
+            editable: false;
+            monospace: true;
+            cursor-visible: false;
+            hexpand: true;
+            vexpand: true;
+            accessible-role: none;
+            valign: center;
 
-              styles [
-                "dim-label",
-                "title-2",
-              ]
-            };
-          }
-
-          StackPage {
-            name: "text";
-
-            child: TextView output_text_view {
-              margin-top: 12;
-              margin-bottom: 12;
-              margin-start: 18;
-              margin-end: 18;
-              width-request: 210;
-              editable: false;
-              monospace: true;
-              cursor-visible: false;
-              hexpand: true;
-              vexpand: true;
-              accessible-role: none;
-              valign: center;
-
-              styles [
-                "font-size-7",
-              ]
-            };
-          }
-        };
+            styles [
+              "font-size-7",
+            ]
+          };
+        }
       };
     };
   }
