@@ -77,7 +77,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
             card = FontPreviewCard(parent_window=self, font_name=font_name)
             flowbox_card = Gtk.FlowBoxChild(child=card)
 
-            flowbox_card.set_css_classes(["more-rounded-corners"])
+            flowbox_card.add_css_class("more-rounded-corners")
             self.preview_list_flowbox.append(flowbox_card)
             self.preview_cards_list.append(card)
 
