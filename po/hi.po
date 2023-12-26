@@ -8,31 +8,34 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-12-27 16:06+0000\n"
+"Last-Translator: almost gamer <almost.gamer01+language@gmail.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/calligraphy/"
+"calligraphy/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
-msgstr ""
+msgstr "सुलेख"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
 msgid "Turn text into ASCII banners"
-msgstr ""
+msgstr "टेक्स्ट को ASCII बैनर में बदलें"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
-msgstr ""
+msgstr "ascii;रूपांतरित करें;रूपांतरण;लेख;"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -40,26 +43,29 @@ msgid ""
 "ASCII Characters. Spice up your online conversations by adding some extra "
 "oompf to your messages!"
 msgstr ""
+"सुलेख छोटे पाठों को ASCII वर्णों से बने बड़े, प्रभावशाली बैनरों में बदल देता "
+"है।अपने संदेशों में कुछ अतिरिक्त सुविधाएं जोड़कर अपनी ऑनलाइन बातचीत को मज़ेदा"
+"र बनाएं!"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
 msgid "ascii"
-msgstr ""
+msgstr "ascii"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
 msgid "convert"
-msgstr ""
+msgstr "बदलना"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:30
 msgid "conversion"
-msgstr ""
+msgstr "परिवर्तन"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
 msgid "text"
-msgstr ""
+msgstr "मूलपाठ"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
