@@ -2,7 +2,7 @@
 # Translators: Translate as "Calligraphy"
 Name=Calligraphy
 Comment=Turn text into ASCII banners
-Exec=calligraphy %u
+Exec=calligraphy
 Icon=io.gitlab.gregorni.Calligraphy
 Terminal=false
 Type=Application
