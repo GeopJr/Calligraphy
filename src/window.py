@@ -48,15 +48,10 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
 
         settings = Gio.Settings(schema_id="io.gitlab.gregorni.Calligraphy")
-        settings.bind(
-            "window-width", self, "default-width", Gio.SettingsBindFlags.DEFAULT
-        )
-        settings.bind(
-            "window-height", self, "default-height", Gio.SettingsBindFlags.DEFAULT
-        )
-        settings.bind(
-            "window-is-maximized", self, "maximized", Gio.SettingsBindFlags.DEFAULT
-        )
+        bind_flags = Gio.SettingsBindFlags.DEFAULT
+        settings.bind("window-width", self, "default-width", bind_flags)
+        settings.bind("window-height", self, "default-height", bind_flags)
+        settings.bind("window-is-maximized", self, "maximized", bind_flags)
 
         self.search_bar.connect_entry(self.search_entry)
 
