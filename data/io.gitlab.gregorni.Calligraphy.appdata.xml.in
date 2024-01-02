@@ -69,8 +69,8 @@
   <content_rating type="oars-1.1" />
 
   <provides>
-    <binary>letterpress</binary>
-    <id>io.gitlab.gregorni.Letterpress.desktop</id>
+    <binary>calligraphy</binary>
+    <id>io.gitlab.gregorni.Calligraphy.desktop</id>
   </provides>
 
   <releases>
