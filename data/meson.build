@@ -23,8 +23,10 @@ appstream_file = i18n.merge_file(
 appstreamcli = find_program('appstreamcli', required: false)
 if appstreamcli.found()
   test('Validate appstream file',
-  appstreamcli,
-  args: ['validate', '--no-net', appstream_file])
+       appstreamcli,
+       args: ['validate', '--no-net', '--explain', appstream_file],
+       workdir: meson.current_build_dir()
+  )
 endif
 
 install_data('io.gitlab.gregorni.Calligraphy.gschema.xml',
