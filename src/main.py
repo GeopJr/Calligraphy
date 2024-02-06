@@ -63,10 +63,9 @@ class CalligraphyApplication(Adw.Application):
 
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
-        about = Adw.AboutWindow.new_from_appdata(
+        about = Adw.AboutDialog.new_from_appdata(
             "/io/gitlab/gregorni/Calligraphy/appdata.xml", "2.0"
         )
-        about.set_transient_for(self.get_active_window())
         about.set_artists(["kramo https://kramo.hu"])
         about.set_designers(["Brage Fuglseth https://bragefuglseth.dev"])
         # These are Python lists: Add your string to the list (separated by a comma)
@@ -87,7 +86,7 @@ class CalligraphyApplication(Adw.Application):
             license_type=Gtk.License.MIT_X11,
         )
 
-        about.present()
+        about.present(self.get_active_window())
 
     def __create_action(self, name, callback, shortcuts=None, param=None):
         """Add an application action.
