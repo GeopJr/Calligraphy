@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2023-11-20 05:10+0000\n"
-"Last-Translator: Louremipsum <Louremipsum@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2024-02-28 14:01+0000\n"
+"Last-Translator: Titouan Real <titouan.real@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.2\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
@@ -70,7 +70,7 @@ msgstr "texte"
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
 msgid "Landing Page"
-msgstr ""
+msgstr "Page d'accueil"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
@@ -106,7 +106,8 @@ msgstr "Copyright © 2023 Les contributeurs de Calligraphy"
 msgid "translator-credits"
 msgstr ""
 "Irénée Thirion <irenee.thirion@e.email>\n"
-"Louremipsum"
+"Louremipsum\n"
+"Titouan Real"
 
 #. Translators: Do not translate "{font_name}"
 #: src/window.py:145
@@ -116,7 +117,7 @@ msgstr "Copié vers le presse-papiers"
 
 #: src/update_button_sensitivity.py:23
 msgid "Copy"
-msgstr ""
+msgstr "Copier"
 
 #: src/update_button_sensitivity.py:23
 #, fuzzy
@@ -125,7 +126,7 @@ msgstr "Résultat"
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
-msgstr ""
+msgstr "Chercher une police"
 
 #: src/gtk/window.blp:32
 msgid "Main Menu"
@@ -133,7 +134,7 @@ msgstr "Menu principal"
 
 #: src/gtk/window.blp:43
 msgid "Search fonts"
-msgstr ""
+msgstr "Chercher une police"
 
 #: src/gtk/window.blp:56
 #, fuzzy
@@ -146,27 +147,29 @@ msgstr ""
 
 #: src/gtk/window.blp:88
 msgid "No Results Found"
-msgstr ""
+msgstr "Aucun résultat trouvé"
 
 #: src/gtk/window.blp:89
 msgid "Try a different search"
-msgstr ""
+msgstr "Essayez une autre recherche"
 
 #: src/gtk/window.blp:136
 msgid "Clear Entry"
-msgstr ""
+msgstr "Efface la saisie"
 
 #: src/gtk/window.blp:148
 msgid "Type here…"
-msgstr ""
+msgstr "Tapez ici…"
 
 #: src/gtk/window.blp:164
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: src/gtk/window.blp:173
 msgid "Non-alphabetic characters may not be supported in every font"
 msgstr ""
+"Les caractères non-alphabétiques peuvent ne pas être supportés dans toutes "
+"les polices"
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
@@ -184,7 +187,7 @@ msgstr "Général"
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Toggle Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
