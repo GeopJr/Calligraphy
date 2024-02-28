@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2023-12-27 16:06+0000\n"
-"Last-Translator: almost gamer <almost.gamer01+language@gmail.com>\n"
+"PO-Revision-Date: 2024-02-29 15:02+0000\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/hi/>\n"
 "Language: hi\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
-msgstr "सुलेख"
+msgstr "Calligraphy"
 
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
@@ -43,9 +43,9 @@ msgid ""
 "ASCII Characters. Spice up your online conversations by adding some extra "
 "oompf to your messages!"
 msgstr ""
-"सुलेख छोटे पाठों को ASCII वर्णों से बने बड़े, प्रभावशाली बैनरों में बदल देता "
-"है।अपने संदेशों में कुछ अतिरिक्त सुविधाएं जोड़कर अपनी ऑनलाइन बातचीत को मज़ेदा"
-"र बनाएं!"
+"Calligraphy छोटे पाठों को ASCII वर्णों से बने बड़े, प्रभावशाली बैनरों में "
+"बदल देता है।अपने संदेशों में कुछ अतिरिक्त सुविधाएं जोड़कर अपनी ऑनलाइन बातचीत "
+"को मज़ेदार बनाएं!"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
@@ -65,35 +65,35 @@ msgstr "परिवर्तन"
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
 msgid "text"
-msgstr "मूलपाठ"
+msgstr "टेक्स्ट"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
 msgid "Landing Page"
-msgstr ""
+msgstr "लैंडिंग पेज"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
 msgid "Entry"
-msgstr ""
+msgstr "प्रवेश"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
 msgid "Search"
-msgstr ""
+msgstr "खोजें"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
 msgid "Detailed View"
-msgstr ""
+msgstr "विस्तृत विवरण"
 
 #: src/main.py:67
 msgid "Calligraphy Contributors"
-msgstr ""
+msgstr "Calligraphy योगदानकर्ता"
 
 #: src/main.py:71
 msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr ""
+msgstr "कॉपीराइट © 2023 Calligraphy योगदानकर्ता"
 
 #. Translators: Translate this string as your translator credits.
 #. Name only:    gregorni
@@ -103,106 +103,106 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:78
 msgid "translator-credits"
-msgstr ""
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #. Translators: Do not translate "{font_name}"
 #: src/window.py:145
 #, python-brace-format
 msgid "{font_name} output copied to clipboard"
-msgstr ""
+msgstr "{font_name} आउटपुट क्लिपबोर्ड पर कॉपी किया गया"
 
 #: src/update_button_sensitivity.py:23
 msgid "Copy"
-msgstr ""
+msgstr "कॉपी"
 
 #: src/update_button_sensitivity.py:23
 msgid "Output Empty"
-msgstr ""
+msgstr "आउटपुट खाली"
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
-msgstr ""
+msgstr "फ़ॉन्ट खोजें"
 
 #: src/gtk/window.blp:32
 msgid "Main Menu"
-msgstr ""
+msgstr "मुख्य मेन्यू"
 
 #: src/gtk/window.blp:43
 msgid "Search fonts"
-msgstr ""
+msgstr "फ़ॉन्ट खोजें"
 
 #: src/gtk/window.blp:56
 msgid "Create ASCII Banners"
-msgstr ""
+msgstr "ASCII बैनर बनाएं"
 
 #: src/gtk/window.blp:57
 msgid "Type something to get started"
-msgstr ""
+msgstr "आरंभ करने के लिए कुछ टाइप करें"
 
 #: src/gtk/window.blp:88
 msgid "No Results Found"
-msgstr ""
+msgstr "कोई परिणाम नहीं मिला"
 
 #: src/gtk/window.blp:89
 msgid "Try a different search"
-msgstr ""
+msgstr "भिन्न खोज का प्रयास करें"
 
 #: src/gtk/window.blp:136
 msgid "Clear Entry"
-msgstr ""
+msgstr "साफ़ प्रविष्टि"
 
 #: src/gtk/window.blp:148
 msgid "Type here…"
-msgstr ""
+msgstr "यहाँ टाइप करें…"
 
 #: src/gtk/window.blp:164
 msgid "Warning"
-msgstr ""
+msgstr "चेतावनी"
 
 #: src/gtk/window.blp:173
 msgid "Non-alphabetic characters may not be supported in every font"
-msgstr ""
+msgstr "हर फ़ॉन्ट में गैर-वर्णमाला वर्ण समर्थित नहीं हो सकते"
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_कीबोर्ड शॉर्टकट"
 
 #: src/gtk/window.blp:192
 msgid "_About Calligraphy"
-msgstr ""
+msgstr "Calligraphy के बारे में"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "जनरल"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Toggle Search"
-msgstr ""
+msgstr "खोज टॉगल करें"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "शॉर्टकट दिखाएँ"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "छोड़ें"
 
 #: src/gtk/font-view-page.blp:13
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "क्लिपबोर्ड पर कॉपी करें"
 
 #: src/gtk/font-view-page.blp:43
 msgid "No Text"
-msgstr ""
+msgstr "कोई टेक्स्ट नहीं"
 
 #: src/gtk/font-view-page.blp:44
 msgid "Type something to create a banner"
-msgstr ""
+msgstr "बैनर बनाने के लिए कुछ टाइप करें"
 
 #: src/gtk/font-preview-card.blp:61
 msgid "No Output"
-msgstr ""
+msgstr "कोई आउटपुट नहीं"
