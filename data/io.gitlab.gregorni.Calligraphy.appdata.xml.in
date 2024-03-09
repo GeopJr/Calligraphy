@@ -83,8 +83,9 @@
       <kudo>HiDpiIcon</kudo>
   </kudos>
 
-  <custom>
-    <value key="GnomeSoftware::key-colors">[(110, 109, 114)]</value>
-  </custom>
+  <branding>
+    <color type="primary" scheme_preference="light">#c061cb</color>
+    <color type="primary" scheme_preference="dark">#443972</color>
+  </branding>
 
 </component>
