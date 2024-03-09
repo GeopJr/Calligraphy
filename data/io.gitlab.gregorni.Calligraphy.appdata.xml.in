@@ -30,11 +30,6 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/landing-page.png</image>
-      <!--Translators: This is a screenshot caption-->
-      <caption>Landing Page</caption>
-    </screenshot>
-    <screenshot>
       <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Entry</caption>
