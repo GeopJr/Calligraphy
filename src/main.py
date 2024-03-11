@@ -64,7 +64,7 @@ class CalligraphyApplication(Adw.Application):
     def __on_about_action(self, *args):
         """Callback for the app.about action."""
         about = Adw.AboutDialog.new_from_appdata(
-            "/io/gitlab/gregorni/Calligraphy/appdata.xml", "2.0"
+            "/io/gitlab/gregorni/Calligraphy/metainfo.xml", "2.0"
         )
         about.set_artists(["kramo https://kramo.hu"])
         about.set_designers(["Brage Fuglseth https://bragefuglseth.dev"])

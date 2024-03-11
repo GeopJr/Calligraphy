@@ -9,7 +9,7 @@
     <file preprocess="xml-stripblanks">gtk/font-view-page.ui</file>
     <file preprocess="xml-stripblanks">gtk/font-preview-card.ui</file>
 
-    <file alias="appdata.xml" preprocess="xml-stripblanks">../data/io.gitlab.gregorni.Calligraphy.appdata.xml</file>
+    <file alias="metainfo.xml" preprocess="xml-stripblanks">../data/io.gitlab.gregorni.Calligraphy.metainfo.xml</file>
   </gresource>
 
   <gresource prefix="/io/gitlab/gregorni/Calligraphy/icons/scalable/actions/">

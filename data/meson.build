@@ -13,11 +13,11 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.Calligraphy.appdata.xml.in',
-       output: 'io.gitlab.gregorni.Calligraphy.appdata.xml',
+        input: 'io.gitlab.gregorni.Calligraphy.metainfo.xml.in',
+       output: 'io.gitlab.gregorni.Calligraphy.metainfo.xml',
        po_dir: '../po',
       install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 appstreamcli = find_program('appstreamcli', required: false)
