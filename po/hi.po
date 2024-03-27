@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2024-02-29 15:02+0000\n"
+"PO-Revision-Date: 2024-03-28 18:02+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/hi/>\n"
@@ -165,11 +165,11 @@ msgstr "हर फ़ॉन्ट में गैर-वर्णमाला �
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
-msgstr "_कीबोर्ड शॉर्टकट"
+msgstr "कीबोर्ड शॉर्टकट (_K)"
 
 #: src/gtk/window.blp:192
 msgid "_About Calligraphy"
-msgstr "Calligraphy के बारे में"
+msgstr "Calligraphy के बारे में (_A)"
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
