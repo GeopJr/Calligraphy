@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-03 16:11+0100\n"
-"PO-Revision-Date: 2024-03-28 18:02+0000\n"
+"PO-Revision-Date: 2024-04-23 04:07+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/calligraphy/"
 "calligraphy/hi/>\n"
@@ -28,14 +28,14 @@ msgstr "Calligraphy"
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
 msgid "Turn text into ASCII banners"
-msgstr "टेक्स्ट को ASCII बैनर में बदलें"
+msgstr "पाठ को ASCII बैनर में बदलें"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
-msgstr "ascii;रूपांतरित करें;रूपांतरण;लेख;"
+msgstr "ascii;रूपांतरित करें;रूपांतरण;पाठ;"
 
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
 msgid ""
@@ -44,8 +44,8 @@ msgid ""
 "oompf to your messages!"
 msgstr ""
 "Calligraphy छोटे पाठों को ASCII वर्णों से बने बड़े, प्रभावशाली बैनरों में "
-"बदल देता है।अपने संदेशों में कुछ अतिरिक्त सुविधाएं जोड़कर अपनी ऑनलाइन बातचीत "
-"को मज़ेदार बनाएं!"
+"बदल देता है। अपने संदेशों में कुछ अतिरिक्त सुविधाएं जोड़कर अपनी ऑनलाइन बातची"
+"त को मज़ेदार बनाएं!"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
@@ -55,7 +55,7 @@ msgstr "ascii"
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
 msgid "convert"
-msgstr "बदलना"
+msgstr "परिवर्तन करें"
 
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:30
@@ -65,12 +65,12 @@ msgstr "परिवर्तन"
 #. Translators: This is a search term and should be lowercase
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
 msgid "text"
-msgstr "टेक्स्ट"
+msgstr "पाठ"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
 msgid "Landing Page"
-msgstr "लैंडिंग पेज"
+msgstr "लैंडिंग पृष्ठ"
 
 #. Translators: This is a screenshot caption
 #: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
@@ -121,15 +121,15 @@ msgstr "आउटपुट खाली"
 
 #: src/gtk/window.blp:23
 msgid "Search Fonts"
-msgstr "फ़ॉन्ट खोजें"
+msgstr "फॉन्ट खोजें"
 
 #: src/gtk/window.blp:32
 msgid "Main Menu"
-msgstr "मुख्य मेन्यू"
+msgstr "मुख्य मेनू"
 
 #: src/gtk/window.blp:43
 msgid "Search fonts"
-msgstr "फ़ॉन्ट खोजें"
+msgstr "फॉन्ट खोजें"
 
 #: src/gtk/window.blp:56
 msgid "Create ASCII Banners"
@@ -149,7 +149,7 @@ msgstr "भिन्न खोज का प्रयास करें"
 
 #: src/gtk/window.blp:136
 msgid "Clear Entry"
-msgstr "साफ़ प्रविष्टि"
+msgstr "प्रविष्टि साफ़ करें"
 
 #: src/gtk/window.blp:148
 msgid "Type here…"
@@ -161,7 +161,7 @@ msgstr "चेतावनी"
 
 #: src/gtk/window.blp:173
 msgid "Non-alphabetic characters may not be supported in every font"
-msgstr "हर फ़ॉन्ट में गैर-वर्णमाला वर्ण समर्थित नहीं हो सकते"
+msgstr "हर फॉन्ट में गैर-वर्णमाला वर्ण समर्थित नहीं हो सकते"
 
 #: src/gtk/window.blp:187
 msgid "_Keyboard Shortcuts"
@@ -174,7 +174,7 @@ msgstr "Calligraphy के बारे में (_A)"
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "जनरल"
+msgstr "सामान्य"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
@@ -184,7 +184,7 @@ msgstr "खोज टॉगल करें"
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "शॉर्टकट दिखाएँ"
+msgstr "शॉर्टकट दिखाएं"
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
@@ -197,7 +197,7 @@ msgstr "क्लिपबोर्ड पर कॉपी करें"
 
 #: src/gtk/font-view-page.blp:43
 msgid "No Text"
-msgstr "कोई टेक्स्ट नहीं"
+msgstr "कोई पाठ नहीं"
 
 #: src/gtk/font-view-page.blp:44
 msgid "Type something to create a banner"
