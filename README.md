@@ -2,6 +2,8 @@
 
 Calligraphy uses [pyfiglet](https://github.com/pwaller/pyfiglet) to turn text into impressive banners made up of ASCII Characters.
 
+***Note: This project is no longer maintained. If you are interested in maintaining the project, please check out [REVIVING.md](REVIVING.md)***
+
 <div align="center">
   <img src="data/screenshots/entry.png">
 </div>
