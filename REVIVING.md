@@ -13,3 +13,5 @@ Things that changed since the last release of this app (In case you want to put 
 Things that need to be fixed somehow:
 
 - The font preview cards should fade out gently towards the right.
+
+In case you have any questions, feel free to ask me on [Matrix](https://matrix.to/#/@gregorni:gnome.org) or [Mastodon](https://fosstodon.org/@gregorni)
