@@ -12,6 +12,11 @@ include:
     RUNTIME_REPO: https://nightly.gnome.org/gnome-nightly.flatpakrepo
     BUNDLE: calligraphy.flatpak
 
+pre-commit:
+  script:
+    - pip install pre-commit --quiet
+    - pre-commit run --all-files
+
 # Build Flatpak for x86_64
 flatpak@x86_64:
   stage: build
@@ -25,8 +30,3 @@ flatpak@aarch64:
   extends:
     - .flatpak@aarch64
     - .vars
-
-pre-commit:
-  script:
-    - pip install pre-commit --quiet
-    - pre-commit run --all-files

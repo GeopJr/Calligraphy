@@ -20,10 +20,11 @@
 from gi.repository import Gtk, Gsk, Graphene, Gdk
 import math
 
+
 class FontPreview(Gtk.Widget):
     __gtype_name__ = "FontPreview"
 
-    FADE_WIDTH = 168.0 # Adjust when gridview gets merged
+    FADE_WIDTH = 168.0  # Adjust when gridview gets merged
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -47,7 +48,7 @@ class FontPreview(Gtk.Widget):
 
     def do_measure(self, orientation, for_size):
         min, nat, min_b, nat_b = self.text_view.measure(orientation, for_size)
-        if (orientation == Gtk.Orientation.HORIZONTAL and min > 0):
+        if orientation == Gtk.Orientation.HORIZONTAL and min > 0:
             min = 0
         return min, nat, min_b, nat_b
 
@@ -92,7 +93,7 @@ class FontPreview(Gtk.Widget):
         colorstop2 = Gsk.ColorStop()
         colorstop2.offset, colorstop2.color = 1, color2
 
-        if (not self.__is_rtl()):
+        if not self.__is_rtl():
             new_fade = width - self.FADE_WIDTH
             snapshot.append_linear_gradient(
                 Graphene.Rect().init(
