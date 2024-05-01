@@ -40,17 +40,6 @@ template $FontPreviewCard: Box {
     child: Overlay {
       can-target: false;
 
-      [overlay]
-      Image details_arrow {
-        halign: end;
-        width-request: 35;
-        icon-name: "go-next-symbolic";
-
-        styles [
-          "details-arrow",
-        ]
-      }
-
       child: Stack display_stack {
         StackPage {
           name: "no-text";
@@ -68,24 +57,7 @@ template $FontPreviewCard: Box {
         StackPage {
           name: "text";
 
-          child: TextView output_text_view {
-            margin-top: 12;
-            margin-bottom: 12;
-            margin-start: 18;
-            margin-end: 18;
-            width-request: 210;
-            editable: false;
-            monospace: true;
-            cursor-visible: false;
-            hexpand: true;
-            vexpand: true;
-            accessible-role: none;
-            valign: center;
-
-            styles [
-              "font-size-7",
-            ]
-          };
+          child: $FontPreview output_text_view {};
         }
       };
     };

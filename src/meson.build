@@ -45,6 +45,7 @@ calligraphy_sources = [
   'fonts_list.py',
   'get_text_view_text.py',
   'font_view_page.py',
+  'font_preview.py',
   'font_preview_card.py',
   'update_button_sensitivity.py',
 ]
