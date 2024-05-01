@@ -34,7 +34,6 @@ class FontPreviewCard(Gtk.Box):
     output_text_view = Gtk.Template.Child()
     show_details_btn = Gtk.Template.Child()
     display_stack = Gtk.Template.Child()
-    details_arrow = Gtk.Template.Child()
 
     def __init__(self, parent_window, font_name, **kwargs):
         super().__init__(**kwargs)
@@ -80,6 +79,3 @@ class FontPreviewCard(Gtk.Box):
         self.display_stack.set_visible_child_name("text" if sensitive else "no-text")
 
         self.show_details_btn.set_sensitive(sensitive)
-        self.details_arrow.set_css_classes(
-            ["details-arrow" if sensitive else "dim-label"]
-        )

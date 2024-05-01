@@ -23,6 +23,7 @@ import pyfiglet
 from gi.repository import Adw, Gdk, Gio, Gtk
 
 from . import get_text_view_text
+from .font_preview import FontPreview
 from .font_preview_card import FontPreviewCard
 from .font_view_page import FontViewPage
 from .fonts_list import FONTS_LIST
