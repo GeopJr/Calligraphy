@@ -14,7 +14,7 @@ textview {
   border-radius: 12px;
 }
 
-.more-rounded-corners {
+gridview > child {
   border-radius: 16px;
 }
 

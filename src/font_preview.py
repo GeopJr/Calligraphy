@@ -24,7 +24,7 @@ import math
 class FontPreview(Gtk.Widget):
     __gtype_name__ = "FontPreview"
 
-    FADE_WIDTH = 168.0  # Adjust when gridview gets merged
+    FADE_WIDTH = 168.0
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -33,24 +33,21 @@ class FontPreview(Gtk.Widget):
         self.text_view.set_margin_bottom(12)
         self.text_view.set_margin_start(18)
         self.text_view.set_margin_end(18)
-        self.text_view.width_request = 210
         self.text_view.set_editable(False)
         self.text_view.set_monospace(True)
         self.text_view.set_cursor_visible(False)
-        self.text_view.set_hexpand(True)
         self.text_view.set_vexpand(True)
         self.text_view.set_valign(Gtk.Align.CENTER)
         self.text_view.set_focusable(False)
         self.text_view.set_can_focus(False)
+        self.text_view.set_size_request(210, -1)
         self.text_view.set_parent(self)
         self.text_view.add_css_class("font-size-7")
         self.set_vexpand(True)
+        self.set_hexpand(True)
 
     def do_measure(self, orientation, for_size):
-        min, nat, min_b, nat_b = self.text_view.measure(orientation, for_size)
-        if orientation == Gtk.Orientation.HORIZONTAL and min > 0:
-            min = 0
-        return min, nat, min_b, nat_b
+        return self.text_view.measure(orientation, for_size)
 
     def do_size_allocate(self, width, height, baseline):
         self.text_view.allocate(width, height, baseline, None)

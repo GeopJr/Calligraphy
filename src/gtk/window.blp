@@ -63,19 +63,13 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
                 name: "fonts-list";
 
                 child: ScrolledWindow {
-                  Adw.Clamp {
+                  Adw.ClampScrollable {
                     maximum-size: 1000;
                     tightening-threshold: 600;
 
-                    FlowBox preview_list_flowbox {
-                      selection-mode: none;
-                      margin-bottom: 24;
-                      margin-start: 12;
-                      margin-end: 12;
-                      column-spacing: 6; // The extra spacing is handled in style.css
-                      max-children-per-line: 2;
-                      homogeneous: true;
-                      valign: start;
+                    GridView preview_list_grid_view {
+                      enable-rubberband: false;
+                      single-click-activate: true;
                     }
                   }
                 };
@@ -126,6 +120,7 @@ template $CalligraphyWindow: Adw.ApplicationWindow {
                   margin-bottom: 6;
                   hexpand: true;
                   input-purpose: alpha;
+                  accepts-tab: false;
                 }
               }
 

@@ -35,22 +35,20 @@ class FontPreviewCard(Gtk.Box):
     show_details_btn = Gtk.Template.Child()
     display_stack = Gtk.Template.Child()
 
-    def __init__(self, parent_window, font_name, **kwargs):
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        # Needed for search from window.py
-        self.font_name = font_name
-        self.font = FONTS_LIST[font_name]
-
-        self.font_name_label.set_label(font_name)
-
         self.output_buffer = self.output_text_view.get_buffer()
+        self.content_changed_signal_id = -1
 
-        copy_callback = lambda *args: parent_window.show_copied_toast(font_name)
+    def bind(self, parent_window, font_name):
+        font_name_str = font_name.get_string()
+        # Needed for search from window.py
+        self.font_name = font_name_str
+        self.font = FONTS_LIST[font_name_str]
+        self.font_name_label.set_label(font_name_str)
+
+        copy_callback = lambda *args: parent_window.show_copied_toast(font_name_str)
         self.copy_btn.connect("clicked", copy_callback)
-
-        details_callback = lambda *args: parent_window.go_to_details_page(font_name)
-        self.show_details_btn.connect("clicked", details_callback)
 
         infinity = float("inf")
         self.figlet = Figlet(font=self.font, width=infinity)
@@ -64,7 +62,14 @@ class FontPreviewCard(Gtk.Box):
         card_width_in_chars = 70
         self.first_needed_chars = int(card_width_in_chars / width_thinnest_char)
 
+    def on_content_changed(self, inst, text):
+        self.update_text(text)
+
     def update_text(self, text):
+        if text == "":
+            self.output_buffer.set_text(text)
+            return
+
         first_line = text.splitlines()[0]
         only_needed_letters = first_line[: self.first_needed_chars]
         output = self.figlet.renderText(only_needed_letters)

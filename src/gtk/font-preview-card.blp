@@ -4,6 +4,12 @@ using Adw 1;
 template $FontPreviewCard: Box {
   orientation: vertical;
   height-request: 272;
+  accessible-role: button;
+
+  accessibility {
+		labelled-by: font_name_label;
+    description: _("Show Details");
+	}
 
   styles [
     "extra-padding-except-top",
@@ -32,7 +38,7 @@ template $FontPreviewCard: Box {
     }
   }
 
-  Button show_details_btn {
+  Adw.Bin show_details_btn {
     styles [
       "card",
     ]

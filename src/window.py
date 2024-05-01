@@ -20,7 +20,7 @@
 import re
 
 import pyfiglet
-from gi.repository import Adw, Gdk, Gio, Gtk
+from gi.repository import Adw, Gdk, Gio, Gtk, GObject
 
 from . import get_text_view_text
 from .font_preview import FontPreview
@@ -42,8 +42,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     clear_input_btn = Gtk.Template.Child()
     toast_overlay = Gtk.Template.Child()
     welcome_stack = Gtk.Template.Child()
-    preview_list_flowbox = Gtk.Template.Child()
+    preview_list_grid_view = Gtk.Template.Child()
     warning_revealer = Gtk.Template.Child()
+
+    @GObject.Signal(arg_types=(str,))
+    def content_changed(self, *args):
+        return
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -54,11 +58,29 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         settings.bind("window-height", self, "default-height", bind_flags)
         settings.bind("window-is-maximized", self, "maximized", bind_flags)
 
-        self.search_bar.connect_entry(self.search_entry)
+        self.current_input = ""
+        self.preview_list_grid_view.remove_css_class("view")
 
-        self.preview_list_flowbox.set_filter_func(self.__filter_func)
+        self.font_filter = Gtk.StringFilter.new(
+            Gtk.PropertyExpression.new(Gtk.StringObject, None, "string")
+        )
+        self.font_filter.set_match_mode(Gtk.StringFilterMatchMode.PREFIX)
+        self.model = Gtk.FilterListModel.new(
+            Gtk.StringList.new(list(FONTS_LIST.keys())), self.font_filter
+        )
+        self.no_selection_model = Gtk.NoSelection.new(self.model)
+
+        self.item_factory = Gtk.SignalListItemFactory()
+        self.item_factory.connect("setup", self.__item_setup)
+        self.item_factory.connect("bind", self.__item_bind)
+        self.item_factory.connect("unbind", self.__item_unbind)
+
+        self.preview_list_grid_view.set_factory(self.item_factory)
+        self.preview_list_grid_view.set_model(self.no_selection_model)
+        self.preview_list_grid_view.connect("activate", self.__item_activate)
+
+        self.search_bar.connect_entry(self.search_entry)
         self.search_entry.connect("search-changed", self.__on_search_changed)
-        self.search_results_count = 0
 
         self.input_buffer = self.input_text_view.get_buffer()
         self.input_buffer.connect("changed", self.__on_input_changed)
@@ -67,40 +89,37 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         self.clear_input_btn.connect("clicked", self.__on_input_cleared)
 
-        self.preview_cards_list = []
+    def __item_setup(self, _factory, list_item):
+        list_item.set_child(FontPreviewCard())
 
-        for font_name in FONTS_LIST:
-            card = FontPreviewCard(parent_window=self, font_name=font_name)
-            flowbox_card = Gtk.FlowBoxChild(child=card)
-
-            flowbox_card.add_css_class("more-rounded-corners")
-            self.preview_list_flowbox.append(flowbox_card)
-            self.preview_cards_list.append(card)
-
-    def __filter_func(self, flowbox_child):
-        search_term = self.search_entry.get_text()
-        matches_pattern = (
-            lambda pattern: re.search(search_term, pattern, re.IGNORECASE) != None
+    def __item_bind(self, _factory, list_item):
+        fpc = list_item.get_child()
+        fpc.bind(parent_window=self, font_name=list_item.get_item())
+        fpc.content_changed_signal_id = self.connect(
+            "content-changed", fpc.on_content_changed
         )
-        preview_card = flowbox_child.get_child()
-        child_matches = matches_pattern(preview_card.font_name) or matches_pattern(
-            preview_card.font
-        )
-        if child_matches:
-            self.search_results_count += 1
-        return child_matches
+        fpc.update_text(self.current_input)
+
+    def __item_unbind(self, _factory, list_item):
+        fpc_signal_id = list_item.get_child().content_changed_signal_id
+        if fpc_signal_id >= 0:
+            self.disconnect(list_item.get_child().content_changed_signal_id)
+
+    def __item_activate(self, _list, pos):
+        font_name = self.no_selection_model.get_item(pos)
+        if not font_name:
+            return
+        self.go_to_details_page(font_name.get_string())
 
     def __on_search_changed(self, *args):
-        self.preview_list_flowbox.invalidate_filter()
-
+        self.font_filter.set_search(self.search_entry.get_text())
         page_to_set = "welcome"
         if self.notable_input:
             page_to_set = "fonts-list"
-            if self.search_results_count == 0:
+            if self.model.get_n_items() == 0:
                 page_to_set = "no-results"
 
             self.welcome_stack.set_visible_child_name(page_to_set)
-        self.search_results_count = 0
 
     def __on_input_changed(self, *args):
         raw_input = get_text_view_text.get(self.input_buffer)
@@ -117,11 +136,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         if self.notable_input:
             page_to_set = "fonts-list"
-            for card in self.preview_cards_list:
-                card.update_text(input_text)
+            self.emit("content-changed", input_text)
         else:
             page_to_set = "welcome"
             self.search_bar.set_search_mode(False)
+
+        self.current_input = input_text
 
         if not self.search_bar.get_search_mode():
             self.welcome_stack.set_visible_child_name(page_to_set)
