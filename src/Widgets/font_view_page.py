@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import pyfiglet
-from gi.repository import Adw, Gtk
+from gi.repository import Adw, Gtk, Graphene
 
 from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
@@ -37,6 +37,7 @@ class FontViewPage(Adw.NavigationPage):
 
         self.font = FONTS_LIST[font_name]
         self.set_title(font_name)
+        self.parent_window = parent_window
 
         copy_callback = lambda *args: parent_window.show_copied_toast(font_name)
         self.copy_btn.connect("clicked", copy_callback)
@@ -50,3 +51,35 @@ class FontViewPage(Adw.NavigationPage):
         self.output_label.set_label(output)
 
         update_button_sensitivity.update(self.copy_btn, output_exists)
+
+    @Gtk.Template.Callback()
+    def screenshot(self, *args):
+        dialog = Gtk.FileDialog()
+        dialog.set_modal(True)
+        dialog.set_initial_name(f"{self.font}.png")
+        dialog.save(self.parent_window, None, self.__do_screenshot)
+
+    def __do_screenshot(self, source, res):
+        try:
+            filename = res.get_source_object().save_finish(res).get_path()
+            paintable = Gtk.WidgetPaintable(widget=self.output_label)
+            width = self.output_label.get_width()
+            height = self.output_label.get_height()
+            snapshot = Gtk.Snapshot()
+            paintable.snapshot(snapshot, width, height)
+            node = snapshot.to_node()
+            if node is None:
+                print(f"Could not get node snapshot, width: {width}, height: {height}")
+                return
+            renderer = self.output_label.get_native().get_renderer()
+
+            rect = Graphene.rect_alloc()
+            rect.origin = Graphene.Point.zero()
+            size = Graphene.Size.alloc()
+            size.width = float(width)
+            size.height = float(height)
+            rect.size = size
+            texture = renderer.render_texture(node, rect)
+            texture.save_to_png(filename)
+        except Exception as e:
+            print(e)

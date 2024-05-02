@@ -30,6 +30,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 locale.bindtextdomain('calligraphy', "@LOCALEDIR@")
 locale.textdomain('calligraphy')
 gettext.install('calligraphy', "@LOCALEDIR@")
+os.unsetenv("GTK_THEME")
 
 if __name__ == '__main__':
     import gi

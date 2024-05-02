@@ -13,6 +13,13 @@
                 <property name="tooltip-text" translatable="yes">Copy to Clipboard</property>
               </object>
             </child>
+            <child type="end">
+              <object class="GtkButton" id="screenshot_btn">
+                <property name="icon-name">screenshot-recorded-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Export as Image</property>
+                <signal name="clicked" handler="screenshot" swapped="no" />
+              </object>
+            </child>
           </object>
         </child>
         <property name="content">
@@ -27,8 +34,8 @@
                       <object class="GtkLabel" id="output_label">
                         <property name="margin-start">12</property>
                         <property name="margin-end">12</property>
-                        <property name="hexpand">true</property>
-                        <property name="vexpand">true</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
                         <property name="accessible-role">40</property>
                         <style>
                           <class name="monospace"/>

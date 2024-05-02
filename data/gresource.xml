@@ -14,5 +14,6 @@
 
   <gresource prefix="/dev/geopjr/Calligraphy/icons/scalable/actions/">
     <file alias="text2-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/text2-symbolic.svg</file>
+    <file alias="screenshot-recorded-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/screenshot-recorded-symbolic.svg</file>
   </gresource>
 </gresources>
