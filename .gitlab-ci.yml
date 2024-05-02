@@ -1,18 +1,23 @@
 image: python:3.12
 
+stages:
+  - lint
+  - build
+
 include:
   - project: "GNOME/citemplates"
     file: "flatpak/flatpak_ci_initiative.yml"
 
 .vars:
   variables:
-    MANIFEST_PATH: io.gitlab.gregorni.Calligraphy.json
+    MANIFEST_PATH: build-aux/dev.geopjr.Calligraphy.Devel.json
     FLATPAK_MODULE: calligraphy
-    APP_ID: io.gitlab.gregorni.Calligraphy
+    APP_ID: dev.geopjr.Calligraphy
     RUNTIME_REPO: https://nightly.gnome.org/gnome-nightly.flatpakrepo
-    BUNDLE: calligraphy.flatpak
+    BUNDLE: dev.geopjr.Calligraphy.Devel.flatpak
 
 pre-commit:
+  stage: lint
   script:
     - pip install pre-commit --quiet
     - pre-commit run --all-files

@@ -1,6 +1,6 @@
-data/io.gitlab.gregorni.Calligraphy.desktop.in
-data/io.gitlab.gregorni.Calligraphy.metainfo.xml.in
-data/io.gitlab.gregorni.Calligraphy.gschema.xml
+data/dev.geopjr.Calligraphy.desktop.in
+data/dev.geopjr.Calligraphy.metainfo.xml.in
+data/dev.geopjr.Calligraphy.gschema.xml
 
 src/main.py
 src/window.py

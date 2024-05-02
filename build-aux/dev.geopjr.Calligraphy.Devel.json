@@ -1,5 +1,5 @@
 {
-    "id": "io.gitlab.gregorni.Calligraphy",
+    "id": "dev.geopjr.Calligraphy",
     "runtime": "org.gnome.Platform",
     "runtime-version": "master",
     "sdk": "org.gnome.Sdk",
@@ -22,7 +22,6 @@
         "*.a"
     ],
     "modules": [
-        "build-aux/blueprint-compiler.json",
         {
             "name": "pyfiglet",
             "buildsystem": "simple",
@@ -32,8 +31,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/8e/c3/8987ec451bcdefa71f6d182f6530d432d81aa26a5491fc9a6dc83b283525/pyfiglet-1.0.1.tar.gz",
-                    "sha256": "c7d9088a6f821bdf69c58d9757378085a76881626b2308e6bbda707121607f18"
+                    "url": "https://files.pythonhosted.org/packages/a0/f2/2649b2acace54f861eccd4ab163bfd914236fc93ddb1df02dad2a2552b14/pyfiglet-1.0.2.tar.gz",
+                    "sha256": "758788018ab8faaddc0984e1ea05ff330d3c64be663c513cc1f105f6a3066dab"
                 }
             ]
         },
@@ -42,10 +41,13 @@
             "builddir": true,
             "buildsystem": "meson",
             "run-tests": true,
+            "config-opts": [
+                "-Ddevel=true"
+            ],
             "sources": [
                 {
                     "type": "dir",
-                    "path": "."
+                    "path": ".."
                 }
             ]
         }

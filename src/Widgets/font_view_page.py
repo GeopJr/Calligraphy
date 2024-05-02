@@ -1,4 +1,4 @@
-# font_view.py
+# font_view_page.py
 #
 # Copyright 2023 Calligraphy Contributors
 #
@@ -24,7 +24,7 @@ from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/font-view-page.ui")
+@Gtk.Template(resource_path="/dev/geopjr/Calligraphy/gtk/font-view-page.ui")
 class FontViewPage(Adw.NavigationPage):
     __gtype_name__ = "FontViewPage"
 

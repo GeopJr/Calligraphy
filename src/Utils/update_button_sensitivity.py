@@ -1,6 +1,4 @@
-#!@PYTHON@
-
-# calligraphy.in
+# update_button_sensitivity.py
 #
 # Copyright 2023 Calligraphy Contributors
 #
@@ -19,24 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import os
-import sys
-import signal
-import locale
-import gettext
 
-sys.path.insert(1, "@PKGDATADIR@")
-signal.signal(signal.SIGINT, signal.SIG_DFL)
-locale.bindtextdomain('calligraphy', "@LOCALEDIR@")
-locale.textdomain('calligraphy')
-gettext.install('calligraphy', "@LOCALEDIR@")
-
-if __name__ == '__main__':
-    import gi
-
-    from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join("@PKGDATADIR@", '@APP_ID@.gresource'))
-    resource._register()
-
-    from calligraphy import main
-    sys.exit(main.main("@VERSION@"))
+def update(button, text_exists):
+    button.set_sensitive(text_exists)
+    button.set_tooltip_text(_("Copy") if text_exists else _("Output Empty"))

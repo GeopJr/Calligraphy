@@ -18,13 +18,13 @@ msgstr ""
 "X-Generator: Poedit 3.3.1\n"
 
 #. Translators: Translate as "Calligraphy"
-#: data/io.gitlab.gregorni.Calligraphy.desktop.in:4
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
+#: data/dev.geopjr.Calligraphy.desktop.in:4
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
-#: data/io.gitlab.gregorni.Calligraphy.desktop.in:5
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:9
+#: data/dev.geopjr.Calligraphy.desktop.in:5
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:9
 #, fuzzy
 msgid "Turn text into ASCII banners"
 msgstr "Passatz vòstre tèxt en bandièra ASCII"
@@ -32,11 +32,11 @@ msgstr "Passatz vòstre tèxt en bandièra ASCII"
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
-#: data/io.gitlab.gregorni.Calligraphy.desktop.in:14
+#: data/dev.geopjr.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;"
 msgstr "ascii;convert;convertir;conversion;text;tèxt;"
 
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:12
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:12
 msgid ""
 "Calligraphy turns short texts into large, impressive banners made up of "
 "ASCII Characters. Spice up your online conversations by adding some extra "
@@ -47,42 +47,42 @@ msgstr ""
 "apondent de picant a vòstres messatges !"
 
 #. Translators: This is a search term and should be lowercase
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:26
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:26
 msgid "ascii"
 msgstr "ascii"
 
 #. Translators: This is a search term and should be lowercase
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:28
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:28
 msgid "convert"
 msgstr "convertir"
 
 #. Translators: This is a search term and should be lowercase
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:30
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:30
 msgid "conversion"
 msgstr "conversion"
 
 #. Translators: This is a search term and should be lowercase
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:32
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:32
 msgid "text"
 msgstr "tèxte"
 
 #. Translators: This is a screenshot caption
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:50
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:50
 msgid "Landing Page"
 msgstr ""
 
 #. Translators: This is a screenshot caption
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:55
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:55
 msgid "Entry"
 msgstr ""
 
 #. Translators: This is a screenshot caption
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:60
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:60
 msgid "Search"
 msgstr ""
 
 #. Translators: This is a screenshot caption
-#: data/io.gitlab.gregorni.Calligraphy.appdata.xml.in:65
+#: data/dev.geopjr.Calligraphy.appdata.xml.in:65
 #, fuzzy
 msgid "Detailed View"
 msgstr "Vista tèxte"

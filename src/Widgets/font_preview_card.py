@@ -1,4 +1,4 @@
-# font_preview.py
+# font_preview_card.py
 #
 # Copyright 2023 Calligraphy Contributors
 #
@@ -25,7 +25,7 @@ from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/font-preview-card.ui")
+@Gtk.Template(resource_path="/dev/geopjr/Calligraphy/gtk/font-preview-card.ui")
 class FontPreviewCard(Gtk.Box):
     __gtype_name__ = "FontPreviewCard"
 

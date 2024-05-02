@@ -27,9 +27,10 @@ from .font_preview import FontPreview
 from .font_preview_card import FontPreviewCard
 from .font_view_page import FontViewPage
 from .fonts_list import FONTS_LIST
+from .env import DEVEL
 
 
-@Gtk.Template(resource_path="/io/gitlab/gregorni/Calligraphy/gtk/window.ui")
+@Gtk.Template(resource_path="/dev/geopjr/Calligraphy/gtk/window.ui")
 class CalligraphyWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CalligraphyWindow"
 
@@ -52,11 +53,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        settings = Gio.Settings(schema_id="io.gitlab.gregorni.Calligraphy")
+        settings = Gio.Settings(schema_id="dev.geopjr.Calligraphy")
         bind_flags = Gio.SettingsBindFlags.DEFAULT
         settings.bind("window-width", self, "default-width", bind_flags)
         settings.bind("window-height", self, "default-height", bind_flags)
         settings.bind("window-is-maximized", self, "maximized", bind_flags)
+
+        if DEVEL:
+            self.add_css_class("devel")
 
         self.current_input = ""
         self.preview_list_grid_view.remove_css_class("view")

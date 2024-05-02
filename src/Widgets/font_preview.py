@@ -46,6 +46,9 @@ class FontPreview(Gtk.Widget):
         self.set_vexpand(True)
         self.set_hexpand(True)
 
+    def __del__(self):
+        self.text_view.unparent()
+
     def do_measure(self, orientation, for_size):
         return self.text_view.measure(orientation, for_size)
 

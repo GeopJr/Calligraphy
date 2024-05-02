@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>io.gitlab.gregorni.Calligraphy.desktop</id>
+	<id>dev.geopjr.Calligraphy.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
-
   <name translatable="no">Calligraphy</name>
-  <developer id="io.gitlab.gregorni">
-    <name translatable="no">Gregor Niehl</name>
+  <developer id="dev.geopjr">
+    <name translate="no">Evangelos "GeopJr" Paterakis</name>
   </developer>
-
   <summary>Turn text into ASCII banners</summary>
 	<description>
 	  <p>
@@ -16,56 +14,44 @@
 	    Spice up your online conversations by adding some extra oompf to your messages!
 	  </p>
 	</description>
-
   <requires>
     <internet>offline-only</internet>
     <display_length compare="ge">360</display_length>
   </requires>
-
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
     <control>touch</control>
   </recommends>
-
   <screenshots>
     <screenshot type="default">
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
+      <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Entry</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/search.png</image>
+      <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/search.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Search</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/World/Calligraphy/-/raw/main/data/screenshots/detailed-view.png</image>
+      <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/detailed-view.png</image>
       <!--Translators: This is a screenshot caption-->
       <caption>Detailed View</caption>
     </screenshot>
   </screenshots>
-
-  <launchable type="desktop-id">io.gitlab.gregorni.Calligraphy.desktop</launchable>
-  <translation type="gettext">calligraphy</translation>
-
-  <url type="homepage">https://gitlab.gnome.org/World/Calligraphy</url>
-  <url type="bugtracker">https://gitlab.gnome.org/World/Calligraphy/-/issues</url>
-  <url type="help">https://gitlab.gnome.org/World/Calligraphy/-/issues</url>
-  <url type="vcs-browser">https://gitlab.gnome.org/World/Calligraphy</url>
-  <url type="contribute">https://gitlab.gnome.org/World/Calligraphy</url>
-  <url type="contact">https://matrix.to/#/#gregorni-apps:matrix.org</url>
-  <url type="translate">https://hosted.weblate.org/engage/calligraphy/</url>
-
-  <update_contact>gregorniehl@web.de</update_contact>
-
+  <launchable type="desktop-id">dev.geopjr.Calligraphy.desktop</launchable>
+  <translation type="gettext">dev.geopjr.Calligraphy</translation>
+  <url type="homepage">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues</url>
+  <url type="help">https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
+  <url type="contribute">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
   <content_rating type="oars-1.1" />
-
   <provides>
-    <binary>calligraphy</binary>
-    <id>io.gitlab.gregorni.Calligraphy</id>
+    <binary>dev.geopjr.Calligraphy</binary>
+    <id>dev.geopjr.Calligraphy</id>
   </provides>
-
   <releases>
     <release version="1.0.0" date="2023-05-31">
       <description translatable="no">
@@ -73,7 +59,6 @@
       </description>
     </release>
   </releases>
-
   <kudos>
       <!--
         GNOME Software kudos:
@@ -82,10 +67,8 @@
       <kudo>ModernToolkit</kudo>
       <kudo>HiDpiIcon</kudo>
   </kudos>
-
   <branding>
     <color type="primary" scheme_preference="light">#bdadff</color>
     <color type="primary" scheme_preference="dark">#443972</color>
   </branding>
-
 </component>

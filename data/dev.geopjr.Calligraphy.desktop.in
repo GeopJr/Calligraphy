@@ -3,7 +3,7 @@
 Name=Calligraphy
 Comment=Turn text into ASCII banners
 Exec=calligraphy
-Icon=io.gitlab.gregorni.Calligraphy
+Icon=dev.geopjr.Calligraphy
 Terminal=false
 Type=Application
 Categories=GTK;GNOME;TextTools;Utility;

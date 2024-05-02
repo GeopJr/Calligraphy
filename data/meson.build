@@ -1,10 +1,20 @@
+install_data(
+  meson.project_name() + '.gschema.xml',
+  install_dir: join_paths(
+      get_option('prefix'),
+      get_option('datadir'),
+      'glib-2.0',
+      'schemas',
+  ),
+)
+
 desktop_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.Calligraphy.desktop.in',
-       output: 'io.gitlab.gregorni.Calligraphy.desktop',
-         type: 'desktop',
-       po_dir: '../po',
-      install: true,
-  install_dir: join_paths(get_option('datadir'), 'applications')
+  input: meson.project_name() + '.desktop.in',
+  output: meson.project_name() + '.desktop',
+  po_dir: join_paths(meson.project_source_root(), 'po'),
+  type: 'desktop',
+  install: true,
+  install_dir: join_paths(get_option('datadir'), 'applications'),
 )
 
 desktop_utils = find_program('desktop-file-validate', required: false)
@@ -13,23 +23,23 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-        input: 'io.gitlab.gregorni.Calligraphy.metainfo.xml.in',
-       output: 'io.gitlab.gregorni.Calligraphy.metainfo.xml',
-       po_dir: '../po',
-      install: true,
-  install_dir: join_paths(get_option('datadir'), 'metainfo')
+  input: meson.project_name() + '.metainfo.xml.in',
+  output: meson.project_name() + '.metainfo.xml',
+  po_dir: join_paths(meson.project_source_root(), 'po'),
+  install: true,
+  install_dir: join_paths(get_option('datadir'), 'metainfo'),
 )
 
-appstreamcli = find_program('appstreamcli', required: false)
-if appstreamcli.found()
-  test('Validate appstream file',
-       appstreamcli,
-       args: ['validate', '--no-net', '--explain', appstream_file],
-       workdir: meson.current_build_dir()
+appstream_util = find_program('appstream-util', required: false)
+if appstream_util.found()
+  test(
+      'Validate appstream file',
+      appstream_util,
+      args: ['validate-relax', '--nonet', appstream_file],
   )
 endif
 
-install_data('io.gitlab.gregorni.Calligraphy.gschema.xml',
+install_data('dev.geopjr.Calligraphy.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 
@@ -39,5 +49,13 @@ if compile_schemas.found()
        compile_schemas,
        args: ['--strict', '--dry-run', meson.current_source_dir()])
 endif
+
+gnome.compile_resources(meson.project_name(),
+  'gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
+  dependencies: [appstream_file],
+)
 
 subdir('icons')

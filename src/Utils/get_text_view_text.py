@@ -1,4 +1,4 @@
-# main.py
+# get_text_view_text.py
 #
 # Copyright 2023 Calligraphy Contributors
 #
@@ -18,6 +18,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
-def update(button, text_exists):
-    button.set_sensitive(text_exists)
-    button.set_tooltip_text(_("Copy") if text_exists else _("Output Empty"))
+def get(buffer):
+    include_hidden_chars = False
+    return buffer.get_text(
+        buffer.get_start_iter(),
+        buffer.get_end_iter(),
+        include_hidden_chars,
+    )

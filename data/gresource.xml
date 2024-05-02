@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/gitlab/gregorni/Calligraphy">
+  <gresource prefix="/dev/geopjr/Calligraphy">
     <file>style.css</file>
     <file>style-dark.css</file>
 
@@ -9,10 +9,10 @@
     <file preprocess="xml-stripblanks">gtk/font-view-page.ui</file>
     <file preprocess="xml-stripblanks">gtk/font-preview-card.ui</file>
 
-    <file alias="metainfo.xml" preprocess="xml-stripblanks">../data/io.gitlab.gregorni.Calligraphy.metainfo.xml</file>
+    <file alias="metainfo.xml" preprocess="xml-stripblanks">dev.geopjr.Calligraphy.metainfo.xml</file>
   </gresource>
 
-  <gresource prefix="/io/gitlab/gregorni/Calligraphy/icons/scalable/actions/">
-    <file alias="text2-symbolic.svg" preprocess="xml-stripblanks">icons/text2-symbolic.svg</file>
+  <gresource prefix="/dev/geopjr/Calligraphy/icons/scalable/actions/">
+    <file alias="text2-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/text2-symbolic.svg</file>
   </gresource>
 </gresources>

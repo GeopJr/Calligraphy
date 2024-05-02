@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="calligraphy">
-	<schema id="io.gitlab.gregorni.Calligraphy" path="/io/gitlab/gregorni/Calligraphy/">
+	<schema id="dev.geopjr.Calligraphy" path="/dev/geopjr/Calligraphy/">
 	  <key name="window-width" type="i">
       <default>800</default>
     </key>
