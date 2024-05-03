@@ -7,6 +7,12 @@
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar">
+            <child type="start">
+              <object class="GtkButton" id="wrap_btn">
+                <property name="icon-name">edit-copy-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Toggle Wrapping</property>
+              </object>
+            </child>
             <child type="end">
               <object class="GtkButton" id="copy_btn">
                 <property name="icon-name">edit-copy-symbolic</property>
@@ -15,7 +21,7 @@
             </child>
             <child type="end">
               <object class="GtkButton" id="screenshot_btn">
-                <property name="icon-name">screenshot-recorded-symbolic</property>
+                <property name="icon-name">image-round-symbolic</property>
                 <property name="tooltip-text" translatable="yes">Export as Image</property>
                 <signal name="clicked" handler="screenshot" swapped="no" />
               </object>

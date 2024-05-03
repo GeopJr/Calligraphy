@@ -22,6 +22,7 @@ from gi.repository import Adw, Gtk, Graphene
 
 from . import update_button_sensitivity
 from .fonts_list import FONTS_LIST
+from .is_rtl import is_rtl
 
 
 @Gtk.Template(resource_path="/dev/geopjr/Calligraphy/gtk/font-view-page.ui")
@@ -30,11 +31,17 @@ class FontViewPage(Adw.NavigationPage):
 
     main_stack = Gtk.Template.Child()
     copy_btn = Gtk.Template.Child()
+    wrap_btn = Gtk.Template.Child()
     output_label = Gtk.Template.Child()
+    parent_window = None
+    text = ""
 
     def __init__(self, font_name, parent_window, **kwargs):
         super().__init__(**kwargs)
 
+        self.font_name = font_name
+        self.parent_window = parent_window
+        self.font_width = self.__get_width()
         self.font = FONTS_LIST[font_name]
         self.set_title(font_name)
         self.parent_window = parent_window
@@ -42,8 +49,13 @@ class FontViewPage(Adw.NavigationPage):
         copy_callback = lambda *args: parent_window.show_copied_toast(font_name)
         self.copy_btn.connect("clicked", copy_callback)
 
-    def update_text(self, text):
-        output = pyfiglet.figlet_format(text, font=self.font)
+        self.__update_wrap_btn_icon()
+        self.wrap_btn.connect("clicked", self.__wrap_btn_clicked_callback)
+
+    def update_text(self, text: str) -> None:
+        self.text = text
+        self.font.width = self.font_width
+        output = self.font.renderText(text)
         output_exists = output != ""
         self.main_stack.set_visible_child_name(
             "text-view" if output_exists else "no-text"
@@ -56,7 +68,7 @@ class FontViewPage(Adw.NavigationPage):
     def screenshot(self, *args):
         dialog = Gtk.FileDialog()
         dialog.set_modal(True)
-        dialog.set_initial_name(f"{self.font}.png")
+        dialog.set_initial_name(f"{self.font_name}.png")
         dialog.save(self.parent_window, None, self.__do_screenshot)
 
     def __do_screenshot(self, source, res):
@@ -83,3 +95,23 @@ class FontViewPage(Adw.NavigationPage):
             texture.save_to_png(filename)
         except Exception as e:
             print(e)
+
+    def __wrap_btn_clicked_callback(self, inst) -> None:
+        self.parent_window.wrap = not self.parent_window.wrap
+        self.font_width = self.__get_width()
+        self.__update_wrap_btn_icon()
+        self.update_text(self.text)
+
+    def __update_wrap_btn_icon(self) -> None:
+        self.wrap_btn.set_icon_name(self.__get_wrap_icon())
+
+    def __get_width(self) -> int | float:
+        return 80 if self.parent_window.wrap else float("inf")
+
+    def __get_wrap_icon(self) -> str:
+        direction = "left" if is_rtl() else "right"
+
+        if self.parent_window.wrap:
+            return f"arrow-turn-{direction}-down-symbolic"
+        else:
+            return f"arrow4-{direction}-symbolic"

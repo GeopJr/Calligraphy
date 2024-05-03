@@ -16,6 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
+from pyfiglet import Figlet
 
 FONTS_LIST = {
     "3D": "3-d",
@@ -66,3 +67,9 @@ FONTS_LIST = {
     "Universe": "univers",
     "USA Flag": "usaflag",
 }
+
+
+def convert_to_fonts():
+    inf = float("inf")
+    for key in FONTS_LIST:
+        FONTS_LIST[key] = Figlet(font=FONTS_LIST[key], width=inf)

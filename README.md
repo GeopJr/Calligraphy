@@ -1,12 +1,9 @@
-<p align="center">
+<div align="center">
   <img alt="An ink bottle in the style of GNOME icons" width="160" src="./data/icons/hicolor/scalable/apps/dev.geopjr.Calligraphy.svg">
-</p>
-<h1 align="center">Calligraphy</h1>
-<h3 align="center">Turn text into ASCII banners</h3>
-
-<p align="center">
-    <img alt="" src="./data/screenshots/entry.png">
-</p>
+  <h1>Calligraphy</h1>
+  <h3>Turn text into ASCII banners</h3>
+  <img alt="" src="./data/screenshots/entry.png">
+</div>
 
 # Acknowledgements
 

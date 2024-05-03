@@ -10,5 +10,8 @@
     <key name="window-is-maximized" type="b">
       <default>false</default>
     </key>
+    <key name="wrap" type="b">
+      <default>true</default>
+    </key>
 	</schema>
 </schemalist>

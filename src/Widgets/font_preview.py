@@ -19,6 +19,7 @@
 
 from gi.repository import Gtk, Gsk, Graphene, Gdk
 import math
+from .is_rtl import is_rtl
 
 
 class FontPreview(Gtk.Widget):
@@ -40,6 +41,7 @@ class FontPreview(Gtk.Widget):
         self.text_view.set_valign(Gtk.Align.CENTER)
         self.text_view.set_focusable(False)
         self.text_view.set_can_focus(False)
+        self.text_view.set_can_target(False)
         self.text_view.set_size_request(210, -1)
         self.text_view.set_parent(self)
         self.text_view.add_css_class("font-size-7")
@@ -93,7 +95,7 @@ class FontPreview(Gtk.Widget):
         colorstop2 = Gsk.ColorStop()
         colorstop2.offset, colorstop2.color = 1, color2
 
-        if not self.__is_rtl():
+        if not is_rtl():
             new_fade = width - self.FADE_WIDTH
             snapshot.append_linear_gradient(
                 Graphene.Rect().init(
@@ -122,8 +124,5 @@ class FontPreview(Gtk.Widget):
 
         node.unref()
 
-    def __is_rtl(self):
-        return Gtk.Widget.get_default_direction() == Gtk.TextDirection.RTL
-
-    def get_buffer(self):
+    def get_buffer(self) -> Gtk.TextBuffer:
         return self.text_view.get_buffer()

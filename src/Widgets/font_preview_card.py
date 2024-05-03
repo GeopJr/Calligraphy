@@ -17,8 +17,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
-from gi.repository import Gtk
+import threading
+from gi.repository import Gtk, GLib
 from pyfiglet import Figlet
 
 from . import update_button_sensitivity
@@ -32,55 +32,37 @@ class FontPreviewCard(Gtk.Box):
     font_name_label = Gtk.Template.Child()
     copy_btn = Gtk.Template.Child()
     output_text_view = Gtk.Template.Child()
-    show_details_btn = Gtk.Template.Child()
     display_stack = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.output_buffer = self.output_text_view.get_buffer()
         self.content_changed_signal_id = -1
+        self.first_needed_chars = 10
+        self.figlet = None
 
     def bind(self, parent_window, font_name):
         font_name_str = font_name.get_string()
-        # Needed for search from window.py
-        self.font_name = font_name_str
-        self.font = FONTS_LIST[font_name_str]
+        self.figlet = FONTS_LIST[font_name_str]
         self.font_name_label.set_label(font_name_str)
 
         copy_callback = lambda *args: parent_window.show_copied_toast(font_name_str)
         self.copy_btn.connect("clicked", copy_callback)
 
-        infinity = float("inf")
-        self.figlet = Figlet(font=self.font, width=infinity)
-
-        thinnest_output_char = self.figlet.renderText(".")
-        if thinnest_output_char == "":
-            thinnest_output_char = self.figlet.renderText("i")
-        thinnest_non_whitespace = thinnest_output_char.strip().splitlines()[0].strip()
-        width_thinnest_char = len(thinnest_non_whitespace)
-
-        card_width_in_chars = 70
-        self.first_needed_chars = int(card_width_in_chars / width_thinnest_char)
-
-    def on_content_changed(self, inst, text):
+    def on_content_changed(self, inst, text: str) -> None:
         self.update_text(text)
 
-    def update_text(self, text):
+    def update_text(self, text: str) -> None:
+        output_buffer = self.output_text_view.get_buffer()
         if text == "":
-            self.output_buffer.set_text(text)
+            output_buffer.set_text(text)
             return
 
-        first_line = text.splitlines()[0]
-        only_needed_letters = first_line[: self.first_needed_chars]
+        full_text = text.replace("\n", " ")
+        only_needed_letters = full_text[: self.first_needed_chars]
         output = self.figlet.renderText(only_needed_letters)
-        self.output_buffer.set_text(output)
-
-        output_exists = output != ""
-        self.__update_sensitivity(output_exists)
+        output_buffer.set_text(output)
+        self.__update_sensitivity(output != "")
 
     def __update_sensitivity(self, sensitive):
         update_button_sensitivity.update(self.copy_btn, sensitive)
-
         self.display_stack.set_visible_child_name("text" if sensitive else "no-text")
-
-        self.show_details_btn.set_sensitive(sensitive)
