@@ -47,6 +47,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     warning_revealer = Gtk.Template.Child()
     toolbarview = Gtk.Template.Child()
 
+    preview_first_needed_chars = 15
     safe_regex = re.compile(r"[^a-zA-Z\s]")
     __wrap = True
 
@@ -104,6 +105,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.search_bar.connect_entry(self.search_entry)
         self.search_entry.connect("search-changed", self.__on_search_changed)
 
+        self.input_text_preview = ""
         self.input_text_view.get_buffer().connect("changed", self.__on_input_changed)
         self.input_text_view.grab_focus()
         self.notable_input = False
@@ -175,7 +177,16 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         if self.notable_input:
             page_to_set = "fonts-list"
-            self.emit("content-changed", input_text)
+
+            sliced_input = input_text.replace("\n", " ")[
+                : self.preview_first_needed_chars
+            ]
+            if sliced_input != self.input_text_preview:
+                self.input_text_preview = sliced_input
+                self.emit(
+                    "content-changed",
+                    sliced_input,
+                )
         else:
             page_to_set = "welcome"
             self.search_bar.set_search_mode(False)

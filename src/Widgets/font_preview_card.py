@@ -37,7 +37,6 @@ class FontPreviewCard(Gtk.Box):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.content_changed_signal_id = -1
-        self.first_needed_chars = 10
         self.figlet = None
 
     def bind(self, parent_window, font_name: str) -> None:
@@ -57,9 +56,9 @@ class FontPreviewCard(Gtk.Box):
             output_buffer.set_text(text)
             return
 
-        full_text = text.replace("\n", " ")
-        only_needed_letters = full_text[: self.first_needed_chars]
-        output = self.figlet.renderText(only_needed_letters)
+        if self.figlet.width < 1000:
+            self.figlet.width = float("inf")
+        output = self.figlet.renderText(text)
         output_buffer.set_text(output)
         self.__update_sensitivity(output != "")
 
