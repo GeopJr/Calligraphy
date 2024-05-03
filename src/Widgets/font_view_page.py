@@ -36,7 +36,7 @@ class FontViewPage(Adw.NavigationPage):
     parent_window = None
     text = ""
 
-    def __init__(self, font_name, parent_window, **kwargs):
+    def __init__(self, font_name: str, parent_window, **kwargs) -> None:
         super().__init__(**kwargs)
 
         self.font_name = font_name

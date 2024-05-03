@@ -27,7 +27,7 @@ class FontPreview(Gtk.Widget):
 
     FADE_WIDTH = 168.0
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.text_view = Gtk.TextView.new()
         self.text_view.set_margin_top(12)
@@ -48,16 +48,18 @@ class FontPreview(Gtk.Widget):
         self.set_vexpand(True)
         self.set_hexpand(True)
 
-    def __del__(self):
+    def __del__(self) -> None:
         self.text_view.unparent()
 
-    def do_measure(self, orientation, for_size):
+    def do_measure(
+        self, orientation: Gtk.Orientation, for_size: int
+    ) -> tuple[int, int, int, int]:
         return self.text_view.measure(orientation, for_size)
 
-    def do_size_allocate(self, width, height, baseline):
+    def do_size_allocate(self, width: int, height: int, baseline: int) -> None:
         self.text_view.allocate(width, height, baseline, None)
 
-    def do_snapshot(self, snapshot):
+    def do_snapshot(self, snapshot: Gtk.Snapshot) -> None:
         width = self.get_width()
         if width <= 0:
             return

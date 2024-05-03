@@ -34,13 +34,13 @@ class FontPreviewCard(Gtk.Box):
     output_text_view = Gtk.Template.Child()
     display_stack = Gtk.Template.Child()
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self.content_changed_signal_id = -1
         self.first_needed_chars = 10
         self.figlet = None
 
-    def bind(self, parent_window, font_name):
+    def bind(self, parent_window, font_name: str) -> None:
         font_name_str = font_name.get_string()
         self.figlet = FONTS_LIST[font_name_str]
         self.font_name_label.set_label(font_name_str)
@@ -63,6 +63,6 @@ class FontPreviewCard(Gtk.Box):
         output_buffer.set_text(output)
         self.__update_sensitivity(output != "")
 
-    def __update_sensitivity(self, sensitive):
+    def __update_sensitivity(self, sensitive: bool) -> None:
         update_button_sensitivity.update(self.copy_btn, sensitive)
         self.display_stack.set_visible_child_name("text" if sensitive else "no-text")

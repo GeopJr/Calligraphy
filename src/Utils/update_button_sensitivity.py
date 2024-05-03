@@ -18,6 +18,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
-def update(button, text_exists):
+def update(button, text_exists: bool) -> None:
     button.set_sensitive(text_exists)
     button.set_tooltip_text(_("Copy") if text_exists else _("Output Empty"))

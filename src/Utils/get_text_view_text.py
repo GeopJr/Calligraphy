@@ -18,7 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
-def get(buffer):
+def get(buffer) -> str:
     return buffer.get_text(
         buffer.get_start_iter(),
         buffer.get_end_iter(),

@@ -32,7 +32,7 @@ from .window import CalligraphyWindow
 class CalligraphyApplication(Adw.Application):
     """The main application singleton class."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(
             application_id="dev.geopjr.Calligraphy",
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
@@ -50,7 +50,7 @@ class CalligraphyApplication(Adw.Application):
         )
         self.__create_action("about", self.__on_about_action)
 
-    def do_activate(self):
+    def do_activate(self) -> None:
         """Called when the application is activated.
 
         We raise the application's main window, creating it if
@@ -61,7 +61,7 @@ class CalligraphyApplication(Adw.Application):
             win = CalligraphyWindow(application=self)
         win.present()
 
-    def __on_about_action(self, *args):
+    def __on_about_action(self, *args) -> None:
         """Callback for the app.about action."""
         about = Adw.AboutDialog.new_from_appdata(
             "/dev/geopjr/Calligraphy/metainfo.xml", "2.0"
@@ -93,7 +93,7 @@ class CalligraphyApplication(Adw.Application):
 
         about.present(self.get_active_window())
 
-    def __create_action(self, name, callback, shortcuts=None, param=None):
+    def __create_action(self, name: str, callback, shortcuts=None, param=None) -> None:
         """Add an application action.
 
         Args:
@@ -109,6 +109,6 @@ class CalligraphyApplication(Adw.Application):
             self.set_accels_for_action(f"app.{name}", shortcuts)
 
 
-def main(version):
+def main(version: str) -> int:
     """The application's entry point."""
     return CalligraphyApplication().run(sys.argv)

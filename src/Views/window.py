@@ -59,10 +59,10 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.__wrap = value
 
     @GObject.Signal(arg_types=(str,))
-    def content_changed(self, *args):
+    def content_changed(self, *args) -> None:
         return
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
         self.settings = Gio.Settings(schema_id="dev.geopjr.Calligraphy")
@@ -127,7 +127,9 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     ) -> None:
         list_item.set_child(FontPreviewCard())
 
-    def __item_bind(self, _factory, list_item):
+    def __item_bind(
+        self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
+    ) -> None:
         fpc = list_item.get_child()
         fpc.bind(parent_window=self, font_name=list_item.get_item())
         fpc.content_changed_signal_id = self.connect(
@@ -135,18 +137,20 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
         fpc.update_text(self.current_input)
 
-    def __item_unbind(self, _factory, list_item):
+    def __item_unbind(
+        self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
+    ) -> None:
         fpc_signal_id = list_item.get_child().content_changed_signal_id
         if fpc_signal_id >= 0:
             self.disconnect(list_item.get_child().content_changed_signal_id)
 
-    def __item_activate(self, _list, pos):
+    def __item_activate(self, _list, pos: int) -> None:
         font_name = self.no_selection_model.get_item(pos)
         if not font_name:
             return
         self.go_to_details_page(font_name.get_string())
 
-    def __on_search_changed(self, *args):
+    def __on_search_changed(self, *args) -> None:
         self.font_filter.set_search(self.search_entry.get_text())
         page_to_set = "welcome"
         if self.notable_input:
@@ -204,12 +208,12 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         )
         self.toast_overlay.add_toast(Adw.Toast(title=message))
 
-    def go_to_details_page(self, font_name):
+    def go_to_details_page(self, font_name: str) -> None:
         page = FontViewPage(font_name=font_name, parent_window=self)
         self.main_nav_view.push(page)
         self.__on_input_changed()
 
-    def on_ctrl_f(self, *args):
+    def on_ctrl_f(self, *args) -> None:
         on_details_page = type(self.main_nav_view.get_visible_page()) == FontViewPage
 
         if self.notable_input and not on_details_page:
