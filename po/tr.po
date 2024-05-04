@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 16:11+0100\n"
+"POT-Creation-Date: 2024-05-04 04:00+0300\n"
 "PO-Revision-Date: 2024-03-21 22:02+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/calligraphy/"
@@ -22,12 +22,13 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
+#: data/gtk/window.ui:25 src/Views/window.py:240
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
 #: data/dev.geopjr.Calligraphy.desktop.in:5
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:9
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
 msgid "Turn text into ASCII banners"
 msgstr "Metni ASCII bannerlara dönüştür"
 
@@ -35,178 +36,195 @@ msgstr "Metni ASCII bannerlara dönüştür"
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/dev.geopjr.Calligraphy.desktop.in:14
-msgid "ascii;convert;conversion;text;"
+#, fuzzy
+msgid "ascii;convert;conversion;text;ansi;"
 msgstr "ascii;convert;conversion;text;dönüştür;dönüşüm;metin;"
 
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:12
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
+#, fuzzy
 msgid ""
 "Calligraphy turns short texts into large, impressive banners made up of "
-"ASCII Characters. Spice up your online conversations by adding some extra "
-"oompf to your messages!"
+"ASCII Characters, ready to be copied or exported to images. Spice up your "
+"online conversations by adding some extra oompf to your messages!"
 msgstr ""
 "Calligraphy, kısa metinleri ASCII Karakterlerinden oluşan büyük, etkileyici "
 "bannerlara dönüştürür. İletilerinize biraz güç takviye ekleyerek çevrimiçi "
 "sohbetlerinizi renklendirin!"
 
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:26
-msgid "ascii"
-msgstr "ascii"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:28
-msgid "convert"
-msgstr "dönüştür"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:30
-msgid "conversion"
-msgstr "dönüşüm"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:32
-msgid "text"
-msgstr "metin"
-
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:50
-msgid "Landing Page"
-msgstr "Giriş Sayfası"
-
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:55
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
 msgid "Entry"
 msgstr "Girdi"
 
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:60
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
 msgid "Search"
 msgstr "Ara"
 
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:65
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
 msgid "Detailed View"
 msgstr "Ayrıntılı Görünüm"
 
-#: src/main.py:67
-msgid "Calligraphy Contributors"
-msgstr "Calligraphy Katkıcıları"
+#: data/gtk/font-preview-card.ui:10
+msgid "Show Details"
+msgstr ""
 
-#: src/main.py:71
-msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr "Telif Hakkı © 2023 Calligraphy Katkıcıları"
+#: data/gtk/font-preview-card.ui:50
+msgid "No Output"
+msgstr "Çıktı Yok"
 
-#. Translators: Translate this string as your translator credits.
-#. Name only:    gregorni
-#. Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-#. Name + Email: gregorni <gregorniehl@web.de>
-#. Do not remove existing names.
-#. Names are separated with newlines.
-#: src/main.py:78
-msgid "translator-credits"
-msgstr "Sabri Ünal <yakushabb@gmail.com>"
+#: data/gtk/font-view-page.ui:13
+msgid "Toggle Wrapping"
+msgstr ""
 
-#. Translators: Do not translate "{font_name}"
-#: src/window.py:145
-#, python-brace-format
-msgid "{font_name} output copied to clipboard"
-msgstr "{font_name} çıktısı panoya kopyalandı"
+#: data/gtk/font-view-page.ui:19
+msgid "Copy to Clipboard"
+msgstr "Panoya Kopyala"
 
-#: src/update_button_sensitivity.py:23
-msgid "Copy"
-msgstr "Kopyala"
+#: data/gtk/font-view-page.ui:25
+msgid "Export as Image"
+msgstr ""
 
-#: src/update_button_sensitivity.py:23
-msgid "Output Empty"
-msgstr "Çıkış Boş"
+#: data/gtk/font-view-page.ui:61
+msgid "No Text"
+msgstr "Metin Yok"
 
-#: src/gtk/window.blp:23
-msgid "Search Fonts"
-msgstr "Yazı Tipi Ara"
+#: data/gtk/font-view-page.ui:62
+msgid "Type something to create a banner"
+msgstr "Banner oluşturmak için bir şey yazın"
 
-#: src/gtk/window.blp:32
-msgid "Main Menu"
-msgstr "Ana Menü"
-
-#: src/gtk/window.blp:43
-msgid "Search fonts"
-msgstr "Yazı tipi ara"
-
-#: src/gtk/window.blp:56
-msgid "Create ASCII Banners"
-msgstr "ASCII bannerlar oluştur"
-
-#: src/gtk/window.blp:57
-msgid "Type something to get started"
-msgstr "Başlamak için bir şey yazın"
-
-#: src/gtk/window.blp:88
-msgid "No Results Found"
-msgstr "Sonuç Bulunamadı"
-
-#: src/gtk/window.blp:89
-msgid "Try a different search"
-msgstr "Başka arama dene"
-
-#: src/gtk/window.blp:136
-msgid "Clear Entry"
-msgstr "Girdiyi Temizle"
-
-#: src/gtk/window.blp:148
-msgid "Type here…"
-msgstr "Buraya yazın…"
-
-#: src/gtk/window.blp:164
-msgid "Warning"
-msgstr "Uyarı"
-
-#: src/gtk/window.blp:173
-msgid "Non-alphabetic characters may not be supported in every font"
-msgstr "Alphabetik olmayan karakterler her yazı tipinde desteklenmeyebilir"
-
-#: src/gtk/window.blp:187
-msgid "_Keyboard Shortcuts"
-msgstr "_Klavye Kısayolları"
-
-#: src/gtk/window.blp:192
-msgid "_About Calligraphy"
-msgstr "Calligraphy _Hakkında"
-
-#: src/gtk/help-overlay.blp:11
+#: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Genel"
 
-#: src/gtk/help-overlay.blp:14
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Toggle Search"
 msgstr "Aramayı aç/kapat"
 
-#: src/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Focus Input Entry"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Kısayolları Göster"
 
-#: src/gtk/help-overlay.blp:24
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
 
-#: src/gtk/font-view-page.blp:13
-msgid "Copy to Clipboard"
-msgstr "Panoya Kopyala"
+#: data/gtk/window.ui:18 src/Views/window.py:234
+msgid "Fonts"
+msgstr ""
 
-#: src/gtk/font-view-page.blp:43
-msgid "No Text"
-msgstr "Metin Yok"
+#: data/gtk/window.ui:31 data/gtk/window.ui:54
+msgid "Search Fonts"
+msgstr "Yazı Tipi Ara"
 
-#: src/gtk/font-view-page.blp:44
-msgid "Type something to create a banner"
-msgstr "Banner oluşturmak için bir şey yazın"
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr "Ana Menü"
 
-#: src/gtk/font-preview-card.blp:61
-msgid "No Output"
-msgstr "Çıktı Yok"
+#: data/gtk/window.ui:70
+msgid "Create ASCII Banners"
+msgstr "ASCII bannerlar oluştur"
+
+#: data/gtk/window.ui:71
+msgid "Type something to get started"
+msgstr "Başlamak için bir şey yazın"
+
+#: data/gtk/window.ui:102
+msgid "No Results Found"
+msgstr "Sonuç Bulunamadı"
+
+#: data/gtk/window.ui:103
+#, fuzzy
+msgid "Try a different search query"
+msgstr "Başka arama dene"
+
+#: data/gtk/window.ui:157
+msgid "Clear Entry"
+msgstr "Girdiyi Temizle"
+
+#: data/gtk/window.ui:169
+msgid "Type here…"
+msgstr "Buraya yazın…"
+
+#: data/gtk/window.ui:186
+msgid "Warning"
+msgstr "Uyarı"
+
+#: data/gtk/window.ui:195
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr "Alphabetik olmayan karakterler her yazı tipinde desteklenmeyebilir"
+
+#: data/gtk/window.ui:216
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: data/gtk/window.ui:220
+msgid "_About Calligraphy"
+msgstr "Calligraphy _Hakkında"
+
+#: src/main.py:80
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr "Telif Hakkı © 2023 Calligraphy Katkıcıları"
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    Gregor Niehl
+#. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+#. Name + Email: Gregor Niehl <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:87
+msgid "translator-credits"
+msgstr "Sabri Ünal <yakushabb@gmail.com>"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Output Empty"
+msgstr "Çıkış Boş"
+
+#. Translators: Do not translate "{font_name}"
+#: src/Views/window.py:213
+#, python-brace-format
+msgid "{font_name} output copied to clipboard"
+msgstr "{font_name} çıktısı panoya kopyalandı"
+
+#: src/Views/window.py:237
+#, fuzzy
+msgid "No Results"
+msgstr "Sonuç Bulunamadı"
+
+#~ msgid "ascii"
+#~ msgstr "ascii"
+
+#~ msgid "convert"
+#~ msgstr "dönüştür"
+
+#~ msgid "conversion"
+#~ msgstr "dönüşüm"
+
+#~ msgid "text"
+#~ msgstr "metin"
+
+#~ msgid "Landing Page"
+#~ msgstr "Giriş Sayfası"
+
+#~ msgid "Calligraphy Contributors"
+#~ msgstr "Calligraphy Katkıcıları"
+
+#~ msgid "Search fonts"
+#~ msgstr "Yazı tipi ara"
 
 #~ msgid "gregorni"
 #~ msgstr "gregorni"

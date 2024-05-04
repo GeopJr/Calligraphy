@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-03 16:11+0100\n"
+"POT-Creation-Date: 2024-05-04 04:00+0300\n"
 "PO-Revision-Date: 2023-09-23 11:59+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/calligraphy/"
@@ -22,12 +22,13 @@ msgstr ""
 
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:7 src/gtk/window.blp:15
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
+#: data/gtk/window.ui:25 src/Views/window.py:240
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
 #: data/dev.geopjr.Calligraphy.desktop.in:5
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:9
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
 msgid "Turn text into ASCII banners"
 msgstr "Перетворюйте текст у ASCII банери"
 
@@ -35,183 +36,192 @@ msgstr "Перетворюйте текст у ASCII банери"
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/dev.geopjr.Calligraphy.desktop.in:14
-msgid "ascii;convert;conversion;text;"
+#, fuzzy
+msgid "ascii;convert;conversion;text;ansi;"
 msgstr ""
 "ascii;convert;conversion;text;аскі;конвертація;конвертувати;перетворення;"
 "текст;"
 
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:12
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
+#, fuzzy
 msgid ""
 "Calligraphy turns short texts into large, impressive banners made up of "
-"ASCII Characters. Spice up your online conversations by adding some extra "
-"oompf to your messages!"
+"ASCII Characters, ready to be copied or exported to images. Spice up your "
+"online conversations by adding some extra oompf to your messages!"
 msgstr ""
 "Calligraphy перетворює маленький текст у великі, вражаючі банери із ASCII "
 "символів. Вражайте ваших друзів у інтернет-чатах цими банерами!"
 
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:26
-msgid "ascii"
-msgstr "аскі"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:28
-msgid "convert"
-msgstr "конвертувати"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:30
-msgid "conversion"
-msgstr "конвертація"
-
-#. Translators: This is a search term and should be lowercase
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:32
-msgid "text"
-msgstr "текст"
-
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:50
-msgid "Landing Page"
-msgstr ""
-
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:55
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
 msgid "Entry"
 msgstr ""
 
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:60
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
 msgid "Search"
 msgstr ""
 
-#. Translators: This is a screenshot caption
-#: data/dev.geopjr.Calligraphy.appdata.xml.in:65
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
 #, fuzzy
 msgid "Detailed View"
 msgstr "Перегляд тексту"
 
-#: src/main.py:67
-msgid "Calligraphy Contributors"
-msgstr "Спільнота Calligraphy"
-
-#: src/main.py:71
-msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr "Copyright © 2023 Спільнота Calligraphy"
-
-#. Translators: Translate this string as your translator credits.
-#. Name only:    gregorni
-#. Name + URL:   gregorni https://gitlab.gnome.org/gregorni/
-#. Name + Email: gregorni <gregorniehl@web.de>
-#. Do not remove existing names.
-#. Names are separated with newlines.
-#: src/main.py:78
-msgid "translator-credits"
-msgstr "volkov <volkovissocool@gmail.com>"
-
-#. Translators: Do not translate "{font_name}"
-#: src/window.py:145
-#, fuzzy, python-brace-format
-msgid "{font_name} output copied to clipboard"
-msgstr "Скопійовано в буфер обміну"
-
-#: src/update_button_sensitivity.py:23
-msgid "Copy"
+#: data/gtk/font-preview-card.ui:10
+msgid "Show Details"
 msgstr ""
 
-#: src/update_button_sensitivity.py:23
+#: data/gtk/font-preview-card.ui:50
 #, fuzzy
-msgid "Output Empty"
+msgid "No Output"
 msgstr "Вивід"
 
-#: src/gtk/window.blp:23
-msgid "Search Fonts"
+#: data/gtk/font-view-page.ui:13
+msgid "Toggle Wrapping"
 msgstr ""
 
-#: src/gtk/window.blp:32
-msgid "Main Menu"
-msgstr "Головне меню"
+#: data/gtk/font-view-page.ui:19
+msgid "Copy to Clipboard"
+msgstr "Скопіювати в буфер обміну"
 
-#: src/gtk/window.blp:43
-msgid "Search fonts"
+#: data/gtk/font-view-page.ui:25
+msgid "Export as Image"
 msgstr ""
 
-#: src/gtk/window.blp:56
-#, fuzzy
-msgid "Create ASCII Banners"
-msgstr "Перетворюйте текст у ASCII банери"
-
-#: src/gtk/window.blp:57
-msgid "Type something to get started"
+#: data/gtk/font-view-page.ui:61
+msgid "No Text"
 msgstr ""
 
-#: src/gtk/window.blp:88
-msgid "No Results Found"
+#: data/gtk/font-view-page.ui:62
+msgid "Type something to create a banner"
 msgstr ""
 
-#: src/gtk/window.blp:89
-msgid "Try a different search"
-msgstr ""
-
-#: src/gtk/window.blp:136
-msgid "Clear Entry"
-msgstr ""
-
-#: src/gtk/window.blp:148
-msgid "Type here…"
-msgstr ""
-
-#: src/gtk/window.blp:164
-msgid "Warning"
-msgstr ""
-
-#: src/gtk/window.blp:173
-msgid "Non-alphabetic characters may not be supported in every font"
-msgstr ""
-
-#: src/gtk/window.blp:187
-msgid "_Keyboard Shortcuts"
-msgstr "_Клавіатурні скорочення"
-
-#: src/gtk/window.blp:192
-msgid "_About Calligraphy"
-msgstr "_Про Calligraphy"
-
-#: src/gtk/help-overlay.blp:11
+#: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Загальні"
 
-#: src/gtk/help-overlay.blp:14
+#: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Toggle Search"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:19
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Focus Input Entry"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Показати клавіатурні скорочення"
 
-#: src/gtk/help-overlay.blp:24
+#: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/gtk/font-view-page.blp:13
-msgid "Copy to Clipboard"
-msgstr "Скопіювати в буфер обміну"
-
-#: src/gtk/font-view-page.blp:43
-msgid "No Text"
+#: data/gtk/window.ui:18 src/Views/window.py:234
+msgid "Fonts"
 msgstr ""
 
-#: src/gtk/font-view-page.blp:44
-msgid "Type something to create a banner"
+#: data/gtk/window.ui:31 data/gtk/window.ui:54
+msgid "Search Fonts"
 msgstr ""
 
-#: src/gtk/font-preview-card.blp:61
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: data/gtk/window.ui:70
 #, fuzzy
-msgid "No Output"
+msgid "Create ASCII Banners"
+msgstr "Перетворюйте текст у ASCII банери"
+
+#: data/gtk/window.ui:71
+msgid "Type something to get started"
+msgstr ""
+
+#: data/gtk/window.ui:102
+msgid "No Results Found"
+msgstr ""
+
+#: data/gtk/window.ui:103
+msgid "Try a different search query"
+msgstr ""
+
+#: data/gtk/window.ui:157
+msgid "Clear Entry"
+msgstr ""
+
+#: data/gtk/window.ui:169
+msgid "Type here…"
+msgstr ""
+
+#: data/gtk/window.ui:186
+msgid "Warning"
+msgstr ""
+
+#: data/gtk/window.ui:195
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+
+#: data/gtk/window.ui:216
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавіатурні скорочення"
+
+#: data/gtk/window.ui:220
+msgid "_About Calligraphy"
+msgstr "_Про Calligraphy"
+
+#: src/main.py:80
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr "Copyright © 2023 Спільнота Calligraphy"
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    Gregor Niehl
+#. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+#. Name + Email: Gregor Niehl <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:87
+msgid "translator-credits"
+msgstr "volkov <volkovissocool@gmail.com>"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr ""
+
+#: src/Utils/update_button_sensitivity.py:23
+#, fuzzy
+msgid "Output Empty"
 msgstr "Вивід"
+
+#. Translators: Do not translate "{font_name}"
+#: src/Views/window.py:213
+#, fuzzy, python-brace-format
+msgid "{font_name} output copied to clipboard"
+msgstr "Скопійовано в буфер обміну"
+
+#: src/Views/window.py:237
+msgid "No Results"
+msgstr ""
+
+#~ msgid "ascii"
+#~ msgstr "аскі"
+
+#~ msgid "convert"
+#~ msgstr "конвертувати"
+
+#~ msgid "conversion"
+#~ msgstr "конвертація"
+
+#~ msgid "text"
+#~ msgstr "текст"
+
+#~ msgid "Calligraphy Contributors"
+#~ msgstr "Спільнота Calligraphy"
 
 #~ msgid "gregorni"
 #~ msgstr "gregorni"

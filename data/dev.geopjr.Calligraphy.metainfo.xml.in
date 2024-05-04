@@ -53,9 +53,19 @@
     <id>dev.geopjr.Calligraphy</id>
   </provides>
   <releases translate="no">
-    <release translate="no" version="1.0.0" date="2023-05-31">
+    <release translate="no" version="1.0.0" date="2024-05-05">
       <description translate="no">
-        <p>First Release! 🎉</p>
+        <p>
+          This is a fork of the original Calligraphy after its archival with the following changes:
+        </p>
+        <ul>
+          <li>Switched to GridView for displaying all the fonts with the ability to display and update unlimited fonts with no performance impact</li>
+          <li>Accessibility improvements</li>
+          <li>Added exporting to png support</li>
+          <li>Added toggling wrapping support</li>
+          <li>Other visual changes</li>
+          <li>Many other optimizations</li>
+        </ul>
       </description>
     </release>
   </releases>
