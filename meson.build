@@ -14,7 +14,7 @@ moduledir = join_paths(pkgdatadir, 'calligraphy')
 
 config = configuration_data()
 config.set('APP_ID', meson.project_name())
-config.set('PYTHON', python.find_installation('python3').path())
+config.set('PYTHON', python.find_installation('python3').full_path())
 config.set('VERSION', meson.project_version())
 config.set('DEVEL', devel ? 'True' : 'False')
 config.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))

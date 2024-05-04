@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-04 04:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Translators: Translate as "Calligraphy"
+#: data/dev.geopjr.Calligraphy.desktop.in:4
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
+#: data/gtk/window.ui:25 src/Views/window.py:240
+msgid "Calligraphy"
+msgstr ""
+
+#: data/dev.geopjr.Calligraphy.desktop.in:5
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
+msgid "Turn text into ASCII banners"
+msgstr ""
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/dev.geopjr.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;ansi;"
+msgstr ""
+
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters, ready to be copied or exported to images. Spice up your "
+"online conversations by adding some extra oompf to your messages!"
+msgstr ""
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
+msgid "Entry"
+msgstr ""
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
+msgid "Search"
+msgstr ""
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
+msgid "Detailed View"
+msgstr ""
+
+#: data/gtk/font-preview-card.ui:10
+msgid "Show Details"
+msgstr ""
+
+#: data/gtk/font-preview-card.ui:50
+msgid "No Output"
+msgstr ""
+
+#: data/gtk/font-view-page.ui:13
+msgid "Toggle Wrapping"
+msgstr ""
+
+#: data/gtk/font-view-page.ui:19
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: data/gtk/font-view-page.ui:25
+msgid "Export as Image"
+msgstr ""
+
+#: data/gtk/font-view-page.ui:61
+msgid "No Text"
+msgstr ""
+
+#: data/gtk/font-view-page.ui:62
+msgid "Type something to create a banner"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Toggle Search"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Focus Input Entry"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/gtk/window.ui:18 src/Views/window.py:234
+msgid "Fonts"
+msgstr ""
+
+#: data/gtk/window.ui:31 data/gtk/window.ui:54
+msgid "Search Fonts"
+msgstr ""
+
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr ""
+
+#: data/gtk/window.ui:70
+msgid "Create ASCII Banners"
+msgstr ""
+
+#: data/gtk/window.ui:71
+msgid "Type something to get started"
+msgstr ""
+
+#: data/gtk/window.ui:102
+msgid "No Results Found"
+msgstr ""
+
+#: data/gtk/window.ui:103
+msgid "Try a different search query"
+msgstr ""
+
+#: data/gtk/window.ui:157
+msgid "Clear Entry"
+msgstr ""
+
+#: data/gtk/window.ui:169
+msgid "Type here…"
+msgstr ""
+
+#: data/gtk/window.ui:186
+msgid "Warning"
+msgstr ""
+
+#: data/gtk/window.ui:195
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+
+#: data/gtk/window.ui:216
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: data/gtk/window.ui:220
+msgid "_About Calligraphy"
+msgstr ""
+
+#: src/main.py:80
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr ""
+
+#. Translators: Translate this string as your translator credits.
+#. Name only:    Gregor Niehl
+#. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+#. Name + Email: Gregor Niehl <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:87
+msgid "translator-credits"
+msgstr ""
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr ""
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Output Empty"
+msgstr ""
+
+#. Translators: Do not translate "{font_name}"
+#: src/Views/window.py:213
+#, python-brace-format
+msgid "{font_name} output copied to clipboard"
+msgstr ""
+
+#: src/Views/window.py:237
+msgid "No Results"
+msgstr ""

@@ -3,14 +3,14 @@
 	<id>dev.geopjr.Calligraphy.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
-  <name translatable="no">Calligraphy</name>
+  <name translate="yes">Calligraphy</name>
   <developer id="dev.geopjr">
     <name translate="no">Evangelos "GeopJr" Paterakis</name>
   </developer>
   <summary>Turn text into ASCII banners</summary>
 	<description>
 	  <p>
-	    Calligraphy turns short texts into large, impressive banners made up of ASCII Characters.
+	    Calligraphy turns short texts into large, impressive banners made up of ASCII Characters, ready to be copied or exported to images.
 	    Spice up your online conversations by adding some extra oompf to your messages!
 	  </p>
 	</description>
@@ -26,35 +26,35 @@
   <screenshots>
     <screenshot type="default">
       <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
-      <!--Translators: This is a screenshot caption-->
+      <!--translators: This is a screenshot caption-->
       <caption>Entry</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/search.png</image>
-      <!--Translators: This is a screenshot caption-->
+      <!--translators: This is a screenshot caption-->
       <caption>Search</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/detailed-view.png</image>
-      <!--Translators: This is a screenshot caption-->
+      <!--translators: This is a screenshot caption-->
       <caption>Detailed View</caption>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">dev.geopjr.Calligraphy.desktop</launchable>
   <translation type="gettext">dev.geopjr.Calligraphy</translation>
-  <url type="homepage">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
+  <url type="homepage">https://calligraphy.geopjr.dev/</url>
   <url type="bugtracker">https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues</url>
-  <url type="help">https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues</url>
+  <url type="donation">https://geopjr.dev/donate</url>
   <url type="vcs-browser">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
-  <url type="contribute">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
+  <url type="contribute">https://gitlab.gnome.org/GeopJr/Calligraphy#contributing</url>
   <content_rating type="oars-1.1" />
   <provides>
     <binary>dev.geopjr.Calligraphy</binary>
     <id>dev.geopjr.Calligraphy</id>
   </provides>
-  <releases>
-    <release version="1.0.0" date="2023-05-31">
-      <description translatable="no">
+  <releases translate="no">
+    <release translate="no" version="1.0.0" date="2023-05-31">
+      <description translate="no">
         <p>First Release! 🎉</p>
       </description>
     </release>

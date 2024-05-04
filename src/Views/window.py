@@ -20,6 +20,7 @@
 import re
 import threading
 import pyfiglet
+from enum import Enum
 from gi.repository import Adw, Gdk, Gio, Gtk, GObject, GLib
 
 from . import get_text_view_text
@@ -34,6 +35,11 @@ from . import env
 class CalligraphyWindow(Adw.ApplicationWindow):
     __gtype_name__ = "CalligraphyWindow"
 
+    class Page(Enum):
+        WELCOME = 1
+        FONT_LIST = 2
+        NO_RESULTS = 3
+
     search_toggle = Gtk.Template.Child()
     search_bar = Gtk.Template.Child()
     search_entry = Gtk.Template.Child()
@@ -46,6 +52,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     preview_list_grid_view = Gtk.Template.Child()
     warning_revealer = Gtk.Template.Child()
     toolbarview = Gtk.Template.Child()
+    win_title = Gtk.Template.Child()
 
     preview_first_needed_chars = 15
     safe_regex = re.compile(r"[^a-zA-Z\s]")
@@ -154,13 +161,13 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
     def __on_search_changed(self, *args) -> None:
         self.font_filter.set_search(self.search_entry.get_text())
-        page_to_set = "welcome"
+        page = self.Page.WELCOME
         if self.notable_input:
-            page_to_set = "fonts-list"
+            page_to_set = self.Page.FONT_LIST
             if self.model.get_n_items() == 0:
-                page_to_set = "no-results"
+                page_to_set = self.Page.NO_RESULTS
 
-            self.welcome_stack.set_visible_child_name(page_to_set)
+            self.set_visible_page(page_to_set)
 
     def __on_input_changed(self, *args) -> None:
         raw_input = get_text_view_text.get(self.input_text_view.get_buffer())
@@ -176,7 +183,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.warning_revealer.set_reveal_child(contains_invalid_char)
 
         if self.notable_input:
-            page_to_set = "fonts-list"
+            page_to_set = self.Page.FONT_LIST
 
             sliced_input = input_text.replace("\n", " ")[
                 : self.preview_first_needed_chars
@@ -188,13 +195,13 @@ class CalligraphyWindow(Adw.ApplicationWindow):
                     sliced_input,
                 )
         else:
-            page_to_set = "welcome"
+            page_to_set = self.Page.WELCOME
             self.search_bar.set_search_mode(False)
 
         self.current_input = input_text
 
         if not self.search_bar.get_search_mode():
-            self.welcome_stack.set_visible_child_name(page_to_set)
+            self.set_visible_page(page_to_set)
 
         current_nav_page = self.main_nav_view.get_visible_page()
         if type(current_nav_page) == FontViewPage:
@@ -230,3 +237,17 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         if self.notable_input and not on_details_page:
             open_search = not self.search_toggle.get_active()
             self.search_toggle.set_active(open_search)
+
+    def set_visible_page(self, page) -> None:
+        match page:
+            case self.Page.FONT_LIST:
+                page_name = "fonts-list"
+                page_title = _("Fonts")
+            case self.Page.NO_RESULTS:
+                page_name = "no-results"
+                page_title = _("No Results")
+            case _:
+                page_name = "welcome"
+                page_title = _("Calligraphy")
+        self.win_title.set_title(page_title)
+        self.welcome_stack.set_visible_child_name(page_name)

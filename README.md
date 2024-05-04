@@ -3,6 +3,24 @@
   <h1>Calligraphy</h1>
   <h3>Turn text into ASCII banners</h3>
   <img alt="" src="./data/screenshots/entry.png">
+  <a href='https://flathub.org/apps/details/dev.geopjr.Calligraphy'>
+    <img width='192' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/>
+  </a>
+</div>
+
+# Building
+
+1. Install and open [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder)
+2. Select "Clone Repository…"
+3. Clone `https://gitlab.gnome.org/GeopJr/Calligraphy.git`
+4. Run the project with the ▶ button at the top, or by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Space</kbd>
+
+# Sponsors
+
+<div align="center">
+
+[![GeopJr Sponsors](https://cdn.jsdelivr.net/gh/GeopJr/GeopJr@main/sponsors.svg)](https://github.com/sponsors/GeopJr)
+
 </div>
 
 # Acknowledgements

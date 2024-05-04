@@ -27,6 +27,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, Gtk
 
 from .window import CalligraphyWindow
+from .env import VERSION
 
 
 class CalligraphyApplication(Adw.Application):
@@ -64,8 +65,13 @@ class CalligraphyApplication(Adw.Application):
     def __on_about_action(self, *args) -> None:
         """Callback for the app.about action."""
         about = Adw.AboutDialog.new_from_appdata(
-            "/dev/geopjr/Calligraphy/metainfo.xml", "2.0"
+            "/dev/geopjr/Calligraphy/metainfo.xml", VERSION
         )
+        # Devel versions use branch name for VERSION and
+        # since it doesn't exist, it falls back to the
+        # latest version. We need to set it again so it
+        # shows up in the Dialog.
+        about.set_version(VERSION)
         about.set_artists(["kramo https://kramo.hu"])
         about.set_designers(["Brage Fuglseth https://bragefuglseth.dev"])
         # These are Python lists: Add your string to the list (separated by a comma)
@@ -77,7 +83,7 @@ class CalligraphyApplication(Adw.Application):
             ]
         )
         about.set_copyright(_("Copyright © 2023 Calligraphy Contributors"))
-        # Translators: Translate this string as your translator credits.
+        # translators: Translate this string as your translator credits.
         # Name only:    Gregor Niehl
         # Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
         # Name + Email: Gregor Niehl <gregorniehl@web.de>

@@ -1,3 +1,6 @@
 .flatpak-builder/
 .ruff_cache/
 .devbox/
+builddir
+pyfiglet-*.tar.gz
+pyfiglet-*/

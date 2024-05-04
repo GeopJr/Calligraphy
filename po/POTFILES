@@ -1,16 +1,13 @@
-data/dev.geopjr.Calligraphy.desktop.in
-data/dev.geopjr.Calligraphy.metainfo.xml.in
-data/dev.geopjr.Calligraphy.gschema.xml
+./data/dev.geopjr.Calligraphy.desktop.in
+./data/dev.geopjr.Calligraphy.metainfo.xml.in
+./src/calligraphy.in
+./src/env.py.in
 
-src/main.py
-src/window.py
-src/font_view_page.py
-src/font_preview_card.py
-src/fonts_list.py
-src/get_text_view_text.py
-src/update_button_sensitivity.py
+./data/gtk/font-preview-card.ui
+./data/gtk/font-view-page.ui
+./data/gtk/help-overlay.ui
+./data/gtk/window.ui
 
-src/gtk/window.blp
-src/gtk/help-overlay.blp
-src/gtk/font-view-page.blp
-src/gtk/font-preview-card.blp
+./src/main.py
+./src/Utils/update_button_sensitivity.py
+./src/Views/window.py
