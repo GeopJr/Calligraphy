@@ -189,13 +189,16 @@
                             <property name="width-request">30</property>
                             <property name="tooltip-text" translatable="yes">Warning</property>
                             <property name="direction">0</property>
+                            <accessibility>
+                              <relation name="labelled-by">warn_label</relation>
+                            </accessibility>
                             <style>
                               <class name="warning"/>
                             </style>
                             <property name="popover">
                               <object class="GtkPopover">
                                 <property name="child">
-                                  <object class="GtkLabel">
+                                  <object class="GtkLabel" id="warn_label">
                                     <property name="label" translatable="yes">Non-alphabetic characters may not be supported in every font</property>
                                   </object>
                                 </property>
