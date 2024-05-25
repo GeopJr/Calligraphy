@@ -50,9 +50,16 @@
 	<content_rating type="oars-1.1" />
 	<provides>
 		<binary>dev.geopjr.Calligraphy</binary>
-		<id>dev.geopjr.Calligraphy</id>
 	</provides>
 	<releases translate="no">
+		<release translate="no" version="1.0.1" date="2024-05-25">
+			<description translate="no">
+				<ul>
+					<li>Accessibility improvements</li>
+					<li>Fixed metadata</li>
+				</ul>
+			</description>
+		</release>
 		<release translate="no" version="1.0.0" date="2024-05-25">
 			<description translate="no">
 				<p>
