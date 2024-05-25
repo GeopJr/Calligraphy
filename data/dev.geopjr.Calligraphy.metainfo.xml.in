@@ -53,7 +53,7 @@
     <id>dev.geopjr.Calligraphy</id>
   </provides>
   <releases translate="no">
-    <release translate="no" version="1.0.0" date="2024-05-05">
+    <release translate="no" version="1.0.0" date="2024-05-25">
       <description translate="no">
         <p>
           This is a fork of the original Calligraphy after its archival with the following changes:
