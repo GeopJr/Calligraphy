@@ -119,6 +119,13 @@ class CalligraphyWindow(Adw.ApplicationWindow):
 
         self.clear_input_btn.connect("clicked", self.__on_input_cleared)
 
+        capture_gesture = Gtk.GestureClick.new()
+        capture_gesture.connect("pressed", self.__capture_click)
+        self.input_text_view.add_controller(capture_gesture)
+
+    def __capture_click(self, gesture, button, x, y):
+        gesture.set_state(Gtk.EventSequenceState.CLAIMED)
+
     def do_close_request(self) -> bool:
         self.settings.apply()
         return False
