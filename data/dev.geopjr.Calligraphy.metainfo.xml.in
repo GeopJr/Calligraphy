@@ -52,6 +52,13 @@
 		<binary>dev.geopjr.Calligraphy</binary>
 	</provides>
 	<releases translate="no">
+		<release translate="no" version="1.0.2" date="2024-10-01">
+			<description translate="no">
+				<ul>
+					<li>Fixed window grabbing being activated when trying to select text</li>
+				</ul>
+			</description>
+		</release>
 		<release translate="no" version="1.0.1" date="2024-05-25">
 			<description translate="no">
 				<ul>
