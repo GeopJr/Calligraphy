@@ -57,6 +57,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     preview_first_needed_chars = 15
     safe_regex = re.compile(r"[^a-zA-Z\s]")
     __wrap = True
+    __favs = {}
 
     @GObject.Property(type=bool, default=True)
     def wrap(self) -> bool:
@@ -65,6 +66,14 @@ class CalligraphyWindow(Adw.ApplicationWindow):
     @wrap.setter
     def wrap(self, value: bool) -> None:
         self.__wrap = value
+
+    @GObject.Property(type=GObject.TYPE_STRV)
+    def favs(self) -> list[str]:
+        return self.__favs
+
+    @favs.setter
+    def favs(self, value: list[str]) -> None:
+        self.__favs = value
 
     @GObject.Signal(arg_types=(str,))
     def content_changed(self, *args) -> None:
@@ -81,6 +90,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.settings.bind("window-height", self, "default-height", bind_flags)
         self.settings.bind("window-is-maximized", self, "maximized", bind_flags)
         self.settings.bind("wrap", self, "wrap", bind_flags)
+        self.settings.bind("favs", self, "favs", bind_flags)
 
         if env.DEVEL:
             self.add_css_class("devel")
@@ -135,8 +145,19 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         GLib.idle_add(self.__update_fonts)
 
     def __update_fonts(self) -> None:
-        self.font_name_list.splice(0, 0, list(FONTS_LIST.keys()))
+        fonts = self.__font_names_with_favs()
+        self.font_name_list.splice(0, 0, fonts)
         self.toolbarview.set_reveal_bottom_bars(True)
+
+    def __update_favs(self) -> None:
+        fonts = self.__font_names_with_favs()
+        self.font_name_list.splice(0, len(fonts), fonts)
+
+    def __font_names_with_favs(self) -> list[str]:
+        fonts = list(FONTS_LIST.keys())
+        for fav in reversed(self.favs):
+            fonts.insert(0, fonts.pop(fonts.index(fav)))
+        return fonts
 
     def __item_setup(
         self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
@@ -147,24 +168,43 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
     ) -> None:
         fpc = list_item.get_child()
-        fpc.bind(parent_window=self, font_name=list_item.get_item())
+        font_name = list_item.get_item().get_string()
+        fpc.bind(font_name=font_name, starred=font_name in self.favs)
         fpc.content_changed_signal_id = self.connect(
             "content-changed", fpc.on_content_changed
         )
+        fpc.copied_signal_id = fpc.connect("copied", self.__on_copied)
+        fpc.unstarred_signal_id = fpc.connect("unstarred", self.__on_unstarred)
+        fpc.starred_signal_id = fpc.connect("starred", self.__on_starred)
         fpc.update_text(self.current_input)
 
     def __item_unbind(
         self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
     ) -> None:
-        fpc_signal_id = list_item.get_child().content_changed_signal_id
-        if fpc_signal_id >= 0:
-            self.disconnect(list_item.get_child().content_changed_signal_id)
+        fpc = list_item.get_child()
+        fpc.unbind()
+        if fpc.content_changed_signal_id >= 0:
+            self.disconnect(fpc.content_changed_signal_id)
 
     def __item_activate(self, _list, pos: int) -> None:
         font_name = self.no_selection_model.get_item(pos)
         if not font_name:
             return
         self.go_to_details_page(font_name.get_string())
+
+    def __on_copied(self, inst, font_name: str) -> None:
+        self.show_copied_toast(font_name)
+
+    def __on_unstarred(self, inst, font_name: str) -> None:
+        if font_name in self.favs:
+            self.favs.remove(font_name)
+            self.favs = self.favs
+
+    def __on_starred(self, inst, font_name: str) -> None:
+        if font_name in self.favs:
+            return
+        self.favs.append(font_name)
+        self.favs = self.favs
 
     def __on_search_changed(self, *args) -> None:
         self.font_filter.set_search(self.search_entry.get_text())

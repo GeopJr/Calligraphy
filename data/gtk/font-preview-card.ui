@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk" version="4.0"/>
+  <requires lib="gtk" version="4.0" />
   <template class="FontPreviewCard" parent="GtkBox">
     <property name="orientation">1</property>
     <property name="height-request">272</property>
@@ -10,7 +10,7 @@
       <property name="description" translatable="yes">Show Details</property>
     </accessibility>
     <style>
-      <class name="extra-padding-except-top"/>
+      <class name="extra-padding-except-top" />
     </style>
     <child>
       <object class="GtkBox">
@@ -21,7 +21,7 @@
             <property name="xalign">0</property>
             <property name="hexpand">true</property>
             <style>
-              <class name="heading"/>
+              <class name="heading" />
             </style>
           </object>
         </child>
@@ -29,43 +29,67 @@
           <object class="GtkButton" id="copy_btn">
             <property name="icon-name">edit-copy-symbolic</property>
             <style>
-              <class name="flat"/>
+              <class name="flat" />
             </style>
           </object>
         </child>
       </object>
     </child>
     <child>
-      <object class="AdwBin">
-        <style>
-          <class name="card"/>
-        </style>
-        <property name="child">
-          <object class="GtkStack" id="display_stack">
+      <object class="GtkOverlay">
+        <child type="overlay">
+          <object class="GtkRevealer" id="star_revealer">
+            <property name="transition-type">crossfade</property>
+            <property name="reveal-child">0</property>
             <child>
-              <object class="GtkStackPage">
-                <property name="name">no-text</property>
-                <property name="child">
-                  <object class="GtkLabel">
-                    <property name="label" translatable="yes">No Output</property>
-                    <style>
-                      <class name="dim-label"/>
-                      <class name="title-2"/>
-                    </style>
-                  </object>
-                </property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkStackPage">
-                <property name="name">text</property>
-                <property name="child">
-                  <object class="FontPreview" id="output_text_view"></object>
-                </property>
+              <object class="GtkToggleButton" id="star_button">
+                <property name="icon-name">star-outline-rounded-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Favorite</property>
+                <property name="halign">end</property>
+                <property name="valign">end</property>
+                <property name="margin-end">6</property>
+                <property name="margin-bottom">6</property>
+                <style>
+                  <class name="flat" />
+                  <class name="star" />
+                </style>
               </object>
             </child>
           </object>
-        </property>
+        </child>
+        <child>
+          <object class="AdwBin">
+            <style>
+              <class name="card" />
+            </style>
+            <property name="child">
+              <object class="GtkStack" id="display_stack">
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">no-text</property>
+                    <property name="child">
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">No Output</property>
+                        <style>
+                          <class name="dim-label" />
+                          <class name="title-2" />
+                        </style>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">text</property>
+                    <property name="child">
+                      <object class="FontPreview" id="output_text_view"></object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
       </object>
     </child>
   </template>

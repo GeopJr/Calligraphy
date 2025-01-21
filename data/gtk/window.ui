@@ -50,7 +50,7 @@
                               <object class="AdwClamp">
                                 <child>
                                   <object class="GtkSearchEntry" id="search_entry">
-                                    <property name="search-delay">100</property>
+                                    <property name="search-delay">250</property>
                                     <property name="placeholder-text" translatable="yes">Search Fonts</property>
                                   </object>
                                 </child>

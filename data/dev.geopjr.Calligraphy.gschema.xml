@@ -13,5 +13,8 @@
     <key name="wrap" type="b">
       <default>true</default>
     </key>
+    <key name="favs" type="as">
+      <default>[]</default>
+    </key>
 	</schema>
 </schemalist>

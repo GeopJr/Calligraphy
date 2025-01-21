@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 04:00+0300\n"
+"POT-Creation-Date: 2025-01-21 00:53+0200\n"
 "PO-Revision-Date: 2024-04-23 04:07+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/calligraphy/"
@@ -22,7 +22,7 @@ msgstr ""
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
-#: data/gtk/window.ui:25 src/Views/window.py:240
+#: data/gtk/window.ui:25 src/Views/window.py:298
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -68,7 +68,11 @@ msgstr "विस्तृत विवरण"
 msgid "Show Details"
 msgstr ""
 
-#: data/gtk/font-preview-card.ui:50
+#: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
+msgid "Favorite"
+msgstr "पसंदीदा"
+
+#: data/gtk/font-preview-card.ui:72
 msgid "No Output"
 msgstr "कोई आउटपुट नहीं"
 
@@ -117,7 +121,7 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "छोड़ें"
 
-#: data/gtk/window.ui:18 src/Views/window.py:234
+#: data/gtk/window.ui:18 src/Views/window.py:292
 msgid "Fonts"
 msgstr ""
 
@@ -146,41 +150,41 @@ msgstr "कोई परिणाम नहीं मिला"
 msgid "Try a different search query"
 msgstr "भिन्न खोज का प्रयास करें"
 
-#: data/gtk/window.ui:157
+#: data/gtk/window.ui:161
 msgid "Clear Entry"
 msgstr "प्रविष्टि साफ़ करें"
 
-#: data/gtk/window.ui:169
+#: data/gtk/window.ui:173
 msgid "Type here…"
 msgstr "यहाँ टाइप करें…"
 
-#: data/gtk/window.ui:186
+#: data/gtk/window.ui:190
 msgid "Warning"
 msgstr "चेतावनी"
 
-#: data/gtk/window.ui:195
+#: data/gtk/window.ui:202
 msgid "Non-alphabetic characters may not be supported in every font"
 msgstr "हर फॉन्ट में गैर-वर्णमाला वर्ण समर्थित नहीं हो सकते"
 
-#: data/gtk/window.ui:216
+#: data/gtk/window.ui:223
 msgid "_Keyboard Shortcuts"
 msgstr "कीबोर्ड शॉर्टकट (_K)"
 
-#: data/gtk/window.ui:220
+#: data/gtk/window.ui:227
 msgid "_About Calligraphy"
 msgstr "Calligraphy के बारे में (_A)"
 
-#: src/main.py:80
+#: src/main.py:85
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "कॉपीराइट © 2023 Calligraphy योगदानकर्ता"
 
-#. Translators: Translate this string as your translator credits.
+#. translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
 #. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
 #. Name + Email: Gregor Niehl <gregorniehl@web.de>
 #. Do not remove existing names.
 #. Names are separated with newlines.
-#: src/main.py:87
+#: src/main.py:92
 msgid "translator-credits"
 msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
@@ -193,15 +197,19 @@ msgid "Output Empty"
 msgstr "आउटपुट खाली"
 
 #. Translators: Do not translate "{font_name}"
-#: src/Views/window.py:213
+#: src/Views/window.py:271
 #, python-brace-format
 msgid "{font_name} output copied to clipboard"
 msgstr "{font_name} आउटपुट क्लिपबोर्ड पर कॉपी किया गया"
 
-#: src/Views/window.py:237
+#: src/Views/window.py:295
 #, fuzzy
 msgid "No Results"
 msgstr "कोई परिणाम नहीं मिला"
+
+#: src/Widgets/font_preview_card.py:94
+msgid "Unfavorite"
+msgstr ""
 
 #~ msgid "ascii"
 #~ msgstr "ascii"

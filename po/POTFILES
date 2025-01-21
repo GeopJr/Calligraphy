@@ -11,3 +11,4 @@
 ./src/main.py
 ./src/Utils/update_button_sensitivity.py
 ./src/Views/window.py
+./src/Widgets/font_preview_card.py

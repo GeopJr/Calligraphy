@@ -1,6 +1,13 @@
-@define-color accent_color @purple_5;
-@define-color accent_bg_color @purple_5;
-@define-color accent_fg_color alpha(white, 1);
+:root {
+  --accent-color: var(--purple-5);
+  --accent-bg-color: var(--purple-5);
+  --accent-fg-color: alpha(white, 1);
+}
+
+@keyframes rotate_star {
+	from { -gtk-icon-transform: rotate(-72deg); }
+	to {}
+}
 
 textview {
   background: none;
@@ -30,7 +37,7 @@ gridview > child {
 }
 
 .clear-input-button:hover, .clear-input-button:active {
-  color: @window_fg_color;
+  color: var(--window-fg-color);
   background: none;
 }
 
@@ -44,4 +51,17 @@ gridview > child {
 
 .weaker-highlight:active {
   background: alpha(@window_fg_color, 0.08);
+}
+
+.star.enabled image {
+	animation: rotate_star 0.4s ease;
+}
+
+.star:hover,
+.star.enabled {
+	color: var(--yellow-5);
+}
+
+.star:active {
+	color: var(--yellow-4);
 }

@@ -19,5 +19,7 @@
     <file alias="arrow4-right-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/arrow4-right-symbolic.svg</file>
     <file alias="arrow-turn-right-down-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/arrow-turn-right-down-symbolic.svg</file>
     <file alias="arrow-turn-left-down-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/arrow-turn-left-down-symbolic.svg</file>
+    <file alias="star-large-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/star-large-symbolic.svg</file>
+    <file alias="star-outline-rounded-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/star-outline-rounded-symbolic.svg</file>
   </gresource>
 </gresources>

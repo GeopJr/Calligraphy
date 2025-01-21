@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 04:00+0300\n"
+"POT-Creation-Date: 2025-01-21 00:53+0200\n"
 "PO-Revision-Date: 2023-06-21 15:06+0200\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
-#: data/gtk/window.ui:25 src/Views/window.py:240
+#: data/gtk/window.ui:25 src/Views/window.py:298
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -69,7 +69,11 @@ msgstr "Vista tèxte"
 msgid "Show Details"
 msgstr ""
 
-#: data/gtk/font-preview-card.ui:50
+#: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
+msgid "Favorite"
+msgstr "Preferit"
+
+#: data/gtk/font-preview-card.ui:72
 #, fuzzy
 msgid "No Output"
 msgstr "Sortida"
@@ -119,7 +123,7 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Sortir"
 
-#: data/gtk/window.ui:18 src/Views/window.py:234
+#: data/gtk/window.ui:18 src/Views/window.py:292
 msgid "Fonts"
 msgstr ""
 
@@ -148,41 +152,41 @@ msgstr ""
 msgid "Try a different search query"
 msgstr ""
 
-#: data/gtk/window.ui:157
+#: data/gtk/window.ui:161
 msgid "Clear Entry"
 msgstr ""
 
-#: data/gtk/window.ui:169
+#: data/gtk/window.ui:173
 msgid "Type here…"
 msgstr ""
 
-#: data/gtk/window.ui:186
+#: data/gtk/window.ui:190
 msgid "Warning"
 msgstr ""
 
-#: data/gtk/window.ui:195
+#: data/gtk/window.ui:202
 msgid "Non-alphabetic characters may not be supported in every font"
 msgstr ""
 
-#: data/gtk/window.ui:216
+#: data/gtk/window.ui:223
 msgid "_Keyboard Shortcuts"
 msgstr "_Acorchis clavièr"
 
-#: data/gtk/window.ui:220
+#: data/gtk/window.ui:227
 msgid "_About Calligraphy"
 msgstr "_A prepaus de Calligraphy"
 
-#: src/main.py:80
+#: src/main.py:85
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Les contributors de Calligraphy"
 
-#. Translators: Translate this string as your translator credits.
+#. translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
 #. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
 #. Name + Email: Gregor Niehl <gregorniehl@web.de>
 #. Do not remove existing names.
 #. Names are separated with newlines.
-#: src/main.py:87
+#: src/main.py:92
 msgid "translator-credits"
 msgstr "Quentin PAGÈS"
 
@@ -196,13 +200,17 @@ msgid "Output Empty"
 msgstr "Sortida"
 
 #. Translators: Do not translate "{font_name}"
-#: src/Views/window.py:213
+#: src/Views/window.py:271
 #, fuzzy, python-brace-format
 msgid "{font_name} output copied to clipboard"
 msgstr "Copiat al quichapapièrs"
 
-#: src/Views/window.py:237
+#: src/Views/window.py:295
 msgid "No Results"
+msgstr ""
+
+#: src/Widgets/font_preview_card.py:94
+msgid "Unfavorite"
 msgstr ""
 
 #~ msgid "ascii"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 04:00+0300\n"
+"POT-Creation-Date: 2025-01-21 00:53+0200\n"
 "PO-Revision-Date: 2024-02-28 14:01+0000\n"
 "Last-Translator: Titouan Real <titouan.real@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/calligraphy/"
@@ -22,7 +22,7 @@ msgstr ""
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
-#: data/gtk/window.ui:25 src/Views/window.py:240
+#: data/gtk/window.ui:25 src/Views/window.py:298
 msgid "Calligraphy"
 msgstr "Calligraphy"
 
@@ -70,7 +70,11 @@ msgstr "Vue texte"
 msgid "Show Details"
 msgstr ""
 
-#: data/gtk/font-preview-card.ui:50
+#: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
+msgid "Favorite"
+msgstr "Favori"
+
+#: data/gtk/font-preview-card.ui:72
 #, fuzzy
 msgid "No Output"
 msgstr "Résultat"
@@ -120,7 +124,7 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
 
-#: data/gtk/window.ui:18 src/Views/window.py:234
+#: data/gtk/window.ui:18 src/Views/window.py:292
 msgid "Fonts"
 msgstr ""
 
@@ -150,43 +154,43 @@ msgstr "Aucun résultat trouvé"
 msgid "Try a different search query"
 msgstr "Essayez une autre recherche"
 
-#: data/gtk/window.ui:157
+#: data/gtk/window.ui:161
 msgid "Clear Entry"
 msgstr "Efface la saisie"
 
-#: data/gtk/window.ui:169
+#: data/gtk/window.ui:173
 msgid "Type here…"
 msgstr "Tapez ici…"
 
-#: data/gtk/window.ui:186
+#: data/gtk/window.ui:190
 msgid "Warning"
 msgstr "Avertissement"
 
-#: data/gtk/window.ui:195
+#: data/gtk/window.ui:202
 msgid "Non-alphabetic characters may not be supported in every font"
 msgstr ""
 "Les caractères non-alphabétiques peuvent ne pas être supportés dans toutes "
 "les polices"
 
-#: data/gtk/window.ui:216
+#: data/gtk/window.ui:223
 msgid "_Keyboard Shortcuts"
 msgstr "Raccourcis _clavier"
 
-#: data/gtk/window.ui:220
+#: data/gtk/window.ui:227
 msgid "_About Calligraphy"
 msgstr "À _propos de Calligraphy"
 
-#: src/main.py:80
+#: src/main.py:85
 msgid "Copyright © 2023 Calligraphy Contributors"
 msgstr "Copyright © 2023 Les contributeurs de Calligraphy"
 
-#. Translators: Translate this string as your translator credits.
+#. translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
 #. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
 #. Name + Email: Gregor Niehl <gregorniehl@web.de>
 #. Do not remove existing names.
 #. Names are separated with newlines.
-#: src/main.py:87
+#: src/main.py:92
 msgid "translator-credits"
 msgstr ""
 "Irénée Thirion <irenee.thirion@e.email>\n"
@@ -203,15 +207,19 @@ msgid "Output Empty"
 msgstr "Résultat"
 
 #. Translators: Do not translate "{font_name}"
-#: src/Views/window.py:213
+#: src/Views/window.py:271
 #, fuzzy, python-brace-format
 msgid "{font_name} output copied to clipboard"
 msgstr "Copié vers le presse-papiers"
 
-#: src/Views/window.py:237
+#: src/Views/window.py:295
 #, fuzzy
 msgid "No Results"
 msgstr "Aucun résultat trouvé"
+
+#: src/Widgets/font_preview_card.py:94
+msgid "Unfavorite"
+msgstr ""
 
 #~ msgid "ascii"
 #~ msgstr "ascii"
