@@ -52,6 +52,14 @@
 		<binary>dev.geopjr.Calligraphy</binary>
 	</provides>
 	<releases translate="no">
+		<release translate="no" version="1.1.0" date="2025-01-21">
+			<description translate="no">
+				<ul>
+					<li>Added the ability to star fonts</li>
+					<li>Other minor bug fixes and improvements</li>
+				</ul>
+			</description>
+		</release>
 		<release translate="no" version="1.0.2" date="2024-10-01">
 			<description translate="no">
 				<ul>
