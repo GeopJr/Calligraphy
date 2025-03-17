@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 00:53+0200\n"
+"PO-Revision-Date: 2025-03-17 19:01+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. Translators: Translate as "Calligraphy"
+#: data/dev.geopjr.Calligraphy.desktop.in:4
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
+#: data/gtk/window.ui:25 src/Views/window.py:298
+msgid "Calligraphy"
+msgstr "Calligraphy"
+
+#: data/dev.geopjr.Calligraphy.desktop.in:5
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
+msgid "Turn text into ASCII banners"
+msgstr "Muunna teksti ASCII-merkkitauluiksi"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/dev.geopjr.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;ansi;"
+msgstr "ascii;convert;conversion;text;ansi;muunnos;teksti;"
+
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters, ready to be copied or exported to images. Spice up your "
+"online conversations by adding some extra oompf to your messages!"
+msgstr ""
+"Calligraphy muuntaa lyhyen tekstin suureksi ASCII-merkeistä koostuvaksi "
+"merkkitauluksi, joka on mahdollista kopioida leikepöydälle tai viedä "
+"kuvaksi. Elävöitä verkkokeskustelujasi lisäämällä hieman näkyvyyttä!"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
+msgid "Entry"
+msgstr "Tietue"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
+msgid "Search"
+msgstr "Haku"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
+msgid "Detailed View"
+msgstr "Tarkka näkymä"
+
+#: data/gtk/font-preview-card.ui:10
+msgid "Show Details"
+msgstr "Näytä tiedot"
+
+#: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
+msgid "Favorite"
+msgstr "Suosikki"
+
+#: data/gtk/font-preview-card.ui:72
+msgid "No Output"
+msgstr "Ei tulostetta"
+
+#: data/gtk/font-view-page.ui:13
+msgid "Toggle Wrapping"
+msgstr "Rivitys päällä/pois"
+
+#: data/gtk/font-view-page.ui:19
+msgid "Copy to Clipboard"
+msgstr "Kopioi leikepöydälle"
+
+#: data/gtk/font-view-page.ui:25
+msgid "Export as Image"
+msgstr "Vie kuvana"
+
+#: data/gtk/font-view-page.ui:61
+msgid "No Text"
+msgstr "Ei tekstiä"
+
+#: data/gtk/font-view-page.ui:62
+msgid "Type something to create a banner"
+msgstr "Kirjoita jotain luodaksesi merkkitaulun"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Yleiset"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Toggle Search"
+msgstr "Haku päällä/pois"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Focus Input Entry"
+msgstr "Kohdista syötekenttään"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Lopeta"
+
+#: data/gtk/window.ui:18 src/Views/window.py:292
+msgid "Fonts"
+msgstr "Fontit"
+
+#: data/gtk/window.ui:31 data/gtk/window.ui:54
+msgid "Search Fonts"
+msgstr "Etsi fontteja"
+
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: data/gtk/window.ui:70
+msgid "Create ASCII Banners"
+msgstr "Luo ASCII-merkkitauluja"
+
+#: data/gtk/window.ui:71
+msgid "Type something to get started"
+msgstr "Kirjoita jotain aloittaaksesi"
+
+#: data/gtk/window.ui:102
+msgid "No Results Found"
+msgstr "Tuloksia ei löytynyt"
+
+#: data/gtk/window.ui:103
+msgid "Try a different search query"
+msgstr "Kokeile eri hakuehtoja"
+
+#: data/gtk/window.ui:161
+msgid "Clear Entry"
+msgstr "Tyhjennä tietue"
+
+#: data/gtk/window.ui:173
+msgid "Type here…"
+msgstr "Kirjoita tähän…"
+
+#: data/gtk/window.ui:190
+msgid "Warning"
+msgstr "Varoitus"
+
+#: data/gtk/window.ui:202
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr ""
+"Muut merkit kuin aakkoset eivät välttämättä ole kaikkien fonttien tukemia"
+
+#: data/gtk/window.ui:223
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: data/gtk/window.ui:227
+msgid "_About Calligraphy"
+msgstr "_Tietoja - Calligraphy"
+
+#: src/main.py:85
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr "Tekijänoikeus © 2023 Calligraphy-avustajat"
+
+#. translators: Translate this string as your translator credits.
+#. Name only:    Gregor Niehl
+#. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+#. Name + Email: Gregor Niehl <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:92
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr "Kopioi"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Output Empty"
+msgstr "Tyhjä tuloste"
+
+#. Translators: Do not translate "{font_name}"
+#: src/Views/window.py:271
+#, python-brace-format
+msgid "{font_name} output copied to clipboard"
+msgstr "{font_name}-tuloste kopioitu leikepöydälle"
+
+#: src/Views/window.py:295
+msgid "No Results"
+msgstr "Ei tuloksia"
+
+#: src/Widgets/font_preview_card.py:94
+msgid "Unfavorite"
+msgstr "Poista suosikeista"
