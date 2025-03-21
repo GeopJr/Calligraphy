@@ -12,6 +12,12 @@
     <file alias="metainfo.xml" preprocess="xml-stripblanks">dev.geopjr.Calligraphy.metainfo.xml</file>
   </gresource>
 
+  <gresource prefix="/dev/geopjr/Calligraphy/icons/scalable/apps/">
+    <file alias="dev.geopjr.Archives.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/apps/dev.geopjr.Archives.svg</file>
+    <file alias="dev.geopjr.Collision.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/apps/dev.geopjr.Collision.svg</file>
+    <file alias="dev.geopjr.Tuba.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/apps/dev.geopjr.Tuba.svg</file>
+  </gresource>
+
   <gresource prefix="/dev/geopjr/Calligraphy/icons/scalable/actions/">
     <file alias="text2-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/text2-symbolic.svg</file>
     <file alias="image-round-symbolic.svg" preprocess="xml-stripblanks">icons/hicolor/scalable/actions/image-round-symbolic.svg</file>

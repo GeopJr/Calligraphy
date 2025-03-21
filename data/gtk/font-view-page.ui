@@ -61,7 +61,7 @@
                     <property name="title" translatable="yes">No Text</property>
                     <property name="description" translatable="yes">Type something to create a banner</property>
                     <style>
-                      <class name="dim-label"/>
+                      <class name="dimmed"/>
                     </style>
                   </object>
                 </property>

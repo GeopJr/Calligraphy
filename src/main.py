@@ -91,6 +91,17 @@ class CalligraphyApplication(Adw.Application):
         # Names are separated with newlines.
         about.set_translator_credits(_("translator-credits"))
 
+        # translators: Application metainfo for the app "Archives". <https://gitlab.gnome.org/GeopJr/Archives/>
+        about.add_other_app(
+            "dev.geopjr.Archives", _("Archives"), _("Create and view web archives")
+        )
+        # translators: Application metainfo for the app "Collision". <https://github.com/GeopJr/Collision>
+        about.add_other_app(
+            "dev.geopjr.Collision", _("Collision"), _("Check hashes for your files")
+        )
+        # translators: Application metainfo for the app "Tuba". <https://github.com/GeopJr/Tuba>
+        about.add_other_app("dev.geopjr.Tuba", _("Tuba"), _("Browse the Fediverse"))
+
         about.add_legal_section(
             title="pyfiglet",
             copyright="Copyright © 2018 Christopher Jones, Stefano Rivera, Peter Waller",

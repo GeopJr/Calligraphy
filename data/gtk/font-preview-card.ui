@@ -71,7 +71,7 @@
                       <object class="GtkLabel">
                         <property name="label" translatable="yes">No Output</property>
                         <style>
-                          <class name="dim-label" />
+                          <class name="dimmed" />
                           <class name="title-2" />
                         </style>
                       </object>
