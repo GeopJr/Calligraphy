@@ -52,6 +52,14 @@
 		<binary>dev.geopjr.Calligraphy</binary>
 	</provides>
 	<releases translate="no">
+		<release translate="no" version="1.2.0" date="2025-03-22">
+			<description translate="no">
+				<ul>
+					<li>Visual refinements to match the state of the art of GNOME apps</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release translate="no" version="1.1.0" date="2025-01-21">
 			<description translate="no">
 				<ul>
