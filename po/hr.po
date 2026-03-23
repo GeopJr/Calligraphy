@@ -1,0 +1,207 @@
+# Croatian translation for Calligraphy.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Calligraphy package.
+# Milo Ivir <mail@milotype.de>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Calligraphy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 00:53+0200\n"
+"PO-Revision-Date: 2025-11-09 20:48+0100\n"
+"Last-Translator: Milo Ivir <mail@mivirtype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Translators: Translate as "Calligraphy"
+#: data/dev.geopjr.Calligraphy.desktop.in:4
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
+#: data/gtk/window.ui:25 src/Views/window.py:298
+msgid "Calligraphy"
+msgstr "Calligraphy"
+
+#: data/dev.geopjr.Calligraphy.desktop.in:5
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
+msgid "Turn text into ASCII banners"
+msgstr "Pretvori tekst u ASCII natpise"
+
+#. Translators: These are search terms for the application;
+#. the translation should contain the original list AND the translated strings.
+#. The list must end with a semicolon.
+#: data/dev.geopjr.Calligraphy.desktop.in:14
+msgid "ascii;convert;conversion;text;ansi;"
+msgstr "ascii;konvertiraj;konverzija;tekst;ansi;"
+
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
+msgid ""
+"Calligraphy turns short texts into large, impressive banners made up of "
+"ASCII Characters, ready to be copied or exported to images. Spice up your "
+"online conversations by adding some extra oompf to your messages!"
+msgstr ""
+"Calligraphy pretvara kratke tekstove u velike, impresivne natpise "
+"sastavljene od ASCII znakova, spremne za kopiranje ili izvoz kao slike. "
+"Dodaj malo šarma svojim online razgovorima!"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
+msgid "Entry"
+msgstr "Ulaz"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
+msgid "Search"
+msgstr "Pretraga"
+
+#. translators: This is a screenshot caption
+#: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
+msgid "Detailed View"
+msgstr "Detaljan prikaz"
+
+#: data/gtk/font-preview-card.ui:10
+msgid "Show Details"
+msgstr "Prikaži detalje"
+
+#: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
+msgid "Favorite"
+msgstr "Favorit"
+
+#: data/gtk/font-preview-card.ui:72
+msgid "No Output"
+msgstr "Nema rezultata"
+
+#: data/gtk/font-view-page.ui:13
+msgid "Toggle Wrapping"
+msgstr "Uključi/Isključi prelamanje"
+
+#: data/gtk/font-view-page.ui:19
+msgid "Copy to Clipboard"
+msgstr "Kopiraj u međuspremnik"
+
+#: data/gtk/font-view-page.ui:25
+msgid "Export as Image"
+msgstr "Izvezi kao sliku"
+
+#: data/gtk/font-view-page.ui:61
+msgid "No Text"
+msgstr "Nema teksta"
+
+#: data/gtk/font-view-page.ui:62
+msgid "Type something to create a banner"
+msgstr "Utipkaj nešto za stvaranje natpisa"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Općenito"
+
+#: data/gtk/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Toggle Search"
+msgstr "Uklj./Isklj. pretragu"
+
+#: data/gtk/help-overlay.ui:21
+msgctxt "shortcut window"
+msgid "Focus Input Entry"
+msgstr "Fokusiraj ulaz unosa"
+
+#: data/gtk/help-overlay.ui:27
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Prikaži prečace"
+
+#: data/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Zatvori aplikaciju"
+
+#: data/gtk/window.ui:18 src/Views/window.py:292
+msgid "Fonts"
+msgstr "Fontovi"
+
+#: data/gtk/window.ui:31 data/gtk/window.ui:54
+msgid "Search Fonts"
+msgstr "Pretraži fontove"
+
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr "Glavni izbornik"
+
+#: data/gtk/window.ui:70
+msgid "Create ASCII Banners"
+msgstr "Stvori ASCII natpise"
+
+#: data/gtk/window.ui:71
+msgid "Type something to get started"
+msgstr "Upiši nešto za pokretanje"
+
+#: data/gtk/window.ui:102
+msgid "No Results Found"
+msgstr "Nije pronađen nijedan rezultat"
+
+#: data/gtk/window.ui:103
+msgid "Try a different search query"
+msgstr "Pokušaj drugačiju pretragu"
+
+#: data/gtk/window.ui:161
+msgid "Clear Entry"
+msgstr "Izbriši unos"
+
+#: data/gtk/window.ui:173
+msgid "Type here…"
+msgstr "Tipkaj ovdje …"
+
+#: data/gtk/window.ui:190
+msgid "Warning"
+msgstr "Upozorenje"
+
+#: data/gtk/window.ui:202
+msgid "Non-alphabetic characters may not be supported in every font"
+msgstr "Znakovi koji nisu abecedni možda nisu podržani u svakom fontu"
+
+#: data/gtk/window.ui:223
+msgid "_Keyboard Shortcuts"
+msgstr "_Tipkovni prečaci"
+
+#: data/gtk/window.ui:227
+msgid "_About Calligraphy"
+msgstr "_O aplikaciji Calligraphy"
+
+#: src/main.py:85
+msgid "Copyright © 2023 Calligraphy Contributors"
+msgstr "Autorska prava © 2023. doprinositelji aplikaciji Calligraphy"
+
+#. translators: Translate this string as your translator credits.
+#. Name only:    Gregor Niehl
+#. Name + URL:   Gregor Niehl https://gitlab.gnome.org/gregorni/
+#. Name + Email: Gregor Niehl <gregorniehl@web.de>
+#. Do not remove existing names.
+#. Names are separated with newlines.
+#: src/main.py:92
+msgid "translator-credits"
+msgstr "Milo Ivir <mail@milotype.de>"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: src/Utils/update_button_sensitivity.py:23
+msgid "Output Empty"
+msgstr "Rezultat je prazan"
+
+#. Translators: Do not translate "{font_name}"
+#: src/Views/window.py:271
+#, python-brace-format
+msgid "{font_name} output copied to clipboard"
+msgstr "Rezultat fonta {font_name} je kopiran u međuspremnik"
+
+#: src/Views/window.py:295
+msgid "No Results"
+msgstr "Nema rezultata"
+
+#: src/Widgets/font_preview_card.py:94
+msgid "Unfavorite"
+msgstr "Ukloni iz favorita"

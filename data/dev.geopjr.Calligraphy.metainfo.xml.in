@@ -100,12 +100,12 @@
 		</release>
 	</releases>
 	<kudos>
-			<!--
+		<!--
 				GNOME Software kudos:
 				https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
 			-->
-			<kudo>ModernToolkit</kudo>
-			<kudo>HiDpiIcon</kudo>
+		<kudo>ModernToolkit</kudo>
+		<kudo>HiDpiIcon</kudo>
 	</kudos>
 	<branding>
 		<color type="primary" scheme_preference="light">#bdadff</color>
