@@ -91,7 +91,7 @@ class CalligraphyApplication(Adw.Application):
         # Names are separated with newlines.
         about.set_translator_credits(_("translator-credits"))
 
-        # translators: Application metainfo for the app "Archives". <https://gitlab.gnome.org/GeopJr/Archives/>
+        # translators: Application metainfo for the app "Archives". <https://codeberg.org/GeopJr/Archives/>
         about.add_other_app(
             "dev.geopjr.Archives", _("Archives"), _("Create and view web archives")
         )

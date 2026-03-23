@@ -1,0 +1,18 @@
+when:
+  - event: pull_request
+  - event: push
+    branch: main
+
+steps:
+  precommit:
+    image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
+    settings:
+      args: "--all-files"
+
+  build:
+    depends_on: [precommit]
+    image: alpine:edge
+    commands:
+      - apk add --no-cache meson python3 py3-pip glib-dev gtk4.0-dev libadwaita-dev desktop-file-utils gettext-dev make clang git
+      - pip3 install --break-system-packages --verbose pyfiglet
+      - CC=clang make

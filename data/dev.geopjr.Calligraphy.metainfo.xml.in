@@ -25,17 +25,17 @@
 	</recommends>
 	<screenshots>
 		<screenshot type="default">
-			<image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/entry.png</image>
+			<image>https://codeberg.org/GeopJr/Calligraphy/media/commit/c511d385b8c7e15da5014914841f139b87b99c32/data/screenshots/entry.png</image>
 			<!--translators: This is a screenshot caption-->
 			<caption>Entry</caption>
 		</screenshot>
 		<screenshot>
-			<image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/search.png</image>
+			<image>https://codeberg.org/GeopJr/Calligraphy/media/commit/c511d385b8c7e15da5014914841f139b87b99c32/data/screenshots/search.png</image>
 			<!--translators: This is a screenshot caption-->
 			<caption>Search</caption>
 		</screenshot>
 		<screenshot>
-			<image>https://gitlab.gnome.org/GeopJr/Calligraphy/-/raw/main/data/screenshots/detailed-view.png</image>
+			<image>https://codeberg.org/GeopJr/Calligraphy/media/commit/c511d385b8c7e15da5014914841f139b87b99c32/data/screenshots/detailed-view.png</image>
 			<!--translators: This is a screenshot caption-->
 			<caption>Detailed View</caption>
 		</screenshot>
@@ -43,10 +43,10 @@
 	<launchable type="desktop-id">dev.geopjr.Calligraphy.desktop</launchable>
 	<translation type="gettext">dev.geopjr.Calligraphy</translation>
 	<url type="homepage">https://calligraphy.geopjr.dev/</url>
-	<url type="bugtracker">https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues</url>
+	<url type="bugtracker">https://codeberg.org/GeopJr/Calligraphy/issues</url>
 	<url type="donation">https://geopjr.dev/donate</url>
-	<url type="vcs-browser">https://gitlab.gnome.org/GeopJr/Calligraphy</url>
-	<url type="contribute">https://gitlab.gnome.org/GeopJr/Calligraphy#contributing</url>
+	<url type="vcs-browser">https://codeberg.org/GeopJr/Calligraphy</url>
+	<url type="contribute">https://codeberg.org/GeopJr/Calligraphy#contributing</url>
 	<content_rating type="oars-1.1" />
 	<provides>
 		<binary>dev.geopjr.Calligraphy</binary>

@@ -6,8 +6,8 @@
 
 	<name xml:lang="en">Calligraphy</name>
 	<shortdesc xml:lang="en">Turn text into ASCII banners</shortdesc>
-	<homepage rdf:resource="https://gitlab.gnome.org/GeopJr/Calligraphy" />
-	<bug-database rdf:resource="https://gitlab.gnome.org/GeopJr/Calligraphy/-/issues/"/>
+	<homepage rdf:resource="https://codeberg.org/GeopJr/Calligraphy" />
+	<bug-database rdf:resource="https://codeberg.org/GeopJr/Calligraphy/issues"/>
 	<programming-language>Python</programming-language>
 
 	<platform>GTK 4</platform>
