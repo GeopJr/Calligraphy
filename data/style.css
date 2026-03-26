@@ -4,9 +4,28 @@
   --accent-fg-color: alpha(white, 1);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: var(--purple-2);
+    --accent-bg-color: var(--purple-2);
+  }
+
+  .star:hover,
+  .star.enabled {
+    color: var(--yellow-1);
+  }
+
+  .star:active {
+    color: var(--yellow-2);
+  }
+}
+
 @keyframes rotate_star {
-	from { -gtk-icon-transform: rotate(-72deg); }
-	to {}
+  from {
+    -gtk-icon-transform: rotate(-72deg);
+  }
+
+  to {}
 }
 
 textview {
@@ -21,7 +40,7 @@ textview {
   border-radius: 12px;
 }
 
-gridview > child {
+gridview>child {
   border-radius: 16px;
 }
 
@@ -32,11 +51,12 @@ gridview > child {
 }
 
 .clear-input-button {
-  color: alpha(@window_fg_color, 0.7);
+  color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.7));
   box-shadow: none;
 }
 
-.clear-input-button:hover, .clear-input-button:active {
+.clear-input-button:hover,
+.clear-input-button:active {
   color: var(--window-fg-color);
   background: none;
 }
@@ -46,22 +66,22 @@ gridview > child {
 }
 
 .weaker-highlight:hover {
-  background: alpha(@window_fg_color, 0.03);
+  background-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.03));
 }
 
 .weaker-highlight:active {
-  background: alpha(@window_fg_color, 0.08);
+  background-color: rgb(from var(--window-fg-color) r g b / calc(alpha * 0.08));
 }
 
 .star.enabled image {
-	animation: rotate_star 0.4s ease;
+  animation: rotate_star 0.4s ease;
 }
 
 .star:hover,
 .star.enabled {
-	color: var(--yellow-5);
+  color: var(--yellow-5);
 }
 
 .star:active {
-	color: var(--yellow-4);
+  color: var(--yellow-4);
 }
