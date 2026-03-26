@@ -48,7 +48,7 @@ class FontPreview(Gtk.Widget):
         self.set_vexpand(True)
         self.set_hexpand(True)
 
-    def __del__(self) -> None:
+    def teardown(self) -> None:
         self.text_view.unparent()
 
     def do_measure(

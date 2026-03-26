@@ -114,6 +114,7 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         self.item_factory.connect("setup", self.__item_setup)
         self.item_factory.connect("bind", self.__item_bind)
         self.item_factory.connect("unbind", self.__item_unbind)
+        self.item_factory.connect("teardown", self.__item_teardown)
 
         self.preview_list_grid_view.set_factory(self.item_factory)
         self.preview_list_grid_view.set_model(self.no_selection_model)
@@ -185,6 +186,11 @@ class CalligraphyWindow(Adw.ApplicationWindow):
         fpc.unbind()
         if fpc.content_changed_signal_id >= 0:
             self.disconnect(fpc.content_changed_signal_id)
+
+    def __item_teardown(
+        self, _factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem
+    ) -> None:
+        list_item.get_child().teardown()
 
     def __item_activate(self, _list, pos: int) -> None:
         font_name = self.no_selection_model.get_item(pos)
