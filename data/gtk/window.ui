@@ -80,7 +80,7 @@
                                   <object class="GtkScrolledWindow">
                                     <child>
                                       <object class="AdwClampScrollable">
-                                        <property name="maximum-size">1000</property>
+                                        <property name="maximum-size">5000</property>
                                         <property name="tightening-threshold">600</property>
                                         <child>
                                           <object class="GtkGridView" id="preview_list_grid_view">
