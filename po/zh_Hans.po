@@ -8,35 +8,35 @@ msgstr ""
 "Project-Id-Version: calligraphy\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-21 00:53+0200\n"
-"PO-Revision-Date: 2023-10-18 04:15+0000\n"
-"Last-Translator: 陶勇 <peachlemon2014@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"calligraphy/calligraphy/zh_Hans/>\n"
+"PO-Revision-Date: 2026-04-10 02:57+0000\n"
+"Last-Translator: Outbreak2096 <outbreak2096@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.codeberg.org/projects/calligraphy/calligraphy/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. Translators: Translate as "Calligraphy"
 #: data/dev.geopjr.Calligraphy.desktop.in:4
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:6 data/gtk/window.ui:5
 #: data/gtk/window.ui:25 src/Views/window.py:298
 msgid "Calligraphy"
-msgstr "图表"
+msgstr "Calligraphy"
 
 #: data/dev.geopjr.Calligraphy.desktop.in:5
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:10
 msgid "Turn text into ASCII banners"
-msgstr ""
+msgstr "将文本转换为 ASCII 横幅"
 
 #. Translators: These are search terms for the application;
 #. the translation should contain the original list AND the translated strings.
 #. The list must end with a semicolon.
 #: data/dev.geopjr.Calligraphy.desktop.in:14
 msgid "ascii;convert;conversion;text;ansi;"
-msgstr ""
+msgstr "ascii;convert;conversion;text;ansi;转换;转化;文本;"
 
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:12
 msgid ""
@@ -44,134 +44,136 @@ msgid ""
 "ASCII Characters, ready to be copied or exported to images. Spice up your "
 "online conversations by adding some extra oompf to your messages!"
 msgstr ""
+"Calligraphy 可以将短文本转换为由 ASCII 字符组成的大型精美横幅，可直接复制或导"
+"出为图片。为您的在线对话增添视觉冲击力，让您的消息更具活力！"
 
 #. translators: This is a screenshot caption
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:30
 msgid "Entry"
-msgstr ""
+msgstr "输入"
 
 #. translators: This is a screenshot caption
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:35
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #. translators: This is a screenshot caption
 #: data/dev.geopjr.Calligraphy.metainfo.xml.in:40
 msgid "Detailed View"
-msgstr ""
+msgstr "详细视图"
 
 #: data/gtk/font-preview-card.ui:10
 msgid "Show Details"
-msgstr ""
+msgstr "显示详情"
 
 #: data/gtk/font-preview-card.ui:47 src/Widgets/font_preview_card.py:100
 msgid "Favorite"
-msgstr "喜欢"
+msgstr "收藏"
 
 #: data/gtk/font-preview-card.ui:72
 msgid "No Output"
-msgstr ""
+msgstr "无输出"
 
 #: data/gtk/font-view-page.ui:13
 msgid "Toggle Wrapping"
-msgstr ""
+msgstr "切换换行"
 
 #: data/gtk/font-view-page.ui:19
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "复制到剪贴板"
 
 #: data/gtk/font-view-page.ui:25
 msgid "Export as Image"
-msgstr ""
+msgstr "导出为图片"
 
 #: data/gtk/font-view-page.ui:61
 msgid "No Text"
-msgstr ""
+msgstr "无文本"
 
 #: data/gtk/font-view-page.ui:62
 msgid "Type something to create a banner"
-msgstr ""
+msgstr "输入一些内容以创建横幅"
 
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: data/gtk/help-overlay.ui:15
 msgctxt "shortcut window"
 msgid "Toggle Search"
-msgstr ""
+msgstr "切换搜索"
 
 #: data/gtk/help-overlay.ui:21
 msgctxt "shortcut window"
 msgid "Focus Input Entry"
-msgstr ""
+msgstr "聚焦输入框"
 
 #: data/gtk/help-overlay.ui:27
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "显示快捷键"
 
 #: data/gtk/help-overlay.ui:33
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 #: data/gtk/window.ui:18 src/Views/window.py:292
 msgid "Fonts"
-msgstr ""
+msgstr "字体"
 
 #: data/gtk/window.ui:31 data/gtk/window.ui:54
 msgid "Search Fonts"
-msgstr ""
+msgstr "搜索字体"
 
 #: data/gtk/window.ui:41
 msgid "Main Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: data/gtk/window.ui:70
 msgid "Create ASCII Banners"
-msgstr ""
+msgstr "创建 ASCII 横幅"
 
 #: data/gtk/window.ui:71
 msgid "Type something to get started"
-msgstr ""
+msgstr "输入一些内容以开始"
 
 #: data/gtk/window.ui:102
 msgid "No Results Found"
-msgstr ""
+msgstr "未找到结果"
 
 #: data/gtk/window.ui:103
 msgid "Try a different search query"
-msgstr ""
+msgstr "尝试其他搜索查询"
 
 #: data/gtk/window.ui:161
 msgid "Clear Entry"
-msgstr ""
+msgstr "清除输入"
 
 #: data/gtk/window.ui:173
 msgid "Type here…"
-msgstr ""
+msgstr "在此处输入…"
 
 #: data/gtk/window.ui:190
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: data/gtk/window.ui:202
 msgid "Non-alphabetic characters may not be supported in every font"
-msgstr ""
+msgstr "并非所有字体都支持非字母字符"
 
 #: data/gtk/window.ui:223
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "键盘快捷键(_K)"
 
 #: data/gtk/window.ui:227
 msgid "_About Calligraphy"
-msgstr ""
+msgstr "关于 Calligraphy(_A)"
 
 #: src/main.py:85
 msgid "Copyright © 2023 Calligraphy Contributors"
-msgstr ""
+msgstr "版权所有 © 2023 Calligraphy 贡献者"
 
 #. translators: Translate this string as your translator credits.
 #. Name only:    Gregor Niehl
@@ -181,29 +183,29 @@ msgstr ""
 #. Names are separated with newlines.
 #: src/main.py:92
 msgid "translator-credits"
-msgstr ""
+msgstr "Outbreak2096"
 
 #: src/Utils/update_button_sensitivity.py:23
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: src/Utils/update_button_sensitivity.py:23
 msgid "Output Empty"
-msgstr ""
+msgstr "输出为空"
 
 #. Translators: Do not translate "{font_name}"
 #: src/Views/window.py:271
 #, python-brace-format
 msgid "{font_name} output copied to clipboard"
-msgstr ""
+msgstr "{font_name} 输出已复制到剪贴板"
 
 #: src/Views/window.py:295
 msgid "No Results"
-msgstr ""
+msgstr "无结果"
 
 #: src/Widgets/font_preview_card.py:94
 msgid "Unfavorite"
-msgstr ""
+msgstr "取消收藏"
 
 #~ msgid "ascii"
 #~ msgstr "ASCII码"
