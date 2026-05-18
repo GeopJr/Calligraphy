@@ -1,7 +1,7 @@
 :root {
   --accent-color: var(--purple-5);
   --accent-bg-color: var(--purple-5);
-  --accent-fg-color: alpha(white, 1);
+  --accent-fg-color: white;
 }
 
 @media (prefers-color-scheme: dark) {
